@@ -1,0 +1,237 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Blog | Coming Soon | Reimagine Pro Wash & More" 
+        description="Blog coming soon! Stay tuned for pressure washing tips, maintenance guides, and industry insights from Reimagine Pro Wash & More.">
+  <main class="coming-soon-container">
+    <section class="coming-soon">
+      <div class="content">
+        <div class="icon-wrapper">
+          <i class="fas fa-blog"></i>
+        </div>
+        <h1>Blog Coming Soon</h1>
+        <p class="subtitle">We're preparing valuable content about pressure washing tips, maintenance guides, and more!</p>
+        
+        <div class="preview-content">
+          <h2>What to Expect</h2>
+          <div class="preview-grid">
+            <div class="preview-item">
+              <i class="fas fa-lightbulb"></i>
+              <h3>Helpful Tips</h3>
+              <p>Expert advice on maintaining your property's exterior</p>
+            </div>
+            <div class="preview-item">
+              <i class="fas fa-calendar-alt"></i>
+              <h3>Seasonal Guides</h3>
+              <p>When and how to clean different surfaces throughout the year</p>
+            </div>
+            <div class="preview-item">
+              <i class="fas fa-tools"></i>
+              <h3>DIY vs Professional</h3>
+              <p>Know when to tackle it yourself or call the experts</p>
+            </div>
+            <div class="preview-item">
+              <i class="fas fa-leaf"></i>
+              <h3>Eco-Friendly Methods</h3>
+              <p>Learn about environmentally safe cleaning practices</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-cta">
+          <h3>Need Help Now?</h3>
+          <p>Don't wait for the blog - get your free quote today!</p>
+          <div class="cta-buttons">
+            <a href="tel:9842024980" class="btn-cta">Call (984) 202-4980</a>
+            <a href="mailto:info@rprowashnc.com" class="btn-cta secondary">Email Us</a>
+          </div>
+        </div>
+
+        <a href="/" class="btn-home">Return to Homepage</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .coming-soon-container {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .coming-soon {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .icon-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .icon-wrapper i {
+    font-size: 5rem;
+    color: #1E90FF;
+    opacity: 0.8;
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    color: #4A4A4A;
+    margin-bottom: 50px;
+  }
+
+  .preview-content {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  }
+
+  .preview-content h2 {
+    color: #003366;
+    margin-bottom: 30px;
+  }
+
+  .preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  .preview-item {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .preview-item i {
+    font-size: 2.5rem;
+    color: #1E90FF;
+    margin-bottom: 15px;
+  }
+
+  .preview-item h3 {
+    color: #003366;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+
+  .preview-item p {
+    color: #4A4A4A;
+    line-height: 1.5;
+  }
+
+  .contact-cta {
+    background: linear-gradient(135deg, #003366, #1E90FF);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+  }
+
+  .contact-cta h3 {
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .contact-cta p {
+    margin-bottom: 25px;
+    opacity: 0.9;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-cta {
+    display: inline-block;
+    padding: 12px 30px;
+    background: white;
+    color: #003366;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  .btn-cta.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-cta.secondary:hover {
+    background: white;
+    color: #003366;
+  }
+
+  .btn-home {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(45deg, #003366, #1E90FF);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+
+  .btn-home:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+    }
+
+    .icon-wrapper i {
+      font-size: 4rem;
+    }
+
+    .preview-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .preview-content, .contact-cta {
+      padding: 30px 20px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-cta {
+      width: 200px;
+    }
+  }
+</style>

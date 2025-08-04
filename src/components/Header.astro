@@ -1,0 +1,192 @@
+---
+
+---
+
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/">
+        <!-- Logo placeholder - replace with actual logo -->
+        <span class="logo-text">Reimagine Pro Wash</span>
+      </a>
+    </div>
+    
+    <nav class="main-nav">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/services" class="nav-link">Services</a>
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/contact" class="nav-link">Contact</a>
+      <a href="tel:9842024980" class="nav-phone">Call (984) 202-4980</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button class="mobile-menu-btn" id="mobile-menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/services" class="mobile-nav-link">Services</a>
+    <a href="/blog" class="mobile-nav-link">Blog</a>
+    <a href="/contact" class="mobile-nav-link">Contact</a>
+    <a href="tel:9842024980" class="mobile-nav-phone">Call (984) 202-4980</a>
+  </nav>
+</header>
+
+<style>
+  /* Brand Colors */
+  :root {
+    --primary-blue: #1E90FF;
+    --dark-blue: #003366;
+    --gray: #4A4A4A;
+    --white: #FFFFFF;
+    --accent-blue: #87CEEB;
+  }
+
+  .main-header {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+  }
+
+  .logo a {
+    text-decoration: none;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-blue);
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: var(--gray);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--primary-blue);
+  }
+
+  .nav-phone {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+
+  .nav-phone:hover {
+    background: var(--dark-blue);
+  }
+
+  /* Mobile Menu */
+  .mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: var(--gray);
+    margin: 3px 0;
+    transition: 0.3s;
+  }
+
+  .mobile-nav {
+    display: none;
+    background: var(--white);
+    border-top: 1px solid #eee;
+    padding: 20px;
+  }
+
+  .mobile-nav a {
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+    color: var(--gray);
+    border-bottom: 1px solid #eee;
+  }
+
+  .mobile-nav-phone {
+    background: var(--primary-blue);
+    color: var(--white) !important;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none;
+    }
+
+    .mobile-menu-btn {
+      display: flex;
+    }
+
+    .mobile-nav.active {
+      display: block;
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    if (mobileMenuBtn && mobileNav) {
+      mobileMenuBtn.addEventListener('click', function() {
+        mobileMenuBtn.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+      });
+    }
+  });
+</script>

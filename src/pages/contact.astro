@@ -1,0 +1,221 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact | Coming Soon | Reimagine Pro Wash & More" 
+        description="Contact page coming soon. Call us at (984) 202-4980 or email info@rprowashnc.com for professional pressure washing services in Knightdale, NC.">
+  <main class="coming-soon-container">
+    <section class="coming-soon">
+      <div class="content">
+        <div class="icon-wrapper">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h1>Contact Page Coming Soon</h1>
+        <p class="subtitle">We're working on creating a better experience for you!</p>
+        
+        <div class="temp-contact">
+          <h2>Get in Touch Now</h2>
+          <div class="contact-methods">
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h3>Call Us</h3>
+                <a href="tel:9842024980">(984) 202-4980</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h3>Email Us</h3>
+                <a href="mailto:info@rprowashnc.com">info@rprowashnc.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h3>Service Area</h3>
+                <p>Knightdale, NC + 50 mile radius</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-section">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="https://www.instagram.com/reimagine_prowash/" target="_blank" rel="noopener">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.facebook.com/people/Reimagine-Pro-Wash-More/61575086936289/" target="_blank" rel="noopener">
+              <i class="fab fa-facebook"></i> Facebook
+            </a>
+          </div>
+        </div>
+
+        <a href="/" class="btn-home">Return to Homepage</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .coming-soon-container {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .coming-soon {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .icon-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .icon-wrapper i {
+    font-size: 5rem;
+    color: #1E90FF;
+    opacity: 0.8;
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    color: #4A4A4A;
+    margin-bottom: 50px;
+  }
+
+  .temp-contact {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  }
+
+  .temp-contact h2 {
+    color: #003366;
+    margin-bottom: 30px;
+  }
+
+  .contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    text-align: left;
+  }
+
+  .contact-item i {
+    font-size: 2rem;
+    color: #1E90FF;
+    margin-top: 5px;
+  }
+
+  .contact-item h3 {
+    margin: 0 0 5px 0;
+    color: #003366;
+    font-size: 1.2rem;
+  }
+
+  .contact-item a {
+    color: #1E90FF;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .contact-item a:hover {
+    color: #003366;
+    text-decoration: underline;
+  }
+
+  .social-section {
+    margin-bottom: 40px;
+  }
+
+  .social-section h3 {
+    color: #003366;
+    margin-bottom: 20px;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #1E90FF;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+
+  .social-links a:hover {
+    background: #003366;
+    transform: translateY(-2px);
+  }
+
+  .btn-home {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(45deg, #003366, #1E90FF);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+
+  .btn-home:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+    }
+
+    .icon-wrapper i {
+      font-size: 4rem;
+    }
+
+    .contact-methods {
+      grid-template-columns: 1fr;
+    }
+
+    .temp-contact {
+      padding: 30px 20px;
+    }
+  }
+</style>
