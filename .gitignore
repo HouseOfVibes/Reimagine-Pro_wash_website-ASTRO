@@ -4,7 +4,7 @@
 .pnp.js
 
 # Build output
-/dist/
+# /dist/  # Temporarily commented out for deployment testing
 /.astro/
 
 # Log files
