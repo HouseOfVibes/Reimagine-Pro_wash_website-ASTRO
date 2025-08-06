@@ -1,5 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/$USER/public_html/
-    - /bin/cp -R dist/* $DEPLOYPATH
+    - export DEPLOYPATH=/home/b913955/rprowashnc.com/
+    - /bin/cp -R dist/* $DEPLOYPATH 2>/dev/null || true
+    - /bin/cp dist/.* $DEPLOYPATH 2>/dev/null || true
+    - /bin/cp test.html $DEPLOYPATH 2>/dev/null || true
