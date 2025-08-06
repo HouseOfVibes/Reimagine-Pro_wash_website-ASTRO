@@ -1,5 +1,7 @@
 ---
 deployment:
- tasks:
- - export DEPLOYPATH=/home/b913955/public_html/rprowashnc.com/
- - /bin/cp dist/index.html $DEPLOYPATH
+  tasks:
+    - export DEPLOYPATH=/home/b913955/public_html/
+    - /bin/cp dist/index.html $DEPLOYPATH
+    - /bin/cp dist/robots.txt $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH
