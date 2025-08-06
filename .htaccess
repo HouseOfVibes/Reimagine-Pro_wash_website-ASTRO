@@ -6,8 +6,5 @@ DirectoryIndex index.html
   Allow from all
 </Files>
 
-# Allow access to asset folders
-<Directory ~ "(_astro|blog|contact|services)">
-  Order Allow,Deny
-  Allow from all
-</Directory>
+# Allow access to all files (default behavior)
+# No Directory directives needed in .htaccess
