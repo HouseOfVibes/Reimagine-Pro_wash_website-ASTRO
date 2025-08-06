@@ -2,4 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/$USER/public_html/rprowashnc.com/
-    - /bin/cp test-index.html $DEPLOYPATH/index.html
+    - npm install
+    - npm run build
+    - /bin/cp -R dist/* $DEPLOYPATH/
