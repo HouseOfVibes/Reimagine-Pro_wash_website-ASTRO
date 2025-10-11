@@ -137,10 +137,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
       <div class="hero-image">
-        <!-- Logo will go here -->
-        <div class="logo-placeholder">
-          <p>Reimagine Pro Wash Logo</p>
-        </div>
+        <img src="/images/logo.png" alt="Reimagine Pro Wash & More Logo" class="hero-logo" />
       </div>
     </div>
   </section>
@@ -326,32 +323,68 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Before/After Gallery Placeholder -->
+  <!-- Before/After Gallery -->
   <section class="gallery">
     <div class="container">
       <h2>See The Difference</h2>
       <p class="section-subtitle">Dramatic before and after results</p>
       <div class="gallery-grid">
         <div class="gallery-item">
-          <div class="before-after">
-            <div class="before">Before</div>
-            <div class="after">After</div>
+          <div class="before-after-images">
+            <div class="image-wrapper">
+              <img src="/images/Driveway Before.png" alt="Driveway Before Cleaning" />
+              <span class="label">Before</span>
+            </div>
+            <div class="image-wrapper">
+              <img src="/images/Driveway After.png" alt="Driveway After Cleaning" />
+              <span class="label">After</span>
+            </div>
           </div>
-          <p>House Washing Transformation</p>
+          <p>Driveway Cleaning</p>
         </div>
         <div class="gallery-item">
-          <div class="before-after">
-            <div class="before">Before</div>
-            <div class="after">After</div>
-          </div>
-          <p>Driveway Cleaning Results</p>
+          <img src="/images/House Washing.png" alt="House Washing" />
+          <p>House Washing</p>
         </div>
         <div class="gallery-item">
-          <div class="before-after">
-            <div class="before">Before</div>
-            <div class="after">After</div>
-          </div>
-          <p>Deck Restoration Project</p>
+          <img src="/images/UnderGround_Pool_Deck_Cleaning.png" alt="Deck Restoration" />
+          <p>Deck Restoration</p>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/Clean Fense.png" alt="Fence Cleaning" />
+          <p>Fence Cleaning</p>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/gutter cleaning.png" alt="Gutter Cleaning" />
+          <p>Gutter Cleaning</p>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/Commercial Pressure Washing.png" alt="Commercial Pressure Washing" />
+          <p>Commercial Pressure Washing</p>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/Hardscapes Cleaning.png" alt="Hardscapes Cleaning" />
+          <p>Hardscapes Cleaning</p>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/Clean_Wooden_Sitting_Deck.png" alt="Pool Deck Cleaning" />
+          <p>Pool Deck Cleaning</p>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/Brick Restoration.png" alt="Brick Restoration" />
+          <p>Brick Restoration</p>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/Before and After- Graffiti Removal.png" alt="Graffiti Removal" />
+          <p>Graffiti Removal</p>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/Dumpster PAd before and after.png" alt="Dumpster Pad Cleaning" />
+          <p>Dumpster Pad Cleaning</p>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/Arbor:Pergola.png" alt="Arbor & Pergola Cleaning" />
+          <p>Arbor & Pergola Cleaning</p>
         </div>
       </div>
     </div>
@@ -587,14 +620,17 @@ import Layout from '../layouts/Layout.astro';
 </script>
 
 <style>
-  /* Brand Colors */
+  /* Brand Colors - Light Theme */
   :root {
-    --primary-blue: #003366;
-    --dark-blue: #1E90FF;
+    --primary-blue: #1E90FF;
+    --dark-blue: #0066CC;
     --gray: #4A4A4A;
     --light-gray: #F5F5F5;
-    --accent-blue: #87CEEB;
+    --accent-blue: #4DA6FF;
     --white: #FFFFFF;
+    --black: #000000;
+    --dark-bg: #FAFAFA;
+    --card-bg: #FFFFFF;
   }
 
   /* Global Styles */
@@ -608,6 +644,7 @@ import Layout from '../layouts/Layout.astro';
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: var(--gray);
+    background-color: var(--white);
   }
 
   .container {
@@ -621,7 +658,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   h1, h2, h3, h4 {
-    color: var(--dark-blue);
+    color: var(--black);
     margin-bottom: 20px;
   }
 
@@ -634,6 +671,7 @@ import Layout from '../layouts/Layout.astro';
     font-size: 2.2rem;
     text-align: center;
     margin-bottom: 40px;
+    width: 100%;
   }
 
   .section-subtitle {
@@ -706,22 +744,24 @@ import Layout from '../layouts/Layout.astro';
 
   /* Hero Section */
   .hero {
-    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--primary-blue) 50%, var(--dark-blue) 100%);
+    background: linear-gradient(135deg, #0066CC 0%, #1E90FF 50%, #4DA6FF 100%);
     color: var(--white);
     padding: 120px 0;
     position: relative;
     overflow: hidden;
+    border-bottom: 2px solid var(--primary-blue);
   }
 
   .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="60" cy="30" r="1.5" fill="rgba(255,255,255,0.08)"/></svg>');
-    animation: float 20s infinite linear;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none"><path d="M0,50 Q300,0 600,50 T1200,50 L1200,100 L0,100 Z" fill="rgba(255,255,255,0.9)"/></svg>');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   @keyframes float {
@@ -754,14 +794,15 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 25px;
-    color: var(--accent-blue);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    color: var(--white);
+    text-shadow: 0 0 20px rgba(255,255,255,0.5);
     font-style: italic;
   }
 
   .hero-description {
     font-size: 1.3rem;
     margin-bottom: 40px;
+    color: var(--white);
     opacity: 0.95;
     line-height: 1.6;
     max-width: 600px;
@@ -773,27 +814,22 @@ import Layout from '../layouts/Layout.astro';
     flex-wrap: wrap;
   }
 
-  .logo-placeholder {
-    background: linear-gradient(135deg, var(--white), #f8f9ff);
-    color: var(--primary-blue);
-    padding: 80px 30px;
-    border-radius: 20px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.4rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border: 2px solid rgba(135,206,235,0.3);
-    transition: all 0.3s ease;
+  .hero-logo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2));
+    animation: float-logo 6s ease-in-out infinite;
   }
 
-  .logo-placeholder:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(0,51,102,0.15);
+  @keyframes float-logo {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
   }
 
   /* Services Overview */
   .services-overview {
-    background: linear-gradient(45deg, #f8f9ff 0%, var(--light-gray) 50%, #f0f8ff 100%);
+    background: var(--light-gray);
     position: relative;
   }
 
@@ -846,7 +882,7 @@ import Layout from '../layouts/Layout.astro';
     text-align: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     transition: all 0.4s ease;
-    border: 2px solid transparent;
+    border: 2px solid var(--primary-blue);
     position: relative;
     overflow: hidden;
   }
@@ -864,8 +900,8 @@ import Layout from '../layouts/Layout.astro';
 
   .service-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(0,51,102,0.2);
-    border-color: var(--accent-blue);
+    box-shadow: 0 15px 35px rgba(30,144,255,0.3);
+    border-color: var(--dark-blue);
   }
 
   .service-card:hover::before {
@@ -898,14 +934,15 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .service-card h4 {
-    color: var(--dark-blue);
+    color: var(--black);
     margin-bottom: 15px;
   }
 
   /* Why Choose Us */
   .why-choose-us {
-    background: linear-gradient(135deg, var(--white) 0%, #fafbff 50%, var(--white) 100%);
+    background: var(--white);
     position: relative;
+    border-top: 2px solid var(--primary-blue);
   }
 
   .why-choose-us::after {
@@ -969,14 +1006,15 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .feature h4 {
-    color: var(--dark-blue);
+    color: var(--black);
     margin-bottom: 15px;
   }
 
   /* Service Area */
   .service-area {
-    background: linear-gradient(180deg, var(--light-gray) 0%, #e8f4f8 50%, var(--light-gray) 100%);
+    background: var(--light-gray);
     position: relative;
+    border-top: 2px solid var(--primary-blue);
   }
 
   .map-container {
@@ -1003,9 +1041,9 @@ import Layout from '../layouts/Layout.astro';
     background: var(--white);
     padding: 35px;
     border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
-    border: 1px solid rgba(135,206,235,0.2);
+    border: 2px solid var(--primary-blue);
   }
 
   .area-column:hover {
@@ -1031,49 +1069,83 @@ import Layout from '../layouts/Layout.astro';
 
   /* Gallery */
   .gallery {
-    background: linear-gradient(45deg, var(--white) 0%, #f8fcff 100%);
+    background: var(--white);
     position: relative;
+    border-top: 2px solid var(--primary-blue);
   }
 
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
   }
 
   .gallery-item {
     text-align: center;
+    background: var(--white);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-blue);
   }
 
-  .before-after {
+  .gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(30,144,255,0.3);
+    border-color: var(--dark-blue);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .gallery-item p {
+    font-weight: 600;
+    color: var(--black);
+    margin: 0;
+  }
+
+  .before-after-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin-bottom: 15px;
   }
 
-  .before, .after {
+  .image-wrapper {
+    position: relative;
+  }
+
+  .image-wrapper img {
+    width: 100%;
     height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
     border-radius: 10px;
-    font-weight: bold;
+    margin-bottom: 0;
+  }
+
+  .image-wrapper .label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.7);
     color: var(--white);
-  }
-
-  .before {
-    background: var(--gray);
-  }
-
-  .after {
-    background: var(--primary-blue);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
   }
 
   /* Testimonials */
   .testimonials {
-    background: linear-gradient(225deg, var(--light-gray) 0%, #eef7fb 50%, var(--light-gray) 100%);
+    background: var(--light-gray);
     position: relative;
+    border-top: 2px solid var(--primary-blue);
   }
 
   .testimonials-grid {
@@ -1086,17 +1158,19 @@ import Layout from '../layouts/Layout.astro';
     background: var(--white);
     padding: 35px;
     border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     text-align: center;
     transition: all 0.3s ease;
-    border-left: 4px solid var(--accent-blue);
+    border: 2px solid var(--primary-blue);
+    border-left: 4px solid var(--primary-blue);
     position: relative;
   }
 
   .testimonial:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(0,51,102,0.15);
-    border-left-color: var(--primary-blue);
+    box-shadow: 0 12px 35px rgba(30,144,255,0.3);
+    border-left-color: var(--dark-blue);
+    border-color: var(--dark-blue);
   }
 
   .testimonial::before {
@@ -1128,8 +1202,9 @@ import Layout from '../layouts/Layout.astro';
 
   /* Contact Section */
   .contact {
-    background: linear-gradient(135deg, var(--white) 0%, #f0f8ff 100%);
+    background: var(--white);
     position: relative;
+    border-top: 2px solid var(--primary-blue);
   }
 
   .contact::before {
@@ -1150,7 +1225,7 @@ import Layout from '../layouts/Layout.astro';
 
   .contact-info h3,
   .contact-form h3 {
-    color: var(--dark-blue);
+    color: var(--black);
     margin-bottom: 30px;
   }
 
@@ -1192,7 +1267,7 @@ import Layout from '../layouts/Layout.astro';
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: var(--dark-blue);
+    color: var(--primary-blue);
   }
 
   .form-group input,
@@ -1200,10 +1275,12 @@ import Layout from '../layouts/Layout.astro';
   .form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--primary-blue);
     border-radius: 5px;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: var(--white);
+    color: var(--black);
   }
 
   .form-group input:focus,
@@ -1211,6 +1288,7 @@ import Layout from '../layouts/Layout.astro';
   .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-blue);
+    box-shadow: 0 0 15px rgba(30,144,255,0.6);
   }
 
   /* Responsive Design */

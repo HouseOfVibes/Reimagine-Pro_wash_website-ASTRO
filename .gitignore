@@ -3,7 +3,8 @@
 /.pnp
 .pnp.js
 
-# Build output (keeping dist/ for cPanel deployment)
+# Build output
+/dist/
 /.astro/
 
 # Log files
