@@ -1,1391 +1,206 @@
----
-import Layout from '../layouts/Layout.astro';
----
-
-<Layout title="Professional Pressure Washing Services | Reimagine Pro Wash & More | Knightdale, NC" 
-        description="Professional pressure washing services in Knightdale, NC and surrounding areas. House washing, concrete cleaning, deck restoration, commercial services. Licensed & insured with 100% satisfaction guarantee.">
-  
-  <!-- Structured Data for Local Business SEO -->
-  <script type="application/ld+json" slot="head">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Reimagine Pro Wash & More",
-      "description": "Professional pressure washing services for residential and commercial properties in Knightdale, NC and surrounding areas",
-      "url": "https://rprowashnc.com",
-      "telephone": "984-202-4980",
-      "email": "info@rprowashnc.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Knightdale",
-        "addressRegion": "NC",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 35.7952,
-        "longitude": -78.4806
-      },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Knightdale",
-          "containedInPlace": {
-            "@type": "State",
-            "name": "North Carolina"
-          }
-        },
-        {
-          "@type": "City",
-          "name": "Raleigh"
-        },
-        {
-          "@type": "City",
-          "name": "Cary"
-        },
-        {
-          "@type": "City",
-          "name": "Apex"
-        },
-        {
-          "@type": "City",
-          "name": "Wake Forest"
-        },
-        {
-          "@type": "City",
-          "name": "Durham"
-        },
-        {
-          "@type": "City",
-          "name": "Clayton"
-        },
-        {
-          "@type": "City",
-          "name": "Smithfield"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reimagine Pro Wash - Hero Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Brand Colors */
+            --primary-blue: #00a1f0;
+            --navy-blue: #092441;
+            --deep-blue: #003463;
+            --medium-blue: #0862b7;
+            --light-blue: #6ccdf7;
+            
+            /* Neutrals */
+            --silver: #95a3ae;
+            --charcoal: #04070c;
+            --mid-gray: #737a7e;
+            --teal-gray: #8b99a0;
+            --off-white: #fefefb;
+            --pure-white: #ffffff;
+            
+            /* Brand Gradients */
+            --gradient-primary: linear-gradient(135deg, #092441 0%, #003463 50%, #00a1f0 100%);
+            --gradient-cta: linear-gradient(135deg, #00a1f0 0%, #0862b7 100%);
+            --gradient-cta-hover: linear-gradient(135deg, #6ccdf7 0%, #00a1f0 100%);
+            --gradient-overlay-dark: linear-gradient(135deg, rgba(4,7,12,0.8) 0%, rgba(9,36,65,0.6) 100%);
         }
-      ],
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "08:00",
-        "closes": "18:00"
-      },
-      "priceRange": "$$",
-      "image": "https://rprowashnc.com/images/logo.png",
-      "sameAs": [
-        "https://www.facebook.com/people/Reimagine-Pro-Wash-More/61575086936289/",
-        "https://www.instagram.com/reimagine_prowash/"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Pressure Washing Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "House Washing",
-              "description": "Safe soft wash method for siding and roofs"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Roof Cleaning",
-              "description": "Gentle soft wash removes algae and stains"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Driveway Cleaning",
-              "description": "Remove oil stains and years of buildup"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Commercial Pressure Washing",
-              "description": "Professional cleaning for businesses"
-            }
-          }
-        ]
-      }
-    }
-  </script>
-  
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1>Professional Pressure Washing Services in <span class="highlight">Knightdale, NC</span></h1>
-        <p class="hero-subtitle">Refresh. Renew. Reimagine.</p>
-        <p class="hero-description">Transform your property with our professional pressure washing services. Licensed, insured, and committed to delivering exceptional results with eco-friendly solutions.</p>
-        <div class="hero-buttons">
-          <a href="#contact" class="btn btn-primary">Get Free Quote</a>
-          <a href="tel:9842024980" class="btn btn-secondary">Call (984) 202-4980</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="/images/logo.png" alt="Reimagine Pro Wash & More Logo" class="hero-logo" />
-      </div>
-    </div>
-  </section>
 
-  <!-- Services Overview -->
-  <section class="services-overview">
-    <div class="container">
-      <h2>Our Services</h2>
-      <p class="section-subtitle">Professional cleaning solutions for homes and businesses</p>
-      
-      <!-- Residential Services -->
-      <div class="service-category">
-        <h3>Residential Services</h3>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-home"></i></div>
-            <h4>House Washing</h4>
-            <p>Safe soft wash method for siding and roofs</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-house-chimney"></i></div>
-            <h4>Roof Cleaning</h4>
-            <p>Gentle soft wash removes algae and stains</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-road"></i></div>
-            <h4>Driveway Cleaning</h4>
-            <p>Remove oil stains and years of buildup</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-square"></i></div>
-            <h4>Concrete Cleaning</h4>
-            <p>Patios, walkways, and sidewalks</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-fence"></i></div>
-            <h4>Deck & Fence Restoration</h4>
-            <p>Deep cleaning and optional staining</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-water"></i></div>
-            <h4>Gutter Cleaning</h4>
-            <p>Complete gutter and downspout service</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Commercial Services -->
-      <div class="service-category">
-        <h3>Commercial Services</h3>
-        <div class="services-grid commercial">
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-building"></i></div>
-            <h4>Building Exterior Washing</h4>
-            <p>Professional commercial building cleaning</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-parking"></i></div>
-            <h4>Parking Lot Cleaning</h4>
-            <p>Complete parking area maintenance</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-walking"></i></div>
-            <h4>Sidewalk Cleaning</h4>
-            <p>Professional walkway maintenance</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-store"></i></div>
-            <h4>Storefront Cleaning</h4>
-            <p>Keep your business looking professional</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-dumpster"></i></div>
-            <h4>Dumpster Pad Cleaning</h4>
-            <p>Health department compliant cleaning</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-truck"></i></div>
-            <h4>Fleet Washing</h4>
-            <p>Commercial vehicle cleaning services</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Choose Us -->
-  <section class="why-choose-us">
-    <div class="container">
-      <h2>Why Choose Reimagine Pro Wash?</h2>
-      <div class="features-grid">
-        <div class="feature">
-          <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-          <h4>Licensed & Insured</h4>
-          <p>Fully licensed business with comprehensive insurance coverage for your peace of mind</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon"><i class="fas fa-leaf"></i></div>
-          <h4>Eco-Friendly Solutions</h4>
-          <p>Biodegradable products and safe wastewater disposal practices</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon"><i class="fas fa-tools"></i></div>
-          <h4>Specialized Equipment</h4>
-          <p>Right pressure and methods for every surface to prevent damage</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon"><i class="fas fa-thumbs-up"></i></div>
-          <h4>100% Satisfaction Guarantee</h4>
-          <p>We're not happy until you're completely satisfied with the results</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
-          <h4>Professional Experience</h4>
-          <p>Background in project management and customer service excellence</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon"><i class="fas fa-star"></i></div>
-          <h4>Quality Results</h4>
-          <p>Immediate, visible results that restore your property's curb appeal</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Service Area -->
-  <section class="service-area">
-    <div class="container">
-      <h2>Areas We Serve</h2>
-      <p class="section-subtitle">Serving 50+ mile radius from Knightdale, NC</p>
-      
-      <!-- Google Map -->
-      <div class="map-container">
-        <div id="service-area-map"></div>
-      </div>
-      
-      <div class="service-areas-grid">
-        <div class="area-column">
-          <h4>Wake County</h4>
-          <ul>
-            <li>Knightdale</li>
-            <li>Raleigh</li>
-            <li>Cary</li>
-            <li>Apex</li>
-            <li>Wake Forest</li>
-            <li>Garner</li>
-            <li>Holly Springs</li>
-            <li>Morrisville</li>
-            <li>Rolesville</li>
-            <li>Fuquay-Varina</li>
-            <li>Wendell</li>
-          </ul>
-        </div>
-        <div class="area-column">
-          <h4>Johnston County</h4>
-          <ul>
-            <li>Clayton</li>
-            <li>Smithfield</li>
-            <li>Selma</li>
-            <li>Benson</li>
-            <li>Four Oaks</li>
-            <li>Wilson's Mills</li>
-            <li>Kenly</li>
-            <li>Pine Level</li>
-          </ul>
-        </div>
-        <div class="area-column">
-          <h4>Additional Areas</h4>
-          <ul>
-            <li>Durham</li>
-            <li>Rocky Mount</li>
-            <li>Fayetteville</li>
-            <li>Goldsboro</li>
-            <li>Wilson</li>
-            <li>Louisburg</li>
-            <li>Henderson</li>
-            <li>Oxford</li>
-            <li>Creedmoor</li>
-            <li>& Many More!</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Before/After Gallery -->
-  <section class="gallery">
-    <div class="container">
-      <h2>See The Difference</h2>
-      <p class="section-subtitle">Dramatic before and after results</p>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <div class="before-after-images">
-            <div class="image-wrapper">
-              <img src="/images/Driveway Before.png" alt="Driveway Before Cleaning" />
-              <span class="label">Before</span>
-            </div>
-            <div class="image-wrapper">
-              <img src="/images/Driveway After.png" alt="Driveway After Cleaning" />
-              <span class="label">After</span>
-            </div>
-          </div>
-          <p>Driveway Cleaning</p>
-        </div>
-        <div class="gallery-item">
-          <img src="/images/House Washing.png" alt="House Washing" />
-          <p>House Washing</p>
-        </div>
-        <div class="gallery-item">
-          <img src="/images/UnderGround_Pool_Deck_Cleaning.png" alt="Deck Restoration" />
-          <p>Deck Restoration</p>
-        </div>
-        <div class="gallery-item">
-          <img src="/images/Clean Fense.png" alt="Fence Cleaning" />
-          <p>Fence Cleaning</p>
-        </div>
-        <div class="gallery-item">
-          <img src="/images/gutter cleaning.png" alt="Gutter Cleaning" />
-          <p>Gutter Cleaning</p>
-        </div>
-        <div class="gallery-item">
-          <img src="/images/Commercial Pressure Washing.png" alt="Commercial Pressure Washing" />
-          <p>Commercial Pressure Washing</p>
-        </div>
-        <div class="gallery-item">
-          <img src="/images/Hardscapes Cleaning.png" alt="Hardscapes Cleaning" />
-          <p>Hardscapes Cleaning</p>
-        </div>
-        <div class="gallery-item">
-          <img src="/images/Clean_Wooden_Sitting_Deck.png" alt="Pool Deck Cleaning" />
-          <p>Pool Deck Cleaning</p>
-        </div>
-        <div class="gallery-item">
-          <img src="/images/Brick Restoration.png" alt="Brick Restoration" />
-          <p>Brick Restoration</p>
-        </div>
-        <div class="gallery-item">
-          <img src="/images/Before and After- Graffiti Removal.png" alt="Graffiti Removal" />
-          <p>Graffiti Removal</p>
-        </div>
-        <div class="gallery-item">
-          <img src="/images/Dumpster PAd before and after.png" alt="Dumpster Pad Cleaning" />
-          <p>Dumpster Pad Cleaning</p>
-        </div>
-        <div class="gallery-item">
-          <img src="/images/Arbor:Pergola.png" alt="Arbor & Pergola Cleaning" />
-          <p>Arbor & Pergola Cleaning</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <div class="container">
-      <h2>What Our Customers Say</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial">
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <p>"Absolutely blown away by the results! My deck looks brand new - it's like they turned back time. Highly recommend Reimagine Pro Wash!"</p>
-          <cite>- Happy Customer</cite>
-        </div>
-        <div class="testimonial">
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <p>"Professional service from start to finish. They protected all my plants and left everything cleaner than I could have imagined."</p>
-          <cite>- Satisfied Homeowner</cite>
-        </div>
-        <div class="testimonial">
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <p>"Great communication and excellent results. Our commercial property looks fantastic and our customers have noticed the difference."</p>
-          <cite>- Business Owner</cite>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Get Your Free Quote Today</h2>
-      <p class="section-subtitle">Ready to transform your property? Contact us for a free estimate!</p>
-      
-      <div class="contact-content">
-        <div class="contact-info">
-          <h3>Contact Information</h3>
-          <div class="contact-item">
-            <strong>Phone:</strong>
-            <a href="tel:9842024980">(984) 202-4980</a>
-          </div>
-          <div class="contact-item">
-            <strong>Email:</strong>
-            <a href="mailto:info@rprowashnc.com">info@rprowashnc.com</a>
-          </div>
-          <div class="contact-item">
-            <strong>Service Area:</strong>
-            50+ miles from Knightdale, NC
-          </div>
-          <div class="social-links">
-            <h4>Follow Us:</h4>
-            <a href="https://www.instagram.com/reimagine_prowash/" target="_blank">Instagram</a>
-            <a href="https://www.facebook.com/people/Reimagine-Pro-Wash-More/61575086936289/" target="_blank">Facebook</a>
-          </div>
-        </div>
-
-        <div class="contact-form">
-          <h3>Request Free Quote</h3>
-          <form action="https://formsubmit.co/info@rprowashnc.com" method="POST">
-            <input type="hidden" name="_subject" value="New Quote Request - Reimagine Pro Wash">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="#contact">
-            
-            <div class="form-group">
-              <label for="name">Name *</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="phone">Phone *</label>
-              <input type="tel" id="phone" name="phone" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="service">Service Type</label>
-              <select id="service" name="service">
-                <option value="">Select a service...</option>
-                <option value="residential">Residential Services</option>
-                <option value="commercial">Commercial Services</option>
-                <option value="specialty">Specialty Services</option>
-                <option value="multiple">Multiple Services</option>
-              </select>
-            </div>
-            
-            <div class="form-group">
-              <label for="address">Property Address</label>
-              <input type="text" id="address" name="address" placeholder="City, NC">
-            </div>
-            
-            <div class="form-group">
-              <label for="message">Message/Details</label>
-              <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..."></textarea>
-            </div>
-            
-            <div class="form-group">
-              <label for="contact-method">Preferred Contact Method</label>
-              <select id="contact-method" name="contact-method">
-                <option value="phone">Phone</option>
-                <option value="email">Email</option>
-                <option value="either">Either</option>
-              </select>
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Get Free Quote</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-</Layout>
-
-<!-- Google Maps Script -->
-<script>
-  // Service area locations with coordinates
-  const serviceAreas = [
-    // Wake County
-    { name: "Knightdale, NC", lat: 35.7952, lng: -78.4806, primary: true },
-    { name: "Raleigh, NC", lat: 35.7796, lng: -78.6382 },
-    { name: "Cary, NC", lat: 35.7915, lng: -78.7811 },
-    { name: "Apex, NC", lat: 35.7327, lng: -78.8503 },
-    { name: "Wake Forest, NC", lat: 35.9799, lng: -78.5097 },
-    { name: "Garner, NC", lat: 35.7113, lng: -78.6142 },
-    { name: "Holly Springs, NC", lat: 35.6513, lng: -78.8336 },
-    { name: "Morrisville, NC", lat: 35.8235, lng: -78.8256 },
-    { name: "Rolesville, NC", lat: 35.9232, lng: -78.4575 },
-    { name: "Fuquay-Varina, NC", lat: 35.5844, lng: -78.8000 },
-    { name: "Wendell, NC", lat: 35.7810, lng: -78.3697 },
-    // Johnston County
-    { name: "Clayton, NC", lat: 35.6507, lng: -78.4572 },
-    { name: "Smithfield, NC", lat: 35.5085, lng: -78.3394 },
-    { name: "Selma, NC", lat: 35.5366, lng: -78.2844 },
-    { name: "Benson, NC", lat: 35.3821, lng: -78.5494 },
-    { name: "Four Oaks, NC", lat: 35.4444, lng: -78.4278 },
-    // Additional Areas
-    { name: "Durham, NC", lat: 35.9940, lng: -78.8986 },
-    { name: "Rocky Mount, NC", lat: 35.9382, lng: -77.7905 },
-    { name: "Fayetteville, NC", lat: 35.0527, lng: -78.8784 },
-    { name: "Goldsboro, NC", lat: 35.3849, lng: -77.9928 },
-    { name: "Wilson, NC", lat: 35.7212, lng: -77.9156 },
-    { name: "Louisburg, NC", lat: 36.0990, lng: -78.3011 },
-    { name: "Henderson, NC", lat: 36.3297, lng: -78.3992 },
-    { name: "Oxford, NC", lat: 36.3107, lng: -78.5908 },
-    { name: "Creedmoor, NC", lat: 36.1226, lng: -78.6861 }
-  ];
-
-  function initMap() {
-    // Create map centered on Knightdale
-    const map = new google.maps.Map(document.getElementById("service-area-map"), {
-      zoom: 8,
-      center: { lat: 35.7952, lng: -78.4806 },
-      styles: [
-        {
-          featureType: "water",
-          elementType: "geometry",
-          stylers: [{ color: "#e9e9e9" }, { lightness: 17 }]
-        },
-        {
-          featureType: "landscape",
-          elementType: "geometry",
-          stylers: [{ color: "#f5f5f5" }, { lightness: 20 }]
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.fill",
-          stylers: [{ color: "#ffffff" }, { lightness: 17 }]
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.stroke",
-          stylers: [{ color: "#ffffff" }, { lightness: 29 }, { weight: 0.2 }]
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      ]
-    });
 
-    // Add markers for each service area
-    serviceAreas.forEach(location => {
-      const marker = new google.maps.Marker({
-        position: { lat: location.lat, lng: location.lng },
-        map: map,
-        title: location.name,
-        icon: {
-          url: location.primary 
-            ? 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"%3E%3Cpath fill="%23003366" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/%3E%3C/svg%3E'
-            : 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"%3E%3Cpath fill="%231E90FF" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/%3E%3C/svg%3E',
-          scaledSize: new google.maps.Size(location.primary ? 40 : 30, location.primary ? 40 : 30)
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
         }
-      });
 
-      // Add info window
-      const infoWindow = new google.maps.InfoWindow({
-        content: `
-          <div style="padding: 10px;">
-            <h4 style="margin: 0 0 5px 0; color: #003366;">${location.name}</h4>
-            <p style="margin: 0; color: #4A4A4A;">
-              ${location.primary ? '<strong>Headquarters</strong><br>' : ''}
-              Professional pressure washing services available
+        .hero-section {
+            background: 
+                var(--gradient-overlay-dark),
+                url('https://rprowashnc.com/wp-content/uploads/2025/08/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated background pattern */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(108, 221, 247, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 161, 240, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(8, 98, 183, 0.05) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--off-white);
+            max-width: 900px;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-logo {
+            margin-bottom: 2rem;
+        }
+
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 300;
+            color: var(--light-blue);
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-description {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-cta);
+            color: var(--pure-white);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 161, 240, 0.3);
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary:hover {
+            background: var(--gradient-cta-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 161, 240, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--off-white);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid var(--light-blue);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-secondary:hover {
+            background: var(--light-blue);
+            color: var(--navy-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(108, 221, 247, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="/images/logo.png" alt="Reimagine Pro Wash & More Logo" style="max-width: 300px; width: 100%; height: auto; mix-blend-mode: screen;" />
+            </div>
+
+            <h1 class="hero-title">Refresh. Renew. Reimagine.</h1>
+            <p class="hero-subtitle">Professional Pressure Washing Services</p>
+            
+            <p class="hero-description">
+                Transform your property with our professional pressure washing services. Licensed, insured, and committed to delivering exceptional results with eco-friendly solutions.
             </p>
-          </div>
-        `
-      });
-
-      marker.addListener("click", () => {
-        infoWindow.open(map, marker);
-      });
-    });
-
-    // Draw service radius circle
-    const serviceCircle = new google.maps.Circle({
-      strokeColor: "#1E90FF",
-      strokeOpacity: 0.6,
-      strokeWeight: 2,
-      fillColor: "#87CEEB",
-      fillOpacity: 0.15,
-      map: map,
-      center: { lat: 35.7952, lng: -78.4806 },
-      radius: 80467 // 50 miles in meters
-    });
-  }
-
-  // Load map when page is ready
-  window.initMap = initMap;
-</script>
-
-<!-- Load Google Maps API -->
-<script async defer 
-  src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap">
-</script>
-
-<style>
-  /* Brand Colors - Light Theme */
-  :root {
-    --primary-blue: #1E90FF;
-    --dark-blue: #0066CC;
-    --gray: #4A4A4A;
-    --light-gray: #F5F5F5;
-    --accent-blue: #4DA6FF;
-    --white: #FFFFFF;
-    --black: #000000;
-    --dark-bg: #FAFAFA;
-    --card-bg: #FFFFFF;
-  }
-
-  /* Global Styles */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: var(--gray);
-    background-color: var(--white);
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  section {
-    padding: 60px 0;
-  }
-
-  h1, h2, h3, h4 {
-    color: var(--black);
-    margin-bottom: 20px;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
-
-  h2 {
-    font-size: 2.2rem;
-    text-align: center;
-    margin-bottom: 40px;
-    width: 100%;
-  }
-
-  .section-subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--gray);
-    margin-bottom: 40px;
-  }
-
-  .highlight {
-    color: var(--primary-blue);
-  }
-
-  /* Buttons */
-  .btn {
-    display: inline-block;
-    padding: 18px 36px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.4s ease;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    position: relative;
-    overflow: hidden;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  }
-
-  .btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.6s ease;
-  }
-
-  .btn:hover::before {
-    left: 100%;
-  }
-
-  .btn-primary {
-    background: linear-gradient(45deg, var(--primary-blue), var(--dark-blue));
-    color: var(--white);
-  }
-
-  .btn-primary:hover {
-    background: linear-gradient(45deg, var(--dark-blue), var(--primary-blue));
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,51,102,0.3);
-  }
-
-  .btn-secondary {
-    background: var(--white);
-    color: var(--primary-blue);
-    border: 2px solid var(--primary-blue);
-  }
-
-  .btn-secondary:hover {
-    background: var(--primary-blue);
-    color: var(--white);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,51,102,0.3);
-  }
-
-  /* Hero Section */
-  .hero {
-    background: linear-gradient(135deg, #0066CC 0%, #1E90FF 50%, #4DA6FF 100%);
-    color: var(--white);
-    padding: 120px 0;
-    position: relative;
-    overflow: hidden;
-    border-bottom: 2px solid var(--primary-blue);
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none"><path d="M0,50 Q300,0 600,50 T1200,50 L1200,100 L0,100 Z" fill="rgba(255,255,255,0.9)"/></svg>');
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  @keyframes float {
-    0% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(180deg); }
-    100% { transform: translateY(0px) rotate(360deg); }
-  }
-
-  .hero-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 60px;
-    align-items: center;
-  }
-
-  .hero h1 {
-    color: var(--white);
-    font-size: 3.5rem;
-    margin-bottom: 25px;
-    font-weight: 700;
-    line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    letter-spacing: -0.5px;
-  }
-
-  .hero-subtitle {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 25px;
-    color: var(--white);
-    text-shadow: 0 0 20px rgba(255,255,255,0.5);
-    font-style: italic;
-  }
-
-  .hero-description {
-    font-size: 1.3rem;
-    margin-bottom: 40px;
-    color: var(--white);
-    opacity: 0.95;
-    line-height: 1.6;
-    max-width: 600px;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .hero-logo {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2));
-    animation: float-logo 6s ease-in-out infinite;
-  }
-
-  @keyframes float-logo {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-  }
-
-  /* Services Overview */
-  .services-overview {
-    background: var(--light-gray);
-    position: relative;
-  }
-
-  .services-overview::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-blue), var(--primary-blue), var(--accent-blue));
-  }
-
-  .service-category {
-    margin-bottom: 60px;
-  }
-
-  .service-category h3 {
-    font-size: 1.8rem;
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--dark-blue);
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 35px;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  @media (min-width: 768px) {
-    .services-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .services-grid {
-      grid-template-columns: repeat(3, 1fr);
-      max-width: 1100px;
-    }
-  }
-
-  .service-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    transition: all 0.4s ease;
-    border: 2px solid var(--primary-blue);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(135,206,235,0.1), transparent);
-    transition: left 0.6s ease;
-  }
-
-  .service-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(30,144,255,0.3);
-    border-color: var(--dark-blue);
-  }
-
-  .service-card:hover::before {
-    left: 100%;
-  }
-
-  .service-icon {
-    font-size: 3rem;
-    margin-bottom: 25px;
-    color: var(--white);
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 25px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,51,102,0.3);
-  }
-
-  .service-icon i {
-    font-size: 2.2rem;
-  }
-
-  .service-card:hover .service-icon {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 25px rgba(0,51,102,0.4);
-  }
-
-  .service-card h4 {
-    color: var(--black);
-    margin-bottom: 15px;
-  }
-
-  /* Why Choose Us */
-  .why-choose-us {
-    background: var(--white);
-    position: relative;
-    border-top: 2px solid var(--primary-blue);
-  }
-
-  .why-choose-us::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
-  }
-
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 45px;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  @media (min-width: 768px) {
-    .features-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .features-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .feature {
-    text-align: center;
-    padding: 20px;
-  }
-
-  .feature-icon {
-    font-size: 3rem;
-    margin-bottom: 25px;
-    color: var(--white);
-    width: 90px;
-    height: 90px;
-    background: linear-gradient(135deg, var(--dark-blue), var(--accent-blue));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 25px;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(30,144,255,0.3);
-  }
-
-  .feature-icon i {
-    font-size: 2.5rem;
-  }
-
-  .feature:hover .feature-icon {
-    transform: scale(1.1);
-    box-shadow: 0 10px 30px rgba(30,144,255,0.4);
-  }
-
-  .feature h4 {
-    color: var(--black);
-    margin-bottom: 15px;
-  }
-
-  /* Service Area */
-  .service-area {
-    background: var(--light-gray);
-    position: relative;
-    border-top: 2px solid var(--primary-blue);
-  }
-
-  .map-container {
-    margin-bottom: 50px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  }
-
-  #service-area-map {
-    width: 100%;
-    height: 500px;
-    background: #e5e3df;
-    position: relative;
-  }
-
-  .service-areas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-  }
-
-  .area-column {
-    background: var(--white);
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    border: 2px solid var(--primary-blue);
-  }
-
-  .area-column:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(0,51,102,0.15);
-  }
-
-  .area-column h4 {
-    color: var(--primary-blue);
-    border-bottom: 2px solid var(--primary-blue);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-  }
-
-  .area-column ul {
-    list-style: none;
-  }
-
-  .area-column li {
-    padding: 5px 0;
-    border-bottom: 1px solid #eee;
-  }
-
-  /* Gallery */
-  .gallery {
-    background: var(--white);
-    position: relative;
-    border-top: 2px solid var(--primary-blue);
-  }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-  }
-
-  .gallery-item {
-    text-align: center;
-    background: var(--white);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    border: 2px solid var(--primary-blue);
-  }
-
-  .gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(30,144,255,0.3);
-    border-color: var(--dark-blue);
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-  }
-
-  .gallery-item p {
-    font-weight: 600;
-    color: var(--black);
-    margin: 0;
-  }
-
-  .before-after-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 15px;
-  }
-
-  .image-wrapper {
-    position: relative;
-  }
-
-  .image-wrapper img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 0;
-  }
-
-  .image-wrapper .label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgba(0,0,0,0.7);
-    color: var(--white);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9rem;
-  }
-
-  /* Testimonials */
-  .testimonials {
-    background: var(--light-gray);
-    position: relative;
-    border-top: 2px solid var(--primary-blue);
-  }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-  }
-
-  .testimonial {
-    background: var(--white);
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 2px solid var(--primary-blue);
-    border-left: 4px solid var(--primary-blue);
-    position: relative;
-  }
-
-  .testimonial:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(30,144,255,0.3);
-    border-left-color: var(--dark-blue);
-    border-color: var(--dark-blue);
-  }
-
-  .testimonial::before {
-    content: '"';
-    position: absolute;
-    top: -10px;
-    left: 30px;
-    font-size: 4rem;
-    color: var(--accent-blue);
-    opacity: 0.3;
-    font-family: serif;
-  }
-
-  .stars {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-
-  .testimonial p {
-    font-style: italic;
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-  }
-
-  .testimonial cite {
-    color: var(--primary-blue);
-    font-weight: bold;
-  }
-
-  /* Contact Section */
-  .contact {
-    background: var(--white);
-    position: relative;
-    border-top: 2px solid var(--primary-blue);
-  }
-
-  .contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue), var(--primary-blue));
-  }
-
-  .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-  }
-
-  .contact-info h3,
-  .contact-form h3 {
-    color: var(--black);
-    margin-bottom: 30px;
-  }
-
-  .contact-item {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-  }
-
-  .contact-item a {
-    color: var(--primary-blue);
-    text-decoration: none;
-  }
-
-  .social-links {
-    margin-top: 30px;
-  }
-
-  .social-links a {
-    display: inline-block;
-    margin-right: 15px;
-    padding: 10px 15px;
-    background: var(--primary-blue);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-  }
-
-  .social-links a:hover {
-    background: var(--dark-blue);
-  }
-
-  /* Form Styles */
-  .form-group {
-    margin-bottom: 20px;
-  }
-
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: var(--primary-blue);
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid var(--primary-blue);
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background: var(--white);
-    color: var(--black);
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 15px rgba(30,144,255,0.6);
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .hero {
-      padding: 80px 0;
-    }
-
-    .hero-content {
-      grid-template-columns: 1fr;
-      text-align: center;
-      gap: 40px;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      line-height: 1.1;
-    }
-
-    .hero-subtitle {
-      font-size: 1.5rem;
-    }
-
-    .hero-description {
-      font-size: 1.1rem;
-    }
-
-    .contact-content {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-
-    .hero-buttons {
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .btn {
-      width: 100%;
-      max-width: 280px;
-    }
-
-    .services-grid {
-      grid-template-columns: 1fr;
-      gap: 25px;
-    }
-
-    .features-grid {
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-
-    .service-areas-grid {
-      grid-template-columns: 1fr;
-      gap: 25px;
-    }
-
-    .testimonials-grid {
-      grid-template-columns: 1fr;
-      gap: 25px;
-    }
-
-    .gallery-grid {
-      grid-template-columns: 1fr;
-      gap: 25px;
-    }
-
-    #service-area-map {
-      height: 400px;
-    }
-
-    section {
-      padding: 50px 0;
-    }
-
-    h2 {
-      font-size: 1.9rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-
-    .service-card, .testimonial, .area-column {
-      padding: 25px;
-    }
-
-    .service-icon, .feature-icon {
-      width: 70px;
-      height: 70px;
-    }
-
-    .service-icon i, .feature-icon i {
-      font-size: 1.8rem;
-    }
-  }
-</style>
+            
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Get Free Estimate</a>
+                <a href="#services" class="btn-secondary">View Services</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
