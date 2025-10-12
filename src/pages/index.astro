@@ -1,3 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../public/images/logo.png';
+import heroBackground from '../../public/images/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png';
+import insuredBadge from '../../public/images/Insured_ Badge_Transparent.png';
+import ecoFriendlyBadge from '../../public/images/RPW-Eco-Friendy-Badge.png';
+import multiPanelCollage from '../../public/images/RPW-Dynamic_multi-panel_before-and-after_collage_five_0 copy.png';
+import poolDeck from '../../public/images/UnderGround_Pool_Deck_Cleaning.png';
+import houseWashing from '../../public/images/House Washing.png';
+import hardscapes from '../../public/images/Hardscapes Cleaning.png';
+import gutterCleaning from '../../public/images/gutter cleaning.png';
+import commercial from '../../public/images/Commercial Pressure Washing.png';
+import deckRestoration from '../../public/images/Clean_Wooden_Sitting_Deck.png';
+import fenceCleaning from '../../public/images/Clean Fense.png';
+import brickRestoration from '../../public/images/Brick Restoration.png';
+import graffitiRemoval from '../../public/images/Before and After- Graffiti Removal.png';
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1758,7 +1775,7 @@
     <section id="home" class="hero-section">
         <div class="hero-content">
             <div class="hero-logo">
-                <img src="/images/logo.png" alt="Reimagine Pro Wash & More Logo" />
+                <Image src={logo} alt="Reimagine Pro Wash & More Logo" width={500} height={500} loading="eager" />
             </div>
 
             <h1 class="hero-title">Refresh. Renew. Reimagine.</h1>
@@ -1834,7 +1851,7 @@
             </div>
 
             <div class="showcase-image-wrapper">
-                <img src="/images/RPW-Dynamic_multi-panel_before-and-after_collage_five_0 copy.png" alt="Before and After Results Showcase" class="showcase-image">
+                <Image src={multiPanelCollage} alt="Before and After Results Showcase" class="showcase-image" width={1200} height={800} loading="lazy" />
             </div>
 
             <div class="showcase-cta">
@@ -1853,7 +1870,7 @@
             <div class="trust-cards">
                 <div class="trust-card">
                     <div class="trust-icon">
-                        <img src="/images/Insured_ Badge_Transparent.png" alt="Insured Badge">
+                        <Image src={insuredBadge} alt="Insured Badge" width={100} height={100} loading="lazy" />
                     </div>
                     <h3>Fully Insured</h3>
                     <p>Fully insured for your peace of mind. We carry comprehensive liability insurance to protect your property.</p>
@@ -1861,7 +1878,7 @@
 
                 <div class="trust-card">
                     <div class="trust-icon">
-                        <img src="/images/RPW-Eco-Friendy-Badge.png" alt="Eco-Friendly Badge">
+                        <Image src={ecoFriendlyBadge} alt="Eco-Friendly Badge" width={100} height={100} loading="lazy" />
                     </div>
                     <h3>Eco-Friendly Solutions</h3>
                     <p>We use environmentally safe cleaning solutions that are tough on dirt but gentle on your property and the planet.</p>
@@ -1886,7 +1903,7 @@
 
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="/images/UnderGround_Pool_Deck_Cleaning.png" alt="Pool Deck Cleaning" class="service-image">
+                    <Image src={poolDeck} alt="Pool Deck Cleaning" class="service-image" width={400} height={350} loading="lazy" />
                     <div class="service-overlay">
                         <h3>Pool Deck Cleaning</h3>
                         <p>Remove algae, mildew, and stains from your pool deck. Safe for all surfaces including concrete, pavers, and stone.</p>
@@ -1894,7 +1911,7 @@
                 </div>
 
                 <div class="service-card">
-                    <img src="/images/House Washing.png" alt="House Washing" class="service-image">
+                    <Image src={houseWashing} alt="House Washing" class="service-image" width={400} height={350} loading="lazy" />
                     <div class="service-overlay">
                         <h3>House Washing</h3>
                         <p>Gentle yet effective soft washing for all exterior surfaces. Removes dirt, mold, and mildew without damage.</p>
@@ -1902,7 +1919,7 @@
                 </div>
 
                 <div class="service-card">
-                    <img src="/images/Hardscapes Cleaning.png" alt="Hardscapes Cleaning" class="service-image">
+                    <Image src={hardscapes} alt="Hardscapes Cleaning" class="service-image" width={400} height={350} loading="lazy" />
                     <div class="service-overlay">
                         <h3>Hardscapes Cleaning</h3>
                         <p>Restore the beauty of driveways, walkways, patios, and retaining walls with professional pressure washing.</p>
@@ -1910,7 +1927,7 @@
                 </div>
 
                 <div class="service-card">
-                    <img src="/images/gutter cleaning.png" alt="Gutter Cleaning" class="service-image">
+                    <Image src={gutterCleaning} alt="Gutter Cleaning" class="service-image" width={400} height={350} loading="lazy" />
                     <div class="service-overlay">
                         <h3>Gutter Cleaning</h3>
                         <p>Keep your gutters flowing freely. We remove debris and clean downspouts for proper water drainage.</p>
@@ -1918,7 +1935,7 @@
                 </div>
 
                 <div class="service-card">
-                    <img src="/images/Commercial Pressure Washing.png" alt="Commercial Pressure Washing" class="service-image">
+                    <Image src={commercial} alt="Commercial Pressure Washing" class="service-image" width={400} height={350} loading="lazy" />
                     <div class="service-overlay">
                         <h3>Commercial Pressure Washing</h3>
                         <p>Professional cleaning for storefronts, parking lots, sidewalks, and building exteriors.</p>
@@ -1926,7 +1943,7 @@
                 </div>
 
                 <div class="service-card">
-                    <img src="/images/Clean_Wooden_Sitting_Deck.png" alt="Deck Restoration" class="service-image">
+                    <Image src={deckRestoration} alt="Deck Restoration" class="service-image" width={400} height={350} loading="lazy" />
                     <div class="service-overlay">
                         <h3>Deck Restoration</h3>
                         <p>Bring your deck back to life. We clean, strip, and prepare wood decks for staining or sealing.</p>
@@ -1934,7 +1951,7 @@
                 </div>
 
                 <div class="service-card">
-                    <img src="/images/Clean Fense.png" alt="Fence Cleaning" class="service-image">
+                    <Image src={fenceCleaning} alt="Fence Cleaning" class="service-image" width={400} height={350} loading="lazy" />
                     <div class="service-overlay">
                         <h3>Fence Cleaning</h3>
                         <p>Remove years of dirt, mold, and mildew from wood, vinyl, and composite fences.</p>
@@ -1942,7 +1959,7 @@
                 </div>
 
                 <div class="service-card">
-                    <img src="/images/Brick Restoration.png" alt="Brick Restoration" class="service-image">
+                    <Image src={brickRestoration} alt="Brick Restoration" class="service-image" width={400} height={350} loading="lazy" />
                     <div class="service-overlay">
                         <h3>Brick Restoration</h3>
                         <p>Safely restore brick surfaces to their original beauty. Expert cleaning without damaging mortar.</p>
@@ -1950,7 +1967,7 @@
                 </div>
 
                 <div class="service-card">
-                    <img src="/images/Before and After- Graffiti Removal.png" alt="Graffiti Removal" class="service-image">
+                    <Image src={graffitiRemoval} alt="Graffiti Removal" class="service-image" width={400} height={350} loading="lazy" />
                     <div class="service-overlay">
                         <h3>Graffiti Removal</h3>
                         <p>Fast and effective graffiti removal from all surfaces. We restore your property's appearance quickly.</p>
@@ -2134,7 +2151,7 @@
                 <!-- Company Info -->
                 <div class="footer-column">
                     <div class="footer-brand">
-                        <img src="/images/logo.png" alt="Reimagine Pro Wash Logo" class="footer-logo">
+                        <Image src={logo} alt="Reimagine Pro Wash Logo" class="footer-logo" width={120} height={120} loading="lazy" />
                         <h3>REIMAGINE PRO WASH</h3>
                         <p class="footer-tagline">Refresh. Renew. Reimagine.</p>
                     </div>
