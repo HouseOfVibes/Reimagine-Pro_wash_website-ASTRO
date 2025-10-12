@@ -442,8 +442,65 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
                 font-size: 0.85rem;
             }
 
+            .hero-logo {
+                padding-top: 2rem;
+            }
+
             .hero-logo img {
                 max-width: 300px;
+            }
+
+            .hero-content {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .results-showcase-section,
+            .trust-section,
+            .services-section,
+            .service-area-section,
+            .contact-section {
+                padding: 60px 15px;
+            }
+
+            .results-showcase-container h2,
+            .trust-section h2,
+            .services-section h2,
+            .service-area-section h2,
+            .contact-section h2 {
+                font-size: 2rem;
+            }
+
+            .comparison-image-wrapper {
+                height: 300px;
+            }
+
+            .comparison-labels span {
+                font-size: 1rem;
+                padding: 8px 20px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero-logo img {
+                max-width: 250px;
+            }
+
+            .hero-title {
+                font-size: 1.75rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
             }
         }
 
@@ -516,26 +573,30 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
                 radial-gradient(circle at 30% 90%, rgba(0, 161, 240, 0.2) 0%, transparent 15%),
                 radial-gradient(circle at 70% 10%, rgba(108, 221, 247, 0.15) 0%, transparent 15%);
             z-index: 1;
-            animation: waterFlow 20s ease-in-out infinite;
+            animation: waterFlow 8s linear infinite;
             pointer-events: none;
         }
 
         @keyframes waterFlow {
-            0%, 100% {
-                transform: translateX(0px) translateY(0px);
+            0% {
                 opacity: 1;
+                filter: brightness(1) hue-rotate(0deg);
             }
             25% {
-                transform: translateX(-15px) translateY(10px);
                 opacity: 0.95;
+                filter: brightness(1.05) hue-rotate(2deg);
             }
             50% {
-                transform: translateX(15px) translateY(-10px);
                 opacity: 1;
+                filter: brightness(1) hue-rotate(0deg);
             }
             75% {
-                transform: translateX(-10px) translateY(15px);
                 opacity: 0.95;
+                filter: brightness(1.05) hue-rotate(-2deg);
+            }
+            100% {
+                opacity: 1;
+                filter: brightness(1) hue-rotate(0deg);
             }
         }
 
@@ -550,6 +611,7 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
 
         .hero-logo {
             margin-bottom: 2rem;
+            padding-top: 3rem;
         }
 
         .hero-logo img {
@@ -572,13 +634,12 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
 
         .hero-title {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(3rem, 6vw, 5rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 800;
             margin-bottom: 0.5rem;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
             letter-spacing: -0.02em;
             line-height: 1.1;
-            white-space: nowrap;
             text-align: center;
             display: block;
             width: 100%;
@@ -1014,8 +1075,14 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+        }
+
+        @media (max-width: 360px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .service-card {
@@ -1736,9 +1803,6 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
                         <a href="#services" class="rpw-nav-link">Services</a>
                     </li>
                     <li class="rpw-nav-item">
-                        <a href="#about" class="rpw-nav-link">About</a>
-                    </li>
-                    <li class="rpw-nav-item">
                         <a href="#blog" class="rpw-nav-link">Blog</a>
                     </li>
                     <li class="rpw-nav-item">
@@ -1773,9 +1837,6 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
                         </li>
                         <li class="rpw-mobile-nav-item">
                             <a href="#services" class="rpw-mobile-nav-link">Services</a>
-                        </li>
-                        <li class="rpw-mobile-nav-item">
-                            <a href="#about" class="rpw-mobile-nav-link">About</a>
                         </li>
                         <li class="rpw-mobile-nav-item">
                             <a href="#blog" class="rpw-mobile-nav-link">Blog</a>
@@ -1934,7 +1995,7 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
 
             <div class="services-grid">
                 <div class="service-card">
-                    <Image src={poolDeck} alt="Pool Deck Cleaning" class="service-image" width={400} height={350} loading="lazy" />
+                    <Image src={deckRestoration} alt="Pool Deck Cleaning" class="service-image" width={400} height={350} loading="lazy" />
                     <div class="service-overlay">
                         <h3>Pool Deck Cleaning</h3>
                         <p>Remove algae, mildew, and stains from your pool deck. Safe for all surfaces including concrete, pavers, and stone.</p>
@@ -1974,7 +2035,7 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
                 </div>
 
                 <div class="service-card">
-                    <Image src={deckRestoration} alt="Deck Restoration" class="service-image" width={400} height={350} loading="lazy" />
+                    <Image src={poolDeck} alt="Deck Restoration" class="service-image" width={400} height={350} loading="lazy" />
                     <div class="service-overlay">
                         <h3>Deck Restoration</h3>
                         <p>Bring your deck back to life. We clean, strip, and prepare wood decks for staining or sealing.</p>
@@ -2204,7 +2265,6 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/about">About Us</a></li>
                         <li><a href="/#services">Services</a></li>
                         <li><a href="/gallery">Gallery</a></li>
                         <li><a href="/blog">Blog</a></li>
