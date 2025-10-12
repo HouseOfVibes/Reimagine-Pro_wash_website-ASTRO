@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import logo from '../../public/images/logo.png';
 import heroBackground from '../../public/images/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png';
 import insuredBadge from '../../public/images/Insured_ Badge_Transparent.png';
@@ -14,6 +14,22 @@ import deckRestoration from '../../public/images/Clean_Wooden_Sitting_Deck.png';
 import fenceCleaning from '../../public/images/Clean Fense.png';
 import brickRestoration from '../../public/images/Brick Restoration.png';
 import graffitiRemoval from '../../public/images/Before and After- Graffiti Removal.png';
+
+const heroBackgroundWebp = await getImage({
+    src: heroBackground,
+    format: 'webp',
+    width: 1920,
+    quality: 72,
+});
+
+const heroBackgroundPng = await getImage({
+    src: heroBackground,
+    format: 'png',
+    width: 1920,
+});
+
+const heroBackgroundImageSet = `image-set(url('${heroBackgroundWebp.src}') type('image/webp') 1x, url('${heroBackgroundPng.src}') type('image/png') 1x)`;
+const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -448,9 +464,20 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
             left: -10%;
             right: -10%;
             bottom: -10%;
-            background: url('/images/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
+            background-image: var(
+                --hero-background-fallback,
+                url('/images/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png')
+            );
+            background-image: var(
+                --hero-background-image,
+                var(
+                    --hero-background-fallback,
+                    url('/images/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png')
+                )
+            );
             z-index: 0;
             animation: waterMove 40s ease-in-out infinite;
         }
@@ -1772,7 +1799,11 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
         </nav>
     </header>
 
-    <section id="home" class="hero-section">
+    <section
+        id="home"
+        class="hero-section"
+        style={`--hero-background-image: ${heroBackgroundImageSet}; --hero-background-fallback: ${heroBackgroundFallbackValue};`}
+    >
         <div class="hero-content">
             <div class="hero-logo">
                 <Image src={logo} alt="Reimagine Pro Wash & More Logo" width={500} height={500} loading="eager" />
@@ -1808,9 +1839,9 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
                     <div class="comparison-slider">
                         <h4 class="slider-title">Sidewalk Cleaning</h4>
                         <div class="comparison-image-wrapper" data-slider="sidewalk">
-                            <img src="/images/RPW-After Sidewalk-10-7-25 copy.jpeg" alt="After Sidewalk Cleaning" class="comparison-after">
+                            <img src="/images/RPW-After Sidewalk-10-7-25 copy.jpeg" alt="After Sidewalk Cleaning" class="comparison-after" loading="lazy">
                             <div class="comparison-overlay">
-                                <img src="/images/RPW-Before Sidewalk 10-7-25 copy.jpeg" alt="Before Sidewalk Cleaning" class="comparison-before">
+                                <img src="/images/RPW-Before Sidewalk 10-7-25 copy.jpeg" alt="Before Sidewalk Cleaning" class="comparison-before" loading="lazy">
                             </div>
                             <div class="comparison-slider-handle">
                                 <div class="slider-line"></div>
@@ -1830,9 +1861,9 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
                     <div class="comparison-slider">
                         <h4 class="slider-title">Driveway Restoration</h4>
                         <div class="comparison-image-wrapper" data-slider="driveway">
-                            <img src="/images/Driveway After.png" alt="After Driveway Cleaning" class="comparison-after">
+                            <img src="/images/Driveway After.png" alt="After Driveway Cleaning" class="comparison-after" loading="lazy">
                             <div class="comparison-overlay">
-                                <img src="/images/Driveway Before.png" alt="Before Driveway Cleaning" class="comparison-before">
+                                <img src="/images/Driveway Before.png" alt="Before Driveway Cleaning" class="comparison-before" loading="lazy">
                             </div>
                             <div class="comparison-slider-handle">
                                 <div class="slider-line"></div>
