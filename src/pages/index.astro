@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import logo from '../../public/images/logo.png';
 import heroBackground from '../../public/images/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png';
 import insuredBadge from '../../public/images/Insured_ Badge_Transparent.png';
@@ -14,6 +14,22 @@ import deckRestoration from '../../public/images/Clean_Wooden_Sitting_Deck.png';
 import fenceCleaning from '../../public/images/Clean Fense.png';
 import brickRestoration from '../../public/images/Brick Restoration.png';
 import graffitiRemoval from '../../public/images/Before and After- Graffiti Removal.png';
+
+const heroBackgroundWebp = await getImage({
+    src: heroBackground,
+    format: 'webp',
+    width: 1920,
+    quality: 72,
+});
+
+const heroBackgroundPng = await getImage({
+    src: heroBackground,
+    format: 'png',
+    width: 1920,
+});
+
+const heroBackgroundImageSet = `image-set(url('${heroBackgroundWebp.src}') type('image/webp') 1x, url('${heroBackgroundPng.src}') type('image/png') 1x)`;
+const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -426,8 +442,65 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
                 font-size: 0.85rem;
             }
 
+            .hero-logo {
+                padding-top: 2rem;
+            }
+
             .hero-logo img {
                 max-width: 300px;
+            }
+
+            .hero-content {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .results-showcase-section,
+            .trust-section,
+            .services-section,
+            .service-area-section,
+            .contact-section {
+                padding: 60px 15px;
+            }
+
+            .results-showcase-container h2,
+            .trust-section h2,
+            .services-section h2,
+            .service-area-section h2,
+            .contact-section h2 {
+                font-size: 2rem;
+            }
+
+            .comparison-image-wrapper {
+                height: 300px;
+            }
+
+            .comparison-labels span {
+                font-size: 1rem;
+                padding: 8px 20px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero-logo img {
+                max-width: 250px;
+            }
+
+            .hero-title {
+                font-size: 1.75rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
             }
         }
 
@@ -448,9 +521,20 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
             left: -10%;
             right: -10%;
             bottom: -10%;
-            background: url('/images/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
+            background-image: var(
+                --hero-background-fallback,
+                url('/images/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png')
+            );
+            background-image: var(
+                --hero-background-image,
+                var(
+                    --hero-background-fallback,
+                    url('/images/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png')
+                )
+            );
             z-index: 0;
             animation: waterMove 40s ease-in-out infinite;
         }
@@ -489,26 +573,30 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
                 radial-gradient(circle at 30% 90%, rgba(0, 161, 240, 0.2) 0%, transparent 15%),
                 radial-gradient(circle at 70% 10%, rgba(108, 221, 247, 0.15) 0%, transparent 15%);
             z-index: 1;
-            animation: waterFlow 20s ease-in-out infinite;
+            animation: waterFlow 8s linear infinite;
             pointer-events: none;
         }
 
         @keyframes waterFlow {
-            0%, 100% {
-                transform: translateX(0px) translateY(0px);
+            0% {
                 opacity: 1;
+                filter: brightness(1) hue-rotate(0deg);
             }
             25% {
-                transform: translateX(-15px) translateY(10px);
                 opacity: 0.95;
+                filter: brightness(1.05) hue-rotate(2deg);
             }
             50% {
-                transform: translateX(15px) translateY(-10px);
                 opacity: 1;
+                filter: brightness(1) hue-rotate(0deg);
             }
             75% {
-                transform: translateX(-10px) translateY(15px);
                 opacity: 0.95;
+                filter: brightness(1.05) hue-rotate(-2deg);
+            }
+            100% {
+                opacity: 1;
+                filter: brightness(1) hue-rotate(0deg);
             }
         }
 
@@ -523,6 +611,7 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
 
         .hero-logo {
             margin-bottom: 2rem;
+            padding-top: 3rem;
         }
 
         .hero-logo img {
@@ -545,13 +634,12 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
 
         .hero-title {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(3rem, 6vw, 5rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 800;
             margin-bottom: 0.5rem;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
             letter-spacing: -0.02em;
             line-height: 1.1;
-            white-space: nowrap;
             text-align: center;
             display: block;
             width: 100%;
@@ -987,8 +1075,14 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+        }
+
+        @media (max-width: 360px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .service-card {
@@ -1709,9 +1803,6 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
                         <a href="#services" class="rpw-nav-link">Services</a>
                     </li>
                     <li class="rpw-nav-item">
-                        <a href="#about" class="rpw-nav-link">About</a>
-                    </li>
-                    <li class="rpw-nav-item">
                         <a href="#blog" class="rpw-nav-link">Blog</a>
                     </li>
                     <li class="rpw-nav-item">
@@ -1748,9 +1839,6 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
                             <a href="#services" class="rpw-mobile-nav-link">Services</a>
                         </li>
                         <li class="rpw-mobile-nav-item">
-                            <a href="#about" class="rpw-mobile-nav-link">About</a>
-                        </li>
-                        <li class="rpw-mobile-nav-item">
                             <a href="#blog" class="rpw-mobile-nav-link">Blog</a>
                         </li>
                         <li class="rpw-mobile-nav-item">
@@ -1772,7 +1860,11 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
         </nav>
     </header>
 
-    <section id="home" class="hero-section">
+    <section
+        id="home"
+        class="hero-section"
+        style={`--hero-background-image: ${heroBackgroundImageSet}; --hero-background-fallback: ${heroBackgroundFallbackValue};`}
+    >
         <div class="hero-content">
             <div class="hero-logo">
                 <Image src={logo} alt="Reimagine Pro Wash & More Logo" width={500} height={500} loading="eager" />
@@ -1808,9 +1900,9 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
                     <div class="comparison-slider">
                         <h4 class="slider-title">Sidewalk Cleaning</h4>
                         <div class="comparison-image-wrapper" data-slider="sidewalk">
-                            <img src="/images/RPW-After Sidewalk-10-7-25 copy.jpeg" alt="After Sidewalk Cleaning" class="comparison-after">
+                            <img src="/images/RPW-After Sidewalk-10-7-25 copy.jpeg" alt="After Sidewalk Cleaning" class="comparison-after" loading="lazy">
                             <div class="comparison-overlay">
-                                <img src="/images/RPW-Before Sidewalk 10-7-25 copy.jpeg" alt="Before Sidewalk Cleaning" class="comparison-before">
+                                <img src="/images/RPW-Before Sidewalk 10-7-25 copy.jpeg" alt="Before Sidewalk Cleaning" class="comparison-before" loading="lazy">
                             </div>
                             <div class="comparison-slider-handle">
                                 <div class="slider-line"></div>
@@ -1830,9 +1922,9 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
                     <div class="comparison-slider">
                         <h4 class="slider-title">Driveway Restoration</h4>
                         <div class="comparison-image-wrapper" data-slider="driveway">
-                            <img src="/images/Driveway After.png" alt="After Driveway Cleaning" class="comparison-after">
+                            <img src="/images/Driveway After.png" alt="After Driveway Cleaning" class="comparison-after" loading="lazy">
                             <div class="comparison-overlay">
-                                <img src="/images/Driveway Before.png" alt="Before Driveway Cleaning" class="comparison-before">
+                                <img src="/images/Driveway Before.png" alt="Before Driveway Cleaning" class="comparison-before" loading="lazy">
                             </div>
                             <div class="comparison-slider-handle">
                                 <div class="slider-line"></div>
@@ -1903,7 +1995,7 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
 
             <div class="services-grid">
                 <div class="service-card">
-                    <Image src={poolDeck} alt="Pool Deck Cleaning" class="service-image" width={400} height={350} loading="lazy" />
+                    <Image src={deckRestoration} alt="Pool Deck Cleaning" class="service-image" width={400} height={350} loading="lazy" />
                     <div class="service-overlay">
                         <h3>Pool Deck Cleaning</h3>
                         <p>Remove algae, mildew, and stains from your pool deck. Safe for all surfaces including concrete, pavers, and stone.</p>
@@ -1943,7 +2035,7 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
                 </div>
 
                 <div class="service-card">
-                    <Image src={deckRestoration} alt="Deck Restoration" class="service-image" width={400} height={350} loading="lazy" />
+                    <Image src={poolDeck} alt="Deck Restoration" class="service-image" width={400} height={350} loading="lazy" />
                     <div class="service-overlay">
                         <h3>Deck Restoration</h3>
                         <p>Bring your deck back to life. We clean, strip, and prepare wood decks for staining or sealing.</p>
@@ -2173,7 +2265,6 @@ import graffitiRemoval from '../../public/images/Before and After- Graffiti Remo
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/about">About Us</a></li>
                         <li><a href="/#services">Services</a></li>
                         <li><a href="/gallery">Gallery</a></li>
                         <li><a href="/blog">Blog</a></li>
