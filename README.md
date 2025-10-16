@@ -41,7 +41,23 @@ This is the official website for Reimagine Pro Wash & More, a professional press
 - **Styling:** CSS with custom properties (CSS variables)
 - **Icons:** Font Awesome 6.0.0
 - **Fonts:** Google Fonts (Poppins, Open Sans)
-- **Deployment:** cPanel via .cpanel.yml
+- **Deployment:** Vercel (Primary), cPanel (Alternative)
+
+### Astro Integrations
+
+**SEO & Performance:**
+- `@astrojs/sitemap` - Automatic sitemap.xml generation
+- `astro-robots-txt` - Robots.txt configuration
+- `astro-seo` - Comprehensive SEO meta tags
+- `astro-font` - Optimized font loading
+- `astro:assets` - Built-in image optimization
+
+**Benefits:**
+- ✅ Automatic sitemap for search engines
+- ✅ Open Graph & Twitter Card support
+- ✅ Optimized images (WebP/AVIF conversion)
+- ✅ Lazy loading for better performance
+- ✅ Robots.txt for crawler control
 
 ## Design System
 
@@ -119,13 +135,47 @@ Serving 12+ communities including:
 
 ## Deployment
 
-The site is deployed via cPanel using `.cpanel.yml` configuration:
-- Builds are triggered on push to main branch
-- Files are deployed to the home directory on rprowashnc.com
-- `.htaccess` handles routing and redirects
+### Vercel (Primary Deployment)
+
+The site is deployed on **Vercel** for optimal performance and automatic deployments:
+
+**Setup Instructions:**
+1. Connect your GitHub repository to Vercel
+2. Vercel auto-detects Astro and configures build settings
+3. Build Command: `npm run build`
+4. Output Directory: `dist`
+5. Install Command: `npm install`
+
+**Vercel Features:**
+- ✅ Automatic deployments on push to main branch
+- ✅ Preview deployments for pull requests
+- ✅ Edge network for fast global delivery
+- ✅ Automatic HTTPS/SSL certificates
+- ✅ Custom domain support (rprowashnc.com)
+- ✅ Analytics and performance monitoring
+- ✅ Zero-configuration deployment
+
+**Environment:**
+- Framework: Astro (Static Site)
+- Node Version: 18.x or higher
+- Build Time: ~1-2 minutes
+
+### Alternative: cPanel Deployment
+
+If deploying via cPanel (legacy method):
+- Use `.cpanel.yml` configuration
+- Files deployed to home directory
+- `.htaccess` handles routing
 
 ## Recent Updates
 
+### Latest (v2.0)
+- **SEO Integrations:** Added sitemap, robots.txt, and astro-seo
+- **Performance:** Implemented Astro Image optimization (70-90% size reduction)
+- **Deployment:** Migrated to Vercel for optimal performance
+- **Font Optimization:** Added astro-font for faster loading
+
+### Previous Updates
 - Added comprehensive footer with social links and contact info
 - Removed "Licensed" references (now "Fully Insured")
 - Updated email to info@rprowashnc.com throughout site
