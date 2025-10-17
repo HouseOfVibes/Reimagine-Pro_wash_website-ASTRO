@@ -52,12 +52,23 @@ This is the official website for Reimagine Pro Wash & More, a professional press
 - `astro-font` - Optimized font loading
 - `astro:assets` - Built-in image optimization
 
+**Vercel Integration:**
+- `@astrojs/vercel` - Official Vercel adapter
+- **Web Analytics** - Track page views, user behavior
+- **Speed Insights** - Monitor Core Web Vitals in real-time
+- **Image Service** - Enhanced image optimization via Vercel
+- Multiple responsive image sizes (320px - 3840px)
+- AVIF & WebP format support
+
 **Benefits:**
 - ✅ Automatic sitemap for search engines
 - ✅ Open Graph & Twitter Card support
 - ✅ Optimized images (WebP/AVIF conversion)
 - ✅ Lazy loading for better performance
 - ✅ Robots.txt for crawler control
+- ✅ Real-time analytics & performance monitoring
+- ✅ Core Web Vitals tracking for SEO
+- ✅ Enhanced image delivery via Vercel CDN
 
 ## Design System
 
