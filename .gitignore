@@ -6,6 +6,7 @@
 # Build output
 /dist/
 /.astro/
+/.vercel/
 
 # Log files
 *.log
