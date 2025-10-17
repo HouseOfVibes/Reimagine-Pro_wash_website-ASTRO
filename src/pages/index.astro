@@ -1747,14 +1747,89 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
             }
 
             /* Footer responsive */
+            .rpw-footer {
+                padding: 40px 20px 0;
+            }
+
             .footer-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 25px;
+                padding-bottom: 25px;
+            }
+
+            .footer-column h4 {
+                font-size: 1.1rem;
+                margin-bottom: 12px;
+            }
+
+            .footer-brand {
+                margin-bottom: 15px;
+            }
+
+            .footer-logo {
+                max-width: 80px;
+                margin-bottom: 10px;
+            }
+
+            .footer-brand h3 {
+                font-size: 1.1rem;
+            }
+
+            .footer-tagline {
+                font-size: 0.75rem;
+                margin-bottom: 10px;
+            }
+
+            .footer-description {
+                font-size: 0.85rem;
+                margin-bottom: 15px;
+            }
+
+            .footer-social {
+                gap: 12px;
+                margin-bottom: 10px;
+            }
+
+            .social-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .social-icon i {
+                font-size: 1rem;
+            }
+
+            .footer-links li,
+            .footer-contact li {
+                margin-bottom: 8px;
+                font-size: 0.85rem;
+            }
+
+            .footer-cta-btn {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+
+            /* Collapse Quick Links and Services into 2 columns on mobile */
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Show only essential columns on mobile */
+            .footer-column:nth-child(2),
+            .footer-column:nth-child(3) {
+                display: none;
             }
 
             .footer-bottom-content {
                 flex-direction: column;
                 text-align: center;
+                padding: 15px 20px;
+            }
+
+            .footer-bottom p,
+            .footer-bottom-links a {
+                font-size: 0.8rem;
             }
 
             .footer-bottom-links {
