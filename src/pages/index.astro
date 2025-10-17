@@ -2327,10 +2327,12 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const header = document.querySelector('.rpw-main-header');
-            const mobileToggle = document.querySelector('.rpw-mobile-menu-toggle');
-            const mobileMenu = document.querySelector('.rpw-mobile-menu');
-            const navLinks = document.querySelectorAll('.rpw-nav-link, .rpw-mobile-nav-link');
+            const header = document.querySelector<HTMLElement>('.rpw-main-header');
+            const mobileToggle = document.querySelector<HTMLElement>('.rpw-mobile-menu-toggle');
+            const mobileMenu = document.querySelector<HTMLElement>('.rpw-mobile-menu');
+            const navLinks = document.querySelectorAll<HTMLElement>('.rpw-nav-link, .rpw-mobile-nav-link');
+
+            if (!header || !mobileMenu) return;
 
             // Header scroll effect
             window.addEventListener('scroll', function() {
@@ -2352,7 +2354,7 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
 
             // Close mobile menu when clicking outside
             document.addEventListener('click', function(event) {
-                if (mobileToggle && !mobileToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+                if (mobileToggle && !mobileToggle.contains(event.target as Node) && !mobileMenu.contains(event.target as Node)) {
                     mobileToggle.classList.remove('active');
                     mobileMenu.classList.remove('active');
                     document.body.style.overflow = '';
@@ -2395,12 +2397,12 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
             // Update active nav link based on scroll position
             window.addEventListener('scroll', function() {
                 let current = '';
-                const sections = document.querySelectorAll('section[id]');
+                const sections = document.querySelectorAll<HTMLElement>('section[id]');
 
                 sections.forEach(section => {
                     const sectionTop = section.getBoundingClientRect().top;
                     if (sectionTop <= header.offsetHeight + 50) {
-                        current = section.getAttribute('id');
+                        current = section.getAttribute('id') || '';
                     }
                 });
 
@@ -2413,12 +2415,16 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
             });
 
             // Before/After Image Slider
-            const sliders = document.querySelectorAll('.comparison-image-wrapper');
+            const sliders = document.querySelectorAll<HTMLElement>('.comparison-image-wrapper');
 
             sliders.forEach(slider => {
-                const handle = slider.querySelector('.comparison-slider-handle');
-                const overlay = slider.querySelector('.comparison-overlay');
-                const beforeImage = slider.querySelector('.comparison-before');
+                const handle = slider.querySelector<HTMLElement>('.comparison-slider-handle');
+                const overlay = slider.querySelector<HTMLElement>('.comparison-overlay');
+                const beforeImage = slider.querySelector<HTMLElement>('.comparison-before');
+
+                // Guard against null elements
+                if (!handle || !overlay || !beforeImage) return;
+
                 let isDragging = false;
 
                 // Set the before image to match the container width
@@ -2431,7 +2437,7 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
                 setBeforeImageWidth();
                 window.addEventListener('resize', setBeforeImageWidth);
 
-                function updateSlider(x) {
+                function updateSlider(x: number) {
                     const rect = slider.getBoundingClientRect();
                     const position = Math.max(0, Math.min(x - rect.left, rect.width));
                     const percentage = (position / rect.width) * 100;
@@ -2444,7 +2450,7 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
                     isDragging = true;
                 });
 
-                document.addEventListener('mousemove', (e) => {
+                document.addEventListener('mousemove', (e: MouseEvent) => {
                     if (isDragging) {
                         updateSlider(e.clientX);
                     }
@@ -2455,12 +2461,12 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
                 });
 
                 // Touch events for mobile
-                handle.addEventListener('touchstart', (e) => {
+                handle.addEventListener('touchstart', (e: TouchEvent) => {
                     isDragging = true;
                     e.preventDefault();
                 });
 
-                document.addEventListener('touchmove', (e) => {
+                document.addEventListener('touchmove', (e: TouchEvent) => {
                     if (isDragging) {
                         const touch = e.touches[0];
                         updateSlider(touch.clientX);
@@ -2472,15 +2478,15 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
                 });
 
                 // Click anywhere on the slider to jump
-                slider.addEventListener('click', (e) => {
-                    if (e.target !== handle && !handle.contains(e.target)) {
+                slider.addEventListener('click', (e: MouseEvent) => {
+                    if (e.target !== handle && !handle.contains(e.target as Node)) {
                         updateSlider(e.clientX);
                     }
                 });
             });
 
             // Contact Form Handler
-            const contactForm = document.getElementById('contact-form');
+            const contactForm = document.getElementById('contact-form') as HTMLFormElement;
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
