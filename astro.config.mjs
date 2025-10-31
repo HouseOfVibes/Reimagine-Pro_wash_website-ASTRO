@@ -24,7 +24,7 @@ export default defineConfig({
   integrations: [
     sitemap(),
     robotsTxt({
-      sitemap: true,
+      sitemap: 'https://rprowashnc.com/sitemap-index.xml',
       policy: [
         {
           userAgent: '*',

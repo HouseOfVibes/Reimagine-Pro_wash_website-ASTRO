@@ -1,0 +1,159 @@
+---
+// LocalBusiness Schema Markup for SEO
+// This component provides structured data to help search engines understand the business
+// and display rich results in Google Search, Maps, and Knowledge Panels
+
+const siteUrl = Astro.site?.toString() || 'https://rprowashnc.com';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${siteUrl}#localbusiness`,
+  "name": "Reimagine Pro Wash & More",
+  "legalName": "Reimagine Pro Wash & More LLC",
+  "image": [
+    `${siteUrl}/images/logo.png`,
+    `${siteUrl}/images/Reimagine-Pro-Wash-NC-dynamic-photo.png`,
+    `${siteUrl}/images/RPW-Dynamic_multi-panel_before-and-after_collage_five_0%20copy.png`
+  ],
+  "logo": `${siteUrl}/images/logo.png`,
+  "url": siteUrl,
+  "telephone": "+1-984-202-4980",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "",  // TODO: Add exact street address
+    "addressLocality": "Knightdale",
+    "addressRegion": "NC",
+    "postalCode": "27545",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 35.7879,  // Knightdale, NC approximate coordinates
+    "longitude": -78.4809
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.7879,
+      "longitude": -78.4809
+    },
+    "geoRadius": "50 miles"
+  },
+  "description": "Professional pressure washing and exterior cleaning services in Knightdale, NC and throughout the Triangle region. Specializing in residential and commercial pressure washing, soft washing, pool deck cleaning, house washing, gutter cleaning, and more. Licensed, insured, and eco-friendly solutions with a 50+ mile service area.",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "sameAs": [
+    // TODO: Add social media profiles
+    // "https://www.facebook.com/reimagineprowash",
+    // "https://www.instagram.com/reimagine_prowash"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Pressure Washing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pool Deck Cleaning",
+          "description": "Professional pool deck pressure washing and cleaning services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Soft Wash House Cleaning",
+          "description": "Gentle soft wash cleaning for home exteriors, siding, and roofs"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Hardscapes Cleaning",
+          "description": "Concrete, brick, and stone cleaning for driveways, walkways, and patios"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Gutter Cleaning",
+          "description": "Professional gutter cleaning and maintenance services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Commercial Pressure Washing",
+          "description": "Commercial property exterior cleaning and maintenance"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Deck and Patio Restoration",
+          "description": "Deck cleaning, restoration, and sealing services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fence Cleaning",
+          "description": "Fence pressure washing and restoration services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Brick Restoration",
+          "description": "Brick cleaning and restoration for homes and buildings"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Graffiti Removal",
+          "description": "Professional graffiti removal and surface restoration"
+        }
+      }
+    ]
+  },
+  "slogan": "Professional Results. Trusted Service.",
+  "knowsAbout": [
+    "Pressure Washing",
+    "Soft Washing",
+    "Pool Deck Cleaning",
+    "House Washing",
+    "Commercial Cleaning",
+    "Gutter Cleaning",
+    "Deck Restoration",
+    "Exterior Cleaning"
+  ],
+  "paymentAccepted": "Cash, Credit Card, Check",
+  "currenciesAccepted": "USD"
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

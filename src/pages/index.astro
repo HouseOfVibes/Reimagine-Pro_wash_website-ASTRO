@@ -1,5 +1,6 @@
 ---
 import { Image, getImage } from 'astro:assets';
+import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
 import logo from '../../public/images/logo.png';
 import heroBackground from '../../public/images/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png';
 import insuredBadge from '../../public/images/Insured_ Badge_Transparent.png';
@@ -10,7 +11,7 @@ import houseWashing from '../../public/images/House Washing.png';
 import hardscapes from '../../public/images/Hardscapes Cleaning.png';
 import gutterCleaning from '../../public/images/gutter cleaning.png';
 import commercial from '../../public/images/Commercial Pressure Washing.png';
-import deckRestoration from '../../public/images/Clean_Wooden_Sitting_Deck.png';
+import deckRestoration from '../../public/images/Clean_Wooden_Sitting_Deck_Cleaning.png';
 import fenceCleaning from '../../public/images/Clean Fense.png';
 import brickRestoration from '../../public/images/Brick Restoration.png';
 import graffitiRemoval from '../../public/images/Before and After- Graffiti Removal.png';
@@ -43,6 +44,12 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="shortcut icon" href="/favicon.ico">
+
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Professional pressure washing services in Knightdale, NC and Triangle region. Licensed, insured, eco-friendly solutions. 50+ mile service area. Free estimates! Call 984-202-4980.">
+
+    <!-- LocalBusiness Schema for SEO -->
+    <LocalBusinessSchema />
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
