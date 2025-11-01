@@ -10,9 +10,19 @@ const { title, description, image, author, type } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <SEO 
-      title={title} 
-      description={description} 
+
+    <!-- Google Analytics 4 -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-8ZYCWEHB9H"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8ZYCWEHB9H');
+    </script>
+
+    <SEO
+      title={title}
+      description={description}
       image={image}
       author={author}
       type={type}
