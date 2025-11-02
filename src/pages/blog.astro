@@ -79,8 +79,9 @@ const sortedPosts = blogPosts.sort((a, b) => new Date(b.data.date).getTime() - n
   .blog-hero {
     background: linear-gradient(135deg, #092441 0%, #0862b7 50%, #00a1f0 100%);
     color: white;
-    padding: 100px 20px 60px;
+    padding: 120px 20px 60px;
     text-align: center;
+    margin-top: 0;
   }
 
   .blog-hero-content {
@@ -89,15 +90,16 @@ const sortedPosts = blogPosts.sort((a, b) => new Date(b.data.date).getTime() - n
   }
 
   .blog-hero h1 {
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: 2.5rem;
+    font-weight: bold;
     margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Arial', sans-serif;
   }
 
   .blog-hero p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     opacity: 0.95;
+    font-family: 'Arial', sans-serif;
   }
 
   .blog-section {
@@ -184,11 +186,11 @@ const sortedPosts = blogPosts.sort((a, b) => new Date(b.data.date).getTime() - n
 
   .blog-card h2 {
     font-size: 1.5rem;
-    font-weight: 700;
-    color: #092441;
+    font-weight: bold;
+    color: #003366;
     margin-bottom: 15px;
     line-height: 1.4;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Arial', sans-serif;
   }
 
   .blog-card p {
@@ -247,9 +249,10 @@ const sortedPosts = blogPosts.sort((a, b) => new Date(b.data.date).getTime() - n
   }
 
   .blog-cta h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
   }
 
   .blog-cta p {
