@@ -1,0 +1,684 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Services', url: '/services' },
+  { name: 'Roof Cleaning', url: '/services/roof-cleaning' }
+];
+
+const faqs = [
+  {
+    question: "Will roof cleaning damage my shingles?",
+    answer: "Not at all! Our soft wash roof cleaning method is specifically designed to protect your shingles. We use low-pressure water (under 100 PSI) combined with professional cleaning solutions that kill algae, moss, and lichen at the root—without the damaging force of high-pressure washing that can strip granules and void warranties."
+  },
+  {
+    question: "What are those black streaks on my roof?",
+    answer: "Those black streaks are caused by Gloeocapsa Magma, a type of algae that feeds on the limestone in your shingles. Not only does it look unsightly, but it also retains heat and moisture, accelerating roof deterioration. Our soft wash treatment eliminates the algae and prevents rapid regrowth."
+  },
+  {
+    question: "How often should I have my roof cleaned?",
+    answer: "We recommend professional roof cleaning every 2-3 years for most homes in Knightdale and the Triangle area. However, homes with heavy tree coverage or in shaded areas may benefit from more frequent cleaning. Regular cleaning extends your roof's lifespan and maintains your home's curb appeal."
+  },
+  {
+    question: "Is roof cleaning safe for my landscaping?",
+    answer: "Yes! We take extensive precautions to protect your landscaping. Before we begin, we pre-wet all plants and use biodegradable, plant-safe cleaning solutions. Our experienced team ensures runoff is managed properly to keep your lawn, plants, and landscaping healthy and undamaged."
+  },
+  {
+    question: "Can roof cleaning extend my roof's lifespan?",
+    answer: "Absolutely! Regular soft wash roof cleaning removes damaging organic growth that degrades shingles, traps moisture, and voids warranties. By eliminating algae, moss, and lichen, you protect your investment and can add years to your roof's functional life—saving thousands in premature replacement costs."
+  }
+];
+---
+
+<Layout
+  title="Roof Cleaning (Soft Wash) in Knightdale, NC | Reimagine Pro Wash"
+  description="Professional soft wash roof cleaning in Knightdale, NC. Remove black streaks, algae, and moss safely. Protect shingles and extend roof life. Free estimates in Knightdale, Raleigh, Cary, Wake Forest.">
+
+  <ServiceSchema
+    serviceName="Roof Cleaning"
+    description="Professional soft wash roof cleaning services for residential properties in Knightdale, NC and surrounding areas. Safe removal of algae, moss, lichen, and black streaks without damaging shingles."
+    serviceType="Roof Cleaning"
+    image="/images/House Washing.png"
+  />
+
+  <FAQSchema faqs={faqs} />
+
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <main class="service-page">
+    <!-- Hero Section -->
+    <section class="service-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <Breadcrumb items={breadcrumbItems} />
+        <h1>Roof Cleaning in Knightdale, NC</h1>
+        <p class="hero-subtitle">Gentle Soft Wash Cleaning That Protects Your Shingles & Extends Roof Life</p>
+        <div class="hero-cta">
+          <a href="/#contact" class="btn-primary">Get Free Estimate</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="service-overview">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-image">
+            <img src="/images/House Washing.png" alt="Professional soft wash roof cleaning service in Knightdale NC removing black streaks" loading="lazy" />
+          </div>
+          <div class="overview-content">
+            <h2>Professional Roof Cleaning That Protects Your Investment</h2>
+            <p>Black streaks, moss, and algae aren't just cosmetic issues—they're actively damaging your roof. These organic growths feed on your shingles' limestone content, trap moisture, and accelerate deterioration. Reimagine Pro Wash specializes in safe, effective soft wash roof cleaning throughout Knightdale, Raleigh, Cary, Wake Forest, and Clayton.</p>
+            <p>Unlike dangerous high-pressure washing that strips protective granules and can void manufacturer warranties, our soft wash method uses low-pressure application and professional-grade cleaning solutions to eliminate organic growth at the source—safely and thoroughly.</p>
+            <ul class="benefits-list">
+              <li><strong>Shingle-Safe:</strong> Low-pressure cleaning preserves granules and integrity</li>
+              <li><strong>Kills at the Root:</strong> Eliminates algae, moss, and lichen completely</li>
+              <li><strong>Extended Lifespan:</strong> Protect your investment and delay replacement</li>
+              <li><strong>Warranty-Safe:</strong> Method approved by major shingle manufacturers</li>
+              <li><strong>Improved Efficiency:</strong> Clean roofs reflect heat, reducing cooling costs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Remove -->
+    <section class="what-we-clean">
+      <div class="container">
+        <h2>What We Remove</h2>
+        <p class="section-intro">Our roof cleaning service safely eliminates all organic growth:</p>
+        <div class="clean-grid">
+          <div class="clean-item">
+            <h3>Black Streaks (Algae)</h3>
+            <p>Gloeocapsa Magma algae that feeds on limestone and darkens shingles</p>
+          </div>
+          <div class="clean-item">
+            <h3>Moss Growth</h3>
+            <p>Thick moss that lifts shingles and traps moisture underneath</p>
+          </div>
+          <div class="clean-item">
+            <h3>Lichen</h3>
+            <p>Stubborn fungus-algae combination that damages shingle surfaces</p>
+          </div>
+          <div class="clean-item">
+            <h3>Dirt & Debris</h3>
+            <p>Accumulated pollen, leaves, and environmental contaminants</p>
+          </div>
+          <div class="clean-item">
+            <h3>Mold & Mildew</h3>
+            <p>Moisture-loving organisms that accelerate deterioration</p>
+          </div>
+          <div class="clean-item">
+            <h3>Oxidation Stains</h3>
+            <p>Metal and environmental staining on shingles and flashing</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <h2>Our Roof Cleaning Process</h2>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Roof Inspection</h3>
+            <p>Thorough assessment of your roof's condition, material type, and contamination level.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Pre-Treatment</h3>
+            <p>Pre-wet landscaping and apply eco-friendly soft wash solution to kill organic growth at the root.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Gentle Rinse</h3>
+            <p>Low-pressure rinse removes dead growth without damaging shingles or stripping granules.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Quality Check</h3>
+            <p>Final inspection and satisfaction walkthrough to ensure exceptional results.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Soft Wash -->
+    <section class="why-section">
+      <div class="container">
+        <h2>Why Soft Washing is Better Than Pressure Washing</h2>
+        <div class="comparison-grid">
+          <div class="comparison-column good">
+            <h3>✓ Soft Washing (Our Method)</h3>
+            <ul>
+              <li>Low pressure (under 100 PSI)</li>
+              <li>Preserves shingle granules</li>
+              <li>Kills growth at the root</li>
+              <li>Manufacturer warranty-safe</li>
+              <li>Longer-lasting results (2-3 years)</li>
+              <li>Safe for all roof types</li>
+            </ul>
+          </div>
+          <div class="comparison-column bad">
+            <h3>✗ Pressure Washing (Avoid)</h3>
+            <ul>
+              <li>High pressure (1000+ PSI)</li>
+              <li>Strips protective granules</li>
+              <li>Only removes surface growth</li>
+              <li>Can void manufacturer warranties</li>
+              <li>Growth returns quickly (months)</li>
+              <li>Risks shingle damage and leaks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="service-areas">
+      <div class="container">
+        <h2>Serving Knightdale & the Greater Triangle Area</h2>
+        <p>Reimagine Pro Wash provides professional roof cleaning services throughout the Triangle, including:</p>
+        <ul class="areas-list">
+          <li>Knightdale, NC</li>
+          <li>Raleigh, NC</li>
+          <li>Cary, NC</li>
+          <li>Wake Forest, NC</li>
+          <li>Clayton, NC</li>
+          <li>And surrounding areas within 50+ miles</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <FAQ faqs={faqs} title="Roof Cleaning FAQs" />
+
+    <!-- CTA Section -->
+    <section class="service-cta">
+      <div class="container">
+        <h2>Ready to Restore Your Roof's Beauty & Protection?</h2>
+        <p>Get a free, no-obligation estimate for professional roof cleaning in Knightdale and the Triangle area.</p>
+        <div class="cta-buttons">
+          <a href="/#contact" class="btn-primary">Request Free Quote</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+        <p class="satisfaction">100% Satisfaction Guarantee | Licensed & Insured</p>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .service-page {
+    min-height: 100vh;
+  }
+
+  .service-hero {
+    position: relative;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 50%, #00a1f0 100%);
+    color: white;
+    padding: 140px 20px 80px;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: url('/images/House Washing.png') center/cover no-repeat;
+    opacity: 0.15;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  .service-hero h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.05rem;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #092441;
+  }
+
+  .btn-primary:hover {
+    background: #00a1f0;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: #092441;
+    transform: translateY(-2px);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .service-overview {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .overview-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .overview-content h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .overview-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+  }
+
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .benefits-list li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.05rem;
+    color: #333;
+  }
+
+  .benefits-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00a1f0;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .what-we-clean {
+    padding: 100px 20px;
+    background: #f8f9fa;
+  }
+
+  .what-we-clean h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .section-intro {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 50px;
+  }
+
+  .clean-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .clean-item {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .clean-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .clean-item h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .clean-item p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .process-section {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .process-section h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #0862b7, #00a1f0);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+  }
+
+  .step h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .step p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .why-section {
+    padding: 100px 20px;
+    background: #f8f9fa;
+  }
+
+  .why-section h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .comparison-column {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .comparison-column.good {
+    border-top: 4px solid #00a1f0;
+  }
+
+  .comparison-column.bad {
+    border-top: 4px solid #dc3545;
+  }
+
+  .comparison-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .comparison-column.good h3 {
+    color: #00a1f0;
+  }
+
+  .comparison-column.bad h3 {
+    color: #dc3545;
+  }
+
+  .comparison-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .comparison-column li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .comparison-column.good li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00a1f0;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .comparison-column.bad li:before {
+    content: "✗";
+    position: absolute;
+    left: 0;
+    color: #dc3545;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .service-areas {
+    padding: 80px 20px;
+    background: white;
+    text-align: center;
+  }
+
+  .service-areas h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .service-areas p {
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  .areas-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .areas-list li {
+    background: #f8f9fa;
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: #003366;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .service-cta {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .service-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .service-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .satisfaction {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    font-weight: 600;
+  }
+
+  @media (max-width: 1024px) {
+    .overview-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .clean-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comparison-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .service-hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .overview-content h2,
+    .what-we-clean h2,
+    .process-section h2,
+    .why-section h2 {
+      font-size: 1.8rem;
+    }
+
+    .clean-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .service-cta h2 {
+      font-size: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+</style>

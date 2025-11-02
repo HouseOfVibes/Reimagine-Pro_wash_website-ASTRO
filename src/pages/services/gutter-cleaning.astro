@@ -1,0 +1,656 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Services', url: '/services' },
+  { name: 'Gutter Cleaning', url: '/services/gutter-cleaning' }
+];
+
+const faqs = [
+  {
+    question: "How often should gutters be cleaned?",
+    answer: "We recommend cleaning gutters at least twice per year—once in late spring after trees finish blooming, and again in late fall after leaves have dropped. Homes with heavy tree coverage or pine trees may need quarterly cleaning to prevent clogs and overflow."
+  },
+  {
+    question: "What happens if I don't clean my gutters?",
+    answer: "Clogged gutters cause water to overflow, leading to foundation damage, basement flooding, roof leaks, fascia rot, and landscape erosion. Standing water in gutters also attracts mosquitoes and can cause ice dams in winter. Regular cleaning prevents these costly issues."
+  },
+  {
+    question: "Do you clean downspouts too?",
+    answer: "Yes! Complete gutter cleaning includes flushing all downspouts to ensure proper drainage. We'll identify and clear any clogs in downspouts and verify water flows freely away from your foundation."
+  },
+  {
+    question: "Will you damage my roof or gutters?",
+    answer: "Not at all. Our experienced team uses proper techniques and tools designed specifically for gutter cleaning. We carefully remove debris by hand and flush systems with water—never using harsh methods that could damage gutters, hangers, or roofing materials."
+  },
+  {
+    question: "Do I need to be home during gutter cleaning?",
+    answer: "No, you don't need to be present. As long as we have access to your property, we can complete the work and leave everything clean. We'll provide before/after photos and notify you when the job is complete."
+  }
+];
+---
+
+<Layout
+  title="Gutter Cleaning in Knightdale, NC | Reimagine Pro Wash & More"
+  description="Professional gutter cleaning services in Knightdale, NC. Prevent water damage and clogs with regular maintenance. Licensed & insured. Free estimates in Knightdale, Raleigh, Cary, Wake Forest.">
+
+  <ServiceSchema
+    serviceName="Gutter Cleaning"
+    description="Professional gutter cleaning and maintenance services for residential properties in Knightdale, NC. Prevent water damage, foundation issues, and roof leaks with thorough gutter and downspout cleaning."
+    serviceType="Gutter Cleaning"
+    image="/images/gutter cleaning.png"
+  />
+
+  <FAQSchema faqs={faqs} />
+
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <main class="service-page">
+    <!-- Hero Section -->
+    <section class="service-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <Breadcrumb items={breadcrumbItems} />
+        <h1>Gutter Cleaning You Can Rely On</h1>
+        <p class="hero-subtitle">Prevent water damage and clogs with regular professional gutter maintenance</p>
+        <div class="hero-cta">
+          <a href="/#contact" class="btn-primary">Clean My Gutters</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="service-overview">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-image">
+            <img src="/images/gutter cleaning.png" alt="Professional gutter cleaning service in Knightdale NC" loading="lazy" />
+          </div>
+          <div class="overview-content">
+            <h2>Protect Your Home from Water Damage</h2>
+            <p>Neglected gutters cause water overflow, leaks, and costly foundation issues. Leaves, twigs, and debris accumulate throughout the year, creating clogs that prevent proper drainage and lead to serious damage to your home's structure, roof, and landscaping.</p>
+            <p>Reimagine Pro Wash & More provides thorough gutter cleaning services throughout Knightdale, Raleigh, Cary, Wake Forest, and Clayton, ensuring your home's drainage system runs smoothly and protects your most valuable investment.</p>
+            <ul class="benefits-list">
+              <li><strong>Prevents Roof Leaks:</strong> Proper drainage protects shingles and roof structure</li>
+              <li><strong>Protects Foundation:</strong> Directs water away from your home's base</li>
+              <li><strong>Protects Siding:</strong> Prevents overflow staining and rot</li>
+              <li><strong>Extends Gutter Life:</strong> Removes weight and corrosive debris</li>
+              <li><strong>Includes Downspout Flushing:</strong> Complete drainage system maintenance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Do -->
+    <section class="what-we-clean">
+      <div class="container">
+        <h2>Our Complete Gutter Cleaning Service</h2>
+        <p class="section-intro">Thorough cleaning and inspection of your entire gutter system:</p>
+        <div class="clean-grid">
+          <div class="clean-item">
+            <h3>Debris Removal</h3>
+            <p>Hand-remove leaves, twigs, shingle grit, and accumulated sediment</p>
+          </div>
+          <div class="clean-item">
+            <h3>Downspout Flushing</h3>
+            <p>Clear clogs and verify free-flowing drainage to ground level</p>
+          </div>
+          <div class="clean-item">
+            <h3>Gutter Inspection</h3>
+            <p>Check for damage, loose hangers, and proper pitch</p>
+          </div>
+          <div class="clean-item">
+            <h3>Clean-Up</h3>
+            <p>Bag and haul away all debris from your property</p>
+          </div>
+          <div class="clean-item">
+            <h3>Minor Adjustments</h3>
+            <p>Resecure loose sections and ensure proper slope</p>
+          </div>
+          <div class="clean-item">
+            <h3>Condition Report</h3>
+            <p>Photo documentation and recommendations if repairs needed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <h2>Our Gutter Cleaning Process</h2>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Inspection</h3>
+            <p>Assess gutter condition, identify problem areas, and plan the cleaning approach.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Debris Removal</h3>
+            <p>Manually remove all leaves, twigs, and sediment from gutters and valleys.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Flush System</h3>
+            <p>Use water to flush remaining debris and clear all downspouts completely.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Clean & Report</h3>
+            <p>Bag debris, clean work area, and provide photo documentation of completed work.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warning Signs Section -->
+    <section class="warning-section">
+      <div class="container">
+        <h2>Signs Your Gutters Need Cleaning</h2>
+        <div class="warning-grid">
+          <div class="warning-item">
+            <span class="warning-icon">⚠️</span>
+            <h3>Water Overflow</h3>
+            <p>Water spilling over gutter edges during rain</p>
+          </div>
+          <div class="warning-item">
+            <span class="warning-icon">⚠️</span>
+            <h3>Sagging Gutters</h3>
+            <p>Visible drooping or pulling away from fascia</p>
+          </div>
+          <div class="warning-item">
+            <span class="warning-icon">⚠️</span>
+            <h3>Plant Growth</h3>
+            <p>Weeds or plants growing in gutter channels</p>
+          </div>
+          <div class="warning-item">
+            <span class="warning-icon">⚠️</span>
+            <h3>Staining</h3>
+            <p>Dirt streaks on siding below gutter line</p>
+          </div>
+          <div class="warning-item">
+            <span class="warning-icon">⚠️</span>
+            <h3>Foundation Pooling</h3>
+            <p>Water collecting around your home's foundation</p>
+          </div>
+          <div class="warning-item">
+            <span class="warning-icon">⚠️</span>
+            <h3>Pest Activity</h3>
+            <p>Birds, mosquitoes, or rodents near gutters</p>
+          </div>
+        </div>
+        <p class="warning-note">Seeing any of these signs? Schedule your gutter cleaning today to prevent costly damage.</p>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="service-areas">
+      <div class="container">
+        <h2>Serving Knightdale & the Greater Triangle Area</h2>
+        <p>Professional gutter cleaning services throughout the Triangle, including:</p>
+        <ul class="areas-list">
+          <li>Knightdale, NC</li>
+          <li>Raleigh, NC</li>
+          <li>Cary, NC</li>
+          <li>Wake Forest, NC</li>
+          <li>Clayton, NC</li>
+          <li>And surrounding areas within 50+ miles</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <FAQ faqs={faqs} title="Gutter Cleaning FAQs" />
+
+    <!-- CTA Section -->
+    <section class="service-cta">
+      <div class="container">
+        <h2>Protect Your Home from Water Damage</h2>
+        <p>Get a free, no-obligation estimate for professional gutter cleaning in Knightdale and the Triangle area.</p>
+        <div class="cta-buttons">
+          <a href="/#contact" class="btn-primary">Request Free Quote</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+        <p class="satisfaction">100% Satisfaction Guarantee | Licensed & Insured</p>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .service-page {
+    min-height: 100vh;
+  }
+
+  .service-hero {
+    position: relative;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 50%, #00a1f0 100%);
+    color: white;
+    padding: 140px 20px 80px;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: url('/images/gutter cleaning.png') center/cover no-repeat;
+    opacity: 0.15;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  .service-hero h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.05rem;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #092441;
+  }
+
+  .btn-primary:hover {
+    background: #00a1f0;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: #092441;
+    transform: translateY(-2px);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .service-overview {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .overview-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .overview-content h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .overview-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+  }
+
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .benefits-list li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.05rem;
+    color: #333;
+  }
+
+  .benefits-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00a1f0;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .what-we-clean {
+    padding: 100px 20px;
+    background: #f8f9fa;
+  }
+
+  .what-we-clean h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .section-intro {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 50px;
+  }
+
+  .clean-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .clean-item {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .clean-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .clean-item h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .clean-item p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .process-section {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .process-section h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #0862b7, #00a1f0);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+  }
+
+  .step h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .step p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .warning-section {
+    padding: 100px 20px;
+    background: #f8f9fa;
+  }
+
+  .warning-section h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .warning-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+  }
+
+  .warning-item {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    border-top: 3px solid #ffc107;
+  }
+
+  .warning-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .warning-item h3 {
+    font-size: 1.2rem;
+    color: #003366;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .warning-item p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .warning-note {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #003366;
+    font-weight: 600;
+  }
+
+  .service-areas {
+    padding: 80px 20px;
+    background: white;
+    text-align: center;
+  }
+
+  .service-areas h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .service-areas p {
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  .areas-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .areas-list li {
+    background: #f8f9fa;
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: #003366;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .service-cta {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .service-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .service-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .satisfaction {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    font-weight: 600;
+  }
+
+  @media (max-width: 1024px) {
+    .overview-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .clean-grid, .warning-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .service-hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .clean-grid, .warning-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .service-cta h2 {
+      font-size: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+</style>

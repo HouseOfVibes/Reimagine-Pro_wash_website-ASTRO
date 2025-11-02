@@ -1,0 +1,565 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Services', url: '/services' },
+  { name: 'House Washing', url: '/services/house-washing' }
+];
+
+const faqs = [
+  {
+    question: "Is soft washing safe for my home's siding?",
+    answer: "Absolutely! Our soft washing method uses low pressure (under 500 PSI) combined with eco-friendly cleaning solutions. It's specifically designed to safely clean vinyl, brick, stucco, wood, and other siding materials without causing any damage. Unlike high-pressure washing, soft washing won't strip paint, crack siding, or force water behind your home's exterior."
+  },
+  {
+    question: "How long does a typical house wash take?",
+    answer: "Most residential house washing projects in Knightdale and the Triangle area take 2-4 hours, depending on your home's size and condition. We'll assess your property during the free estimate and provide an accurate timeline. Our professional team works efficiently while maintaining the highest quality standards."
+  },
+  {
+    question: "Will house washing remove mold, mildew, and algae?",
+    answer: "Yes! Our soft washing process is highly effective at eliminating mold, mildew, algae, and black streaks. We use professional-grade, biodegradable cleaning solutions that kill organic growth at the root, providing longer-lasting results than pressure washing alone. Your home will stay cleaner for longer."
+  },
+  {
+    question: "How often should I have my house washed?",
+    answer: "We recommend professional house washing once or twice per year for most homes in the Knightdale, NC area. Homes in heavily shaded areas or near trees may benefit from more frequent cleaning due to increased mold and algae growth. Regular cleaning protects your investment and maintains your home's curb appeal."
+  },
+  {
+    question: "Do you use eco-friendly cleaning products?",
+    answer: "Yes! All of our cleaning solutions are biodegradable and safe for your family, pets, and landscaping. We're committed to environmentally responsible practices while delivering exceptional cleaning results. Our products are tough on dirt and grime but gentle on the environment."
+  }
+];
+---
+
+<Layout
+  title="House Washing in Knightdale, NC | Soft Wash Experts | Reimagine Pro Wash"
+  description="Professional soft wash house cleaning in Knightdale, NC. Remove mold, mildew, and grime from vinyl, brick, and stucco safely. Licensed & insured. Free estimates in Knightdale, Raleigh, Cary, Wake Forest.">
+
+  <ServiceSchema
+    serviceName="House Washing"
+    description="Professional soft wash house cleaning services for residential properties in Knightdale, NC and surrounding areas. Safe removal of mold, mildew, algae, and dirt from all siding types."
+    serviceType="House Washing"
+    image="/images/House Washing.png"
+  />
+
+  <FAQSchema faqs={faqs} />
+
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <main class="service-page">
+    <!-- Hero Section -->
+    <section class="service-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <Breadcrumb items={breadcrumbItems} />
+        <h1>House Washing in Knightdale, NC</h1>
+        <p class="hero-subtitle">Professional Soft Wash Cleaning for a Spotless, Protected Home</p>
+        <div class="hero-cta">
+          <a href="/#contact" class="btn-primary">Get Free Estimate</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="service-overview">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-image">
+            <img src="/images/House Washing.png" alt="Professional house washing service in Knightdale NC showing clean home exterior" loading="lazy" />
+          </div>
+          <div class="overview-content">
+            <h2>Safe, Effective House Washing That Protects Your Investment</h2>
+            <p>Your home's exterior faces constant assault from the elements—dirt, mold, mildew, pollen, and algae accumulate over time, degrading your siding and diminishing curb appeal. Reimagine Pro Wash specializes in professional soft wash house cleaning throughout Knightdale, Raleigh, Cary, Wake Forest, and Clayton.</p>
+            <p>Unlike harsh pressure washing that can damage siding, our soft washing method combines low-pressure water with eco-friendly cleaning solutions to gently yet thoroughly clean your home's exterior. The result? A beautifully clean home that lasts longer and looks better.</p>
+            <ul class="benefits-list">
+              <li><strong>Gentle on Surfaces:</strong> Low-pressure cleaning protects siding, paint, and trim</li>
+              <li><strong>Deep Cleaning:</strong> Eliminates mold, mildew, algae at the root</li>
+              <li><strong>Longer Results:</strong> Stays cleaner 4-6x longer than pressure washing</li>
+              <li><strong>Eco-Friendly:</strong> Biodegradable solutions safe for plants and pets</li>
+              <li><strong>Increased Value:</strong> Boosts curb appeal and property value</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Clean -->
+    <section class="what-we-clean">
+      <div class="container">
+        <h2>What We Clean</h2>
+        <p class="section-intro">Our house washing service covers all exterior surfaces:</p>
+        <div class="clean-grid">
+          <div class="clean-item">
+            <h3>Vinyl Siding</h3>
+            <p>Gentle removal of dirt, mold, and oxidation without damage</p>
+          </div>
+          <div class="clean-item">
+            <h3>Brick & Stone</h3>
+            <p>Deep cleaning that preserves mortar and masonry integrity</p>
+          </div>
+          <div class="clean-item">
+            <h3>Stucco & EIFS</h3>
+            <p>Safe cleaning for delicate stucco and synthetic surfaces</p>
+          </div>
+          <div class="clean-item">
+            <h3>Wood Siding</h3>
+            <p>Careful cleaning that protects wood grain and finish</p>
+          </div>
+          <div class="clean-item">
+            <h3>Windows & Trim</h3>
+            <p>Streak-free cleaning of windows, shutters, and trim work</p>
+          </div>
+          <div class="clean-item">
+            <h3>Soffits & Fascia</h3>
+            <p>Complete exterior cleaning from ground to roofline</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <h2>Our House Washing Process</h2>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Inspection & Prep</h3>
+            <p>We inspect your home's exterior, identify problem areas, and protect landscaping and outdoor features.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Pre-Treatment</h3>
+            <p>Apply professional-grade, eco-friendly cleaning solution to break down dirt, mold, and organic growth.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Soft Washing</h3>
+            <p>Gentle, low-pressure rinse removes all contaminants without damaging siding or forcing water behind exterior.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Final Inspection</h3>
+            <p>Walk-through with you to ensure complete satisfaction and address any concerns.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="service-areas">
+      <div class="container">
+        <h2>Serving Knightdale & the Greater Triangle Area</h2>
+        <p>Reimagine Pro Wash provides professional house washing services throughout the Triangle, including:</p>
+        <ul class="areas-list">
+          <li>Knightdale, NC</li>
+          <li>Raleigh, NC</li>
+          <li>Cary, NC</li>
+          <li>Wake Forest, NC</li>
+          <li>Clayton, NC</li>
+          <li>And surrounding areas within 50+ miles</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <FAQ faqs={faqs} title="House Washing FAQs" />
+
+    <!-- CTA Section -->
+    <section class="service-cta">
+      <div class="container">
+        <h2>Ready to Transform Your Home's Exterior?</h2>
+        <p>Get a free, no-obligation estimate for professional house washing in Knightdale and the Triangle area.</p>
+        <div class="cta-buttons">
+          <a href="/#contact" class="btn-primary">Request Free Quote</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+        <p class="satisfaction">100% Satisfaction Guarantee | Licensed & Insured</p>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .service-page {
+    min-height: 100vh;
+  }
+
+  .service-hero {
+    position: relative;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 50%, #00a1f0 100%);
+    color: white;
+    padding: 140px 20px 80px;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: url('/images/House Washing.png') center/cover no-repeat;
+    opacity: 0.15;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  .service-hero h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.05rem;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #092441;
+  }
+
+  .btn-primary:hover {
+    background: #00a1f0;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: #092441;
+    transform: translateY(-2px);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .service-overview {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .overview-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .overview-content h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .overview-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+  }
+
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .benefits-list li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.05rem;
+    color: #333;
+  }
+
+  .benefits-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00a1f0;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .what-we-clean {
+    padding: 100px 20px;
+    background: #f8f9fa;
+  }
+
+  .what-we-clean h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .section-intro {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 50px;
+  }
+
+  .clean-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .clean-item {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .clean-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .clean-item h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .clean-item p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .process-section {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .process-section h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #0862b7, #00a1f0);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+  }
+
+  .step h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .step p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .service-areas {
+    padding: 80px 20px;
+    background: #f8f9fa;
+    text-align: center;
+  }
+
+  .service-areas h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .service-areas p {
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  .areas-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .areas-list li {
+    background: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: #003366;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .service-cta {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .service-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .service-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .satisfaction {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    font-weight: 600;
+  }
+
+  @media (max-width: 1024px) {
+    .overview-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .clean-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .service-hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .overview-content h2,
+    .what-we-clean h2,
+    .process-section h2 {
+      font-size: 1.8rem;
+    }
+
+    .clean-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .service-cta h2 {
+      font-size: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+</style>

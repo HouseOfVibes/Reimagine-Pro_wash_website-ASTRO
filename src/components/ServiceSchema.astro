@@ -1,0 +1,60 @@
+---
+interface Props {
+  serviceName: string;
+  description: string;
+  serviceType?: string;
+  areaServed?: string[];
+  image?: string;
+}
+
+const {
+  serviceName,
+  description,
+  serviceType = "PressureWashing",
+  areaServed = ["Knightdale, NC", "Raleigh, NC", "Cary, NC", "Wake Forest, NC", "Clayton, NC"],
+  image
+} = Astro.props;
+
+const serviceUrl = `https://rprowashnc.com${Astro.url.pathname}`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": serviceType,
+  "name": serviceName,
+  "description": description,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Reimagine Pro Wash & More",
+    "telephone": "+1-984-202-4980",
+    "email": "info@rprowashnc.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Knightdale",
+      "addressRegion": "NC",
+      "postalCode": "27545",
+      "addressCountry": "US"
+    },
+    "url": "https://rprowashnc.com"
+  },
+  "url": serviceUrl,
+  "areaServed": areaServed.map(area => ({
+    "@type": "City",
+    "name": area
+  })),
+  ...(image && {
+    "image": `https://rprowashnc.com${image}`
+  }),
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": serviceUrl,
+    "servicePhone": {
+      "@type": "ContactPoint",
+      "telephone": "+1-984-202-4980",
+      "contactType": "Customer Service"
+    }
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

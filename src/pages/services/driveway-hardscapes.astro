@@ -1,0 +1,630 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Services', url: '/services' },
+  { name: 'Driveway & Hardscape Cleaning', url: '/services/driveway-hardscapes' }
+];
+
+const faqs = [
+  {
+    question: "Will pressure washing damage my concrete driveway?",
+    answer: "Not when done correctly! Our experienced technicians use the appropriate PSI and technique for each surface type. We carefully control water pressure to remove stains, oil, and grime without etching or damaging your concrete, pavers, or stone surfaces."
+  },
+  {
+    question: "Can you remove oil stains from my driveway?",
+    answer: "Yes! Oil stains are one of our specialties. We use professional-grade degreasers and hot water pressure washing to break down and lift oil, tire marks, and automotive fluids. While extremely old or deep oil stains may lighten rather than disappear completely, we'll get the best possible results."
+  },
+  {
+    question: "How often should I have my driveway pressure washed?",
+    answer: "We recommend annual driveway cleaning for most properties in Knightdale and the Triangle area. High-traffic driveways or those with heavy tree coverage may benefit from cleaning every 6-9 months to prevent buildup of algae, mold, and stains that can become harder to remove over time."
+  },
+  {
+    question: "Do you clean pavers and patio stones?",
+    answer: "Absolutely! We specialize in cleaning all types of hardscapes including concrete pavers, brick pavers, natural stone patios, walkways, and retaining walls. We adjust our pressure and technique based on the material to safely restore beauty without disturbing sand joints or damaging surfaces."
+  },
+  {
+    question: "Will cleaning make my driveway slippery?",
+    answer: "Actually, the opposite! Cleaning removes the algae, moss, and organic buildup that make surfaces slippery when wet. After our service, your driveway and hardscapes will be safer and provide better traction—especially important during wet North Carolina weather."
+  }
+];
+---
+
+<Layout
+  title="Driveway & Hardscape Pressure Washing in Knightdale, NC | Reimagine Pro Wash"
+  description="Professional driveway and hardscape cleaning in Knightdale, NC. Remove oil stains, tire marks, and algae from concrete, pavers, and stone. Free estimates in Knightdale, Raleigh, Cary, Wake Forest.">
+
+  <ServiceSchema
+    serviceName="Driveway & Hardscape Cleaning"
+    description="Professional pressure washing services for driveways, patios, walkways, and hardscapes in Knightdale, NC. Remove oil stains, tire marks, algae, and grime from concrete and pavers."
+    serviceType="Driveway Cleaning"
+    image="/images/Hardscapes Cleaning.png"
+  />
+
+  <FAQSchema faqs={faqs} />
+
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <main class="service-page">
+    <!-- Hero Section -->
+    <section class="service-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <Breadcrumb items={breadcrumbItems} />
+        <h1>Driveway & Hardscape Pressure Washing</h1>
+        <p class="hero-subtitle">From driveways to patios, we remove oil, dirt, and grime for a spotless finish</p>
+        <div class="hero-cta">
+          <a href="/#contact" class="btn-primary">Clean My Driveway</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="service-overview">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-image">
+            <img src="/images/Hardscapes Cleaning.png" alt="Professional driveway and hardscape pressure washing in Knightdale NC" loading="lazy" />
+          </div>
+          <div class="overview-content">
+            <h2>Restore Your Outdoor Surfaces to Like-New Condition</h2>
+            <p>Your concrete surfaces take daily abuse from vehicles, foot traffic, and the elements. Over time, driveways, patios, walkways, and pool decks accumulate oil stains, tire marks, algae, and stubborn grime that detract from your property's appearance and can even create safety hazards.</p>
+            <p>Reimagine Pro Wash & More's hardscape cleaning service restores those surfaces to their original appearance using deep-cleaning pressure techniques specifically calibrated for concrete, pavers, and stone materials throughout Knightdale, Raleigh, Cary, Wake Forest, and Clayton.</p>
+            <ul class="benefits-list">
+              <li><strong>Removes Stubborn Stains:</strong> Oil, grease, tire marks, and rust eliminated</li>
+              <li><strong>Safe for All Materials:</strong> Concrete, pavers, brick, natural stone, and more</li>
+              <li><strong>Reduces Slip Hazards:</strong> Eliminates slippery algae and moss buildup</li>
+              <li><strong>Extends Surface Life:</strong> Prevents deterioration and cracking from contaminants</li>
+              <li><strong>Boosts Curb Appeal:</strong> Instantly makes properties look newer and well-maintained</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Clean -->
+    <section class="what-we-clean">
+      <div class="container">
+        <h2>Hardscapes We Clean</h2>
+        <p class="section-intro">Professional cleaning for all types of outdoor hard surfaces:</p>
+        <div class="clean-grid">
+          <div class="clean-item">
+            <h3>Driveways</h3>
+            <p>Remove oil stains, tire marks, and years of built-up grime</p>
+          </div>
+          <div class="clean-item">
+            <h3>Patios & Decks</h3>
+            <p>Concrete, stone, and paver patios restored to original beauty</p>
+          </div>
+          <div class="clean-item">
+            <h3>Walkways & Paths</h3>
+            <p>Safe, clean paths free from algae and slippery buildup</p>
+          </div>
+          <div class="clean-item">
+            <h3>Pool Decks</h3>
+            <p>Remove sunscreen, dirt, and mold for a safer pool area</p>
+          </div>
+          <div class="clean-item">
+            <h3>Retaining Walls</h3>
+            <p>Clean brick, stone, and concrete retaining structures</p>
+          </div>
+          <div class="clean-item">
+            <h3>Parking Areas</h3>
+            <p>Commercial and residential parking surfaces restored</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <h2>Our Hardscape Cleaning Process</h2>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Assessment</h3>
+            <p>We inspect the surfaces for damage, buildup type, and material composition to determine the best approach.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Prep</h3>
+            <p>Protect surrounding areas and apply eco-safe degreasers and pre-treatment solutions to break down stubborn stains.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Pressure Clean</h3>
+            <p>Using controlled PSI calibrated for your surface type, we deep clean effectively without causing damage.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Rinse & Review</h3>
+            <p>Final inspection to ensure spotless results and complete customer satisfaction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+      <div class="container">
+        <h2>Why Professional Hardscape Cleaning Matters</h2>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <h3>Instant Curb Appeal</h3>
+            <p>A clean driveway and patio dramatically improve your home's first impression, making it look newer and well-maintained.</p>
+          </div>
+          <div class="benefit-card">
+            <h3>Safety First</h3>
+            <p>Removing slippery algae, moss, and oil residue reduces the risk of slips and falls on your property.</p>
+          </div>
+          <div class="benefit-card">
+            <h3>Surface Protection</h3>
+            <p>Regular cleaning prevents corrosive buildup that can break down concrete and pavers over time, extending their lifespan.</p>
+          </div>
+          <div class="benefit-card">
+            <h3>Property Value</h3>
+            <p>Clean, maintained hardscapes contribute to higher property values and faster sales when listing your home.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="service-areas">
+      <div class="container">
+        <h2>Serving Knightdale & the Greater Triangle Area</h2>
+        <p>Professional hardscape cleaning services throughout the Triangle, including:</p>
+        <ul class="areas-list">
+          <li>Knightdale, NC</li>
+          <li>Raleigh, NC</li>
+          <li>Cary, NC</li>
+          <li>Wake Forest, NC</li>
+          <li>Clayton, NC</li>
+          <li>And surrounding areas within 50+ miles</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <FAQ faqs={faqs} title="Driveway & Hardscape Cleaning FAQs" />
+
+    <!-- CTA Section -->
+    <section class="service-cta">
+      <div class="container">
+        <h2>Ready to Restore Your Outdoor Surfaces?</h2>
+        <p>Get a free, no-obligation estimate for professional driveway and hardscape cleaning in Knightdale and the Triangle area.</p>
+        <div class="cta-buttons">
+          <a href="/#contact" class="btn-primary">Request Free Quote</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+        <p class="satisfaction">100% Satisfaction Guarantee | Licensed & Insured</p>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .service-page {
+    min-height: 100vh;
+  }
+
+  .service-hero {
+    position: relative;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 50%, #00a1f0 100%);
+    color: white;
+    padding: 140px 20px 80px;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: url('/images/Hardscapes Cleaning.png') center/cover no-repeat;
+    opacity: 0.15;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  .service-hero h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.05rem;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #092441;
+  }
+
+  .btn-primary:hover {
+    background: #00a1f0;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: #092441;
+    transform: translateY(-2px);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .service-overview {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .overview-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .overview-content h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .overview-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+  }
+
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .benefits-list li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.05rem;
+    color: #333;
+  }
+
+  .benefits-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00a1f0;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .what-we-clean {
+    padding: 100px 20px;
+    background: #f8f9fa;
+  }
+
+  .what-we-clean h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .section-intro {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 50px;
+  }
+
+  .clean-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .clean-item {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .clean-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .clean-item h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .clean-item p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .process-section {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .process-section h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #0862b7, #00a1f0);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+  }
+
+  .step h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .step p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .benefits-section {
+    padding: 100px 20px;
+    background: #f8f9fa;
+  }
+
+  .benefits-section h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .benefit-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .benefit-card h3 {
+    font-size: 1.5rem;
+    color: #003366;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .benefit-card p {
+    color: #666;
+    line-height: 1.7;
+  }
+
+  .service-areas {
+    padding: 80px 20px;
+    background: white;
+    text-align: center;
+  }
+
+  .service-areas h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .service-areas p {
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  .areas-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .areas-list li {
+    background: #f8f9fa;
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: #003366;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .service-cta {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .service-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .service-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .satisfaction {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    font-weight: 600;
+  }
+
+  @media (max-width: 1024px) {
+    .overview-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .clean-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .service-hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .clean-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .service-cta h2 {
+      font-size: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+</style>
