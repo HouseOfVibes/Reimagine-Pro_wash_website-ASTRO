@@ -1,6 +1,8 @@
 ---
 import { Image, getImage } from 'astro:assets';
 import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
+import FAQ from '../components/FAQ.astro';
+import FAQSchema from '../components/FAQSchema.astro';
 import logo from '../../public/images/logo.png';
 import heroBackground from '../../public/images/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png';
 import insuredBadge from '../../public/images/Insured_ Badge_Transparent.png';
@@ -31,6 +33,29 @@ const heroBackgroundPng = await getImage({
 
 const heroBackgroundImageSet = `image-set(url('${heroBackgroundWebp.src}') type('image/webp') 1x, url('${heroBackgroundPng.src}') type('image/png') 1x)`;
 const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
+
+const faqs = [
+  {
+    question: "What's the difference between pressure washing and soft washing?",
+    answer: "Pressure washing uses high-pressure water to remove dirt and grime from hard surfaces like driveways and concrete. Soft washing uses low-pressure water combined with specialized cleaning solutions, making it perfect for delicate surfaces like siding, roofs, and decks. We use the appropriate method for each surface to ensure safe and effective cleaning."
+  },
+  {
+    question: "How often should I have my house pressure washed?",
+    answer: "Most homes benefit from professional pressure washing once a year. However, homes in shaded areas or near trees may need cleaning twice a year due to increased mold and mildew growth. Regular cleaning not only maintains your home's appearance but also prevents long-term damage from organic growth."
+  },
+  {
+    question: "Is pressure washing safe for all surfaces?",
+    answer: "When done correctly by professionals, pressure washing is safe for most exterior surfaces. We adjust our pressure settings and cleaning methods based on the material—using soft washing for delicate surfaces like vinyl siding, wood, and shingles, and higher pressure for concrete and brick. Our team is trained to identify the right approach for each surface."
+  },
+  {
+    question: "Will pressure washing damage my landscaping?",
+    answer: "No. We take precautions to protect your landscaping, including pre-wetting plants, using eco-friendly cleaning solutions that are safe for vegetation, and rinsing thoroughly after cleaning. Our biodegradable products are designed to be gentle on plants while tough on dirt and grime."
+  },
+  {
+    question: "How long does a typical pressure washing job take?",
+    answer: "The time varies depending on the size and scope of the project. A standard house washing typically takes 2-4 hours, while driveways and patios can take 1-3 hours. Larger commercial projects may take longer. We'll provide an estimated timeframe when we give you your free quote."
+  }
+];
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -50,6 +75,7 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
 
     <!-- LocalBusiness Schema for SEO -->
     <LocalBusinessSchema />
+    <FAQSchema faqs={faqs} />
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -1161,6 +1187,36 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
             transform: translateY(0);
         }
 
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 20px;
+            background: var(--pure-white);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--navy-blue);
+            margin-bottom: 1rem;
+        }
+
+        .faq-subtitle {
+            text-align: center;
+            color: var(--mid-gray);
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         /* Service Area Section */
         .service-area-section {
             padding: 100px 20px;
@@ -1959,8 +2015,8 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
                 <Image src={logo} alt="Reimagine Pro Wash & More Logo" width={500} height={500} loading="eager" />
             </div>
 
-            <h1 class="hero-title">Refresh. Renew. Reimagine.</h1>
-            <p class="hero-subtitle">Professional Pressure Washing Services</p>
+            <h1 class="hero-title">Professional Pressure Washing in Knightdale, NC</h1>
+            <p class="hero-subtitle">Refresh. Renew. Reimagine.</p>
             
             <p class="hero-description">
                 Transform your property with our professional pressure washing services. Insured and committed to delivering exceptional results with eco-friendly solutions.
@@ -2235,6 +2291,15 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <p class="faq-subtitle">Get answers to common questions about our pressure washing services in Knightdale and the Triangle area</p>
+            <FAQ title="" faqs={faqs} />
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="contact-container">
@@ -2372,12 +2437,12 @@ const heroBackgroundFallbackValue = `url('${heroBackgroundPng.src}')`;
                 <div class="footer-column">
                     <h4>Our Services</h4>
                     <ul class="footer-links">
-                        <li><a href="/#services">House Washing</a></li>
-                        <li><a href="/#services">Pool Deck Cleaning</a></li>
-                        <li><a href="/#services">Driveway Cleaning</a></li>
-                        <li><a href="/#services">Deck Restoration</a></li>
-                        <li><a href="/#services">Gutter Cleaning</a></li>
-                        <li><a href="/#services">Commercial Services</a></li>
+                        <li><a href="/services/house-washing">House Washing</a></li>
+                        <li><a href="/services/pool-deck-patio">Pool Deck Cleaning</a></li>
+                        <li><a href="/services/driveway-hardscapes">Driveway Cleaning</a></li>
+                        <li><a href="/services/deck-fence-restoration">Deck Restoration</a></li>
+                        <li><a href="/services/gutter-cleaning">Gutter Cleaning</a></li>
+                        <li><a href="/services">All Services</a></li>
                     </ul>
                 </div>
 
