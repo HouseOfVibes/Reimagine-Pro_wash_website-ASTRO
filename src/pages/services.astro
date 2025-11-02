@@ -1,11 +1,481 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    title: "House Washing",
+    slug: "house-washing",
+    description: "Professional soft wash house cleaning that removes mold, mildew, and grime from all siding types without damage.",
+    image: "/images/House Washing.png",
+    features: ["Soft wash method", "Safe for all siding", "Eco-friendly solutions", "Long-lasting results"]
+  },
+  {
+    title: "Roof Cleaning",
+    slug: "roof-cleaning",
+    description: "Gentle soft wash roof cleaning removes black streaks, algae, and moss while protecting your shingles.",
+    image: "/images/House Washing.png",
+    features: ["Kills algae at root", "Warranty-safe method", "Extends roof life", "Improves efficiency"]
+  },
+  {
+    title: "Driveway & Hardscapes",
+    slug: "driveway-hardscapes",
+    description: "Deep cleaning for driveways, patios, and walkways removes oil stains, tire marks, and algae.",
+    image: "/images/Hardscapes Cleaning.png",
+    features: ["Oil stain removal", "All materials safe", "Slip hazard reduction", "Instant curb appeal"]
+  },
+  {
+    title: "Gutter Cleaning",
+    slug: "gutter-cleaning",
+    description: "Complete gutter cleaning and downspout flushing prevents water damage and protects your foundation.",
+    image: "/images/gutter cleaning.png",
+    features: ["Debris removal", "Downspout flushing", "Damage inspection", "Clean-up included"]
+  },
+  {
+    title: "Deck & Fence Restoration",
+    slug: "deck-fence-restoration",
+    description: "Cleaning and restoration for wood, composite, and vinyl decks and fences with optional staining and sealing.",
+    image: "/images/Clean_Wooden_Sitting_Deck.png",
+    features: ["All materials", "Removes gray oxidation", "Staining available", "Extends lifespan"]
+  },
+  {
+    title: "Pool Deck & Patio",
+    slug: "pool-deck-patio",
+    description: "Pool-safe cleaning removes sunscreen, dirt, and algae for a safe, beautiful pool area.",
+    image: "/images/UnderGround_Pool_Deck_Cleaning.png",
+    features: ["Pool-safe methods", "Slip prevention", "All pool surfaces", "Seasonal ready"]
+  },
+  {
+    title: "Brick Restoration & Graffiti Removal",
+    slug: "brick-restoration",
+    description: "Specialized masonry cleaning removes graffiti, stains, and efflorescence without damaging brick or stone.",
+    image: "/images/Brick Restoration.png",
+    features: ["Graffiti removal", "Stain elimination", "Texture preservation", "Optional sealing"]
+  }
+];
 ---
 
 <Layout
   title="Professional Pressure Washing Services | Reimagine Pro Wash & More | Knightdale, NC"
-  description="Comprehensive pressure washing services including pool deck cleaning, house washing, hardscapes, gutter cleaning, commercial services, deck restoration, fence cleaning, and more. Serving Knightdale and Triangle area NC.">
-  <main>
-    <h1>Services</h1>
+  description="Comprehensive pressure washing services including house washing, roof cleaning, driveways, gutters, decks, pool decks, and brick restoration. Serving Knightdale, Raleigh, Cary, Wake Forest, Clayton NC.">
+
+  <main class="services-page">
+    <!-- Hero Section -->
+    <section class="services-hero">
+      <div class="hero-content">
+        <h1>Professional Pressure Washing Services</h1>
+        <p class="hero-subtitle">Comprehensive exterior cleaning solutions for homes and businesses in Knightdale, NC and the Triangle area</p>
+        <a href="/#contact" class="btn-primary">Get Free Estimate</a>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-section">
+      <div class="container">
+        <div class="services-intro">
+          <h2>Our Services</h2>
+          <p>From soft wash house cleaning to specialized brick restoration, Reimagine Pro Wash & More delivers professional results that protect your investment and enhance your property's appearance.</p>
+        </div>
+
+        <div class="services-grid">
+          {services.map((service) => (
+            <article class="service-card">
+              <div class="service-image">
+                <img src={service.image} alt={`${service.title} service in Knightdale NC`} loading="lazy" />
+              </div>
+              <div class="service-content">
+                <h3>{service.title}</h3>
+                <p class="service-description">{service.description}</p>
+                <ul class="service-features">
+                  {service.features.map((feature) => (
+                    <li>{feature}</li>
+                  ))}
+                </ul>
+                <a href={`/services/${service.slug}`} class="service-link">
+                  Learn More →
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-section">
+      <div class="container">
+        <h2>Why Choose Reimagine Pro Wash & More?</h2>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-icon">✓</div>
+            <h3>Licensed & Insured</h3>
+            <p>Fully licensed and insured for your peace of mind and protection</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">✓</div>
+            <h3>Eco-Friendly Solutions</h3>
+            <p>Biodegradable cleaning products safe for your family, pets, and landscaping</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">✓</div>
+            <h3>Professional Equipment</h3>
+            <p>Commercial-grade equipment and proven techniques for superior results</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">✓</div>
+            <h3>100% Satisfaction Guarantee</h3>
+            <p>We're not satisfied until you are. Quality work, every time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="service-areas">
+      <div class="container">
+        <h2>Serving the Greater Triangle Area</h2>
+        <p>Professional pressure washing services throughout Knightdale, Raleigh, Cary, Wake Forest, Clayton, and surrounding areas within 50+ miles.</p>
+        <a href="/#contact" class="btn-secondary">Request Service in Your Area</a>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="services-cta">
+      <div class="container">
+        <h2>Ready to Transform Your Property?</h2>
+        <p>Get a free, no-obligation estimate for any of our professional pressure washing services.</p>
+        <div class="cta-buttons">
+          <a href="/#contact" class="btn-primary">Get Free Quote</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>
+
+<style>
+  .services-page {
+    min-height: 100vh;
+  }
+
+  .services-hero {
+    background: linear-gradient(135deg, #092441 0%, #0862b7 50%, #00a1f0 100%);
+    color: white;
+    padding: 140px 20px 80px;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .services-hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+    line-height: 1.6;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.05rem;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #092441;
+  }
+
+  .btn-primary:hover {
+    background: #00a1f0;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: #092441;
+    transform: translateY(-2px);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .services-section {
+    padding: 100px 20px;
+    background: #f8f9fa;
+  }
+
+  .services-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+  }
+
+  .services-intro h2 {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .services-intro p {
+    font-size: 1.15rem;
+    color: #666;
+    line-height: 1.8;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .service-image {
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover .service-image img {
+    transform: scale(1.05);
+  }
+
+  .service-content {
+    padding: 35px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-content h3 {
+    font-size: 1.6rem;
+    color: #003366;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .service-description {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+
+  .service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+  }
+
+  .service-features li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #333;
+    font-size: 0.95rem;
+  }
+
+  .service-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00a1f0;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .service-link {
+    color: #00a1f0;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .service-link:hover {
+    color: #0862b7;
+    transform: translateX(5px);
+  }
+
+  .why-section {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .why-section h2 {
+    font-size: 2.5rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .why-item {
+    text-align: center;
+    padding: 30px;
+  }
+
+  .why-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #0862b7, #00a1f0);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+  }
+
+  .why-item h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .why-item p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .service-areas {
+    padding: 80px 20px;
+    background: #f8f9fa;
+    text-align: center;
+  }
+
+  .service-areas h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .service-areas p {
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 35px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .services-cta {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .services-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .services-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .services-hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .services-intro h2,
+    .why-section h2,
+    .services-cta h2 {
+      font-size: 2rem;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+</style>
