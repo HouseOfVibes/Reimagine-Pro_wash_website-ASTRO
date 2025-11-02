@@ -1,0 +1,630 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Services', url: '/services' },
+  { name: 'Deck & Fence Restoration', url: '/services/deck-fence-restoration' }
+];
+
+const faqs = [
+  {
+    question: "Can you restore a weathered gray deck back to its original color?",
+    answer: "Yes! Our deck restoration process removes the gray oxidation layer, dirt, and mildew to reveal the natural wood color underneath. After cleaning, we can apply a fresh stain or sealant to protect and beautify your deck, making it look brand new again."
+  },
+  {
+    question: "Will pressure washing damage my wood deck or fence?",
+    answer: "Not when done correctly. We use controlled low-pressure soft washing specifically designed for wood surfaces. This gentle approach removes buildup without splintering wood, damaging grain, or forcing water into joints. Our experienced team knows exactly the right pressure for each wood type."
+  },
+  {
+    question: "How often should I have my deck or fence cleaned and sealed?",
+    answer: "We recommend cleaning and resealing wood decks and fences every 2-3 years for optimal protection in North Carolina's climate. Regular maintenance prevents rot, extends the life of the wood, and maintains your outdoor spaces' appearance and safety."
+  },
+  {
+    question: "Do you clean composite and vinyl fencing too?",
+    answer: "Absolutely! We clean all fence materials including wood, vinyl, composite (Trex, TimberTech), aluminum, and wrought iron. Each material requires different techniques and pressures, and our team is trained to safely clean them all without causing damage."
+  },
+  {
+    question: "What's included in deck restoration service?",
+    answer: "Our complete deck restoration includes: thorough cleaning to remove dirt, mold, and old finish; wood brightening treatment; inspection for loose boards or nails; optional repairs; and professional staining or sealing. We prepare your deck for years of safe, beautiful use."
+  }
+];
+---
+
+<Layout
+  title="Deck & Fence Cleaning & Restoration in Knightdale, NC | Reimagine Pro Wash"
+  description="Professional deck and fence cleaning and restoration in Knightdale, NC. Remove dirt, mold, and gray oxidation. Wood, composite, and vinyl. Free estimates in Knightdale, Raleigh, Cary, Wake Forest.">
+
+  <ServiceSchema
+    serviceName="Deck & Fence Restoration"
+    description="Professional deck and fence cleaning and restoration services for wood, composite, and vinyl in Knightdale, NC. Safe removal of dirt, mold, and oxidation with optional staining and sealing."
+    serviceType="Deck Restoration"
+    image="/images/Clean_Wooden_Sitting_Deck.png"
+  />
+
+  <FAQSchema faqs={faqs} />
+
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <main class="service-page">
+    <!-- Hero Section -->
+    <section class="service-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <Breadcrumb items={breadcrumbItems} />
+        <h1>Deck & Fence Cleaning & Restoration</h1>
+        <p class="hero-subtitle">Bring your deck and fence back to life with professional cleaning and refinishing</p>
+        <div class="hero-cta">
+          <a href="/#contact" class="btn-primary">Revive My Deck</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="service-overview">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-image">
+            <img src="/images/Clean_Wooden_Sitting_Deck.png" alt="Professional deck and fence restoration in Knightdale NC" loading="lazy" />
+          </div>
+          <div class="overview-content">
+            <h2>Restore Beauty and Extend the Life of Your Outdoor Spaces</h2>
+            <p>Your deck and fence are exposed to harsh elements year-round—UV rays, rain, humidity, mold, and mildew. Over time, this exposure causes wood to turn gray, splinter, and decay. Composite materials accumulate dirt and lose their luster. Vinyl fencing develops stubborn stains and discoloration.</p>
+            <p>Reimagine Pro Wash & More provides comprehensive deck and fence cleaning and restoration services throughout Knightdale, Raleigh, Cary, Wake Forest, and Clayton. We clean, strip, and prepare your surfaces, then reseal or stain them to look like new—protecting your investment for years to come.</p>
+            <ul class="benefits-list">
+              <li><strong>Removes Buildup:</strong> Dirt, mildew, and gray wood oxidation eliminated</li>
+              <li><strong>All Materials:</strong> Wood, composite, vinyl, and metal fencing</li>
+              <li><strong>UV & Water Protection:</strong> Sealing shields against sun and moisture damage</li>
+              <li><strong>Extends Lifespan:</strong> Proper maintenance adds years to deck and fence life</li>
+              <li><strong>Prepares for Staining:</strong> Professional cleaning ensures perfect finish adhesion</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Clean -->
+    <section class="what-we-clean">
+      <div class="container">
+        <h2>Decks & Fences We Restore</h2>
+        <p class="section-intro">Professional cleaning and restoration for all outdoor structures:</p>
+        <div class="clean-grid">
+          <div class="clean-item">
+            <h3>Wood Decks</h3>
+            <p>Pressure-treated pine, cedar, redwood, and exotic hardwoods</p>
+          </div>
+          <div class="clean-item">
+            <h3>Composite Decks</h3>
+            <p>Trex, TimberTech, Azek, and all composite decking materials</p>
+          </div>
+          <div class="clean-item">
+            <h3>Wood Fencing</h3>
+            <p>Privacy, picket, split-rail, and all wood fence styles</p>
+          </div>
+          <div class="clean-item">
+            <h3>Vinyl Fencing</h3>
+            <p>PVC fences of all colors and configurations</p>
+          </div>
+          <div class="clean-item">
+            <h3>Railings & Stairs</h3>
+            <p>Deck railings, porch rails, and exterior stairways</p>
+          </div>
+          <div class="clean-item">
+            <h3>Pergolas & Gazebos</h3>
+            <p>Free-standing and attached outdoor structures</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <h2>Our Restoration Process</h2>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Inspection</h3>
+            <p>Assess wood condition, identify loose boards, and check for damage or decay.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Deep Cleaning</h3>
+            <p>Remove dirt, mildew, gray oxidation, and old finish using safe, low-pressure methods.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Brightening</h3>
+            <p>Apply wood brightener to restore natural color and open grain for stain penetration.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Seal or Stain</h3>
+            <p>Optional professional staining or sealing to protect and beautify your deck or fence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+      <div class="container">
+        <h2>Why Professional Deck & Fence Restoration Matters</h2>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <h3>Safety First</h3>
+            <p>Clean, properly maintained decks and fences are safer—free from splinters, rot, and structural issues that can cause injuries.</p>
+          </div>
+          <div class="benefit-card">
+            <h3>Curb Appeal</h3>
+            <p>A beautifully restored deck or fence dramatically improves your home's appearance and can increase property value significantly.</p>
+          </div>
+          <div class="benefit-card">
+            <h3>Cost Savings</h3>
+            <p>Regular cleaning and sealing prevents costly premature replacement. Protect your $10,000+ investment with routine maintenance.</p>
+          </div>
+          <div class="benefit-card">
+            <h3>Extended Lifespan</h3>
+            <p>Proper care can double or triple the life of wood decks and fences, protecting against rot, warping, and UV damage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="service-areas">
+      <div class="container">
+        <h2>Serving Knightdale & the Greater Triangle Area</h2>
+        <p>Professional deck and fence restoration throughout the Triangle, including:</p>
+        <ul class="areas-list">
+          <li>Knightdale, NC</li>
+          <li>Raleigh, NC</li>
+          <li>Cary, NC</li>
+          <li>Wake Forest, NC</li>
+          <li>Clayton, NC</li>
+          <li>And surrounding areas within 50+ miles</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <FAQ faqs={faqs} title="Deck & Fence Restoration FAQs" />
+
+    <!-- CTA Section -->
+    <section class="service-cta">
+      <div class="container">
+        <h2>Ready to Transform Your Deck & Fence?</h2>
+        <p>Get a free, no-obligation estimate for professional deck and fence restoration in Knightdale and the Triangle area.</p>
+        <div class="cta-buttons">
+          <a href="/#contact" class="btn-primary">Request Free Quote</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+        <p class="satisfaction">100% Satisfaction Guarantee | Licensed & Insured</p>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .service-page {
+    min-height: 100vh;
+  }
+
+  .service-hero {
+    position: relative;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 50%, #00a1f0 100%);
+    color: white;
+    padding: 140px 20px 80px;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: url('/images/Clean_Wooden_Sitting_Deck.png') center/cover no-repeat;
+    opacity: 0.15;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  .service-hero h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.05rem;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #092441;
+  }
+
+  .btn-primary:hover {
+    background: #00a1f0;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: #092441;
+    transform: translateY(-2px);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .service-overview {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .overview-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .overview-content h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .overview-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+  }
+
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .benefits-list li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.05rem;
+    color: #333;
+  }
+
+  .benefits-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00a1f0;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .what-we-clean {
+    padding: 100px 20px;
+    background: #f8f9fa;
+  }
+
+  .what-we-clean h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .section-intro {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 50px;
+  }
+
+  .clean-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .clean-item {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .clean-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .clean-item h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .clean-item p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .process-section {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .process-section h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #0862b7, #00a1f0);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+  }
+
+  .step h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .step p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .benefits-section {
+    padding: 100px 20px;
+    background: #f8f9fa;
+  }
+
+  .benefits-section h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .benefit-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .benefit-card h3 {
+    font-size: 1.5rem;
+    color: #003366;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .benefit-card p {
+    color: #666;
+    line-height: 1.7;
+  }
+
+  .service-areas {
+    padding: 80px 20px;
+    background: white;
+    text-align: center;
+  }
+
+  .service-areas h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .service-areas p {
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  .areas-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .areas-list li {
+    background: #f8f9fa;
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: #003366;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .service-cta {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .service-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .service-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .satisfaction {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    font-weight: 600;
+  }
+
+  @media (max-width: 1024px) {
+    .overview-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .clean-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .service-hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .clean-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .service-cta h2 {
+      font-size: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+</style>

@@ -1,0 +1,630 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Services', url: '/services' },
+  { name: 'Pool Deck & Patio Cleaning', url: '/services/pool-deck-patio' }
+];
+
+const faqs = [
+  {
+    question: "Is pool deck cleaning safe for my pool water and equipment?",
+    answer: "Absolutely! We use pool-safe cleaning solutions and carefully manage runoff to protect your pool water, equipment, and landscaping. Our experienced team takes precautions to prevent any contamination while delivering exceptional cleaning results for your pool deck area."
+  },
+  {
+    question: "How often should I have my pool deck cleaned?",
+    answer: "We recommend cleaning pool decks at least once per year, ideally before pool season begins. High-traffic pool areas or those with heavy tree coverage may benefit from cleaning twice yearly to maintain safety, appearance, and prevent buildup of sunscreen, oils, and organic growth."
+  },
+  {
+    question: "Can you remove those black spots and green algae from my pool deck?",
+    answer: "Yes! Those black spots are often algae or mildew, and the green growth is algae feeding on moisture and organic matter. Our cleaning process eliminates both at the root, restoring your pool deck's appearance and preventing slippery, dangerous surfaces."
+  },
+  {
+    question: "Will cleaning make my pool deck less slippery?",
+    answer: "Definitely! Removing algae, mold, sunscreen residue, and organic buildup significantly improves traction on pool decks. A clean surface is a safer surface, reducing slip-and-fall risks for your family and guests around the pool area."
+  },
+  {
+    question: "Do you clean pool deck pavers and stone surfaces?",
+    answer: "Yes! We clean all pool deck materials including concrete, pavers, brick, travertine, flagstone, and stamped concrete. Each material requires specific pressure and technique, and our team is trained to safely clean them all without causing damage or displacement."
+  }
+];
+---
+
+<Layout
+  title="Pool Deck & Patio Cleaning in Knightdale, NC | Reimagine Pro Wash"
+  description="Professional pool deck and patio cleaning in Knightdale, NC. Remove dirt, mold, sunscreen, and algae. Safe, slip-free surfaces. Free estimates in Knightdale, Raleigh, Cary, Wake Forest.">
+
+  <ServiceSchema
+    serviceName="Pool Deck & Patio Cleaning"
+    description="Professional pool deck and patio cleaning services in Knightdale, NC. Safe removal of dirt, mold, sunscreen residue, and algae from concrete, pavers, and stone pool areas."
+    serviceType="Pool Deck Cleaning"
+    image="/images/UnderGround_Pool_Deck_Cleaning.png"
+  />
+
+  <FAQSchema faqs={faqs} />
+
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <main class="service-page">
+    <!-- Hero Section -->
+    <section class="service-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <Breadcrumb items={breadcrumbItems} />
+        <h1>Pool Deck & Patio Cleaning & Restoration</h1>
+        <p class="hero-subtitle">Keep your pool area clean, safe, and ready for summer</p>
+        <div class="hero-cta">
+          <a href="/#contact" class="btn-primary">Schedule Cleaning</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="service-overview">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-image">
+            <img src="/images/UnderGround_Pool_Deck_Cleaning.png" alt="Professional pool deck cleaning service in Knightdale NC" loading="lazy" />
+          </div>
+          <div class="overview-content">
+            <h2">Transform Your Pool Area into a Safe, Beautiful Oasis</h2>
+            <p>Pool decks and patios face unique challenges—constant exposure to pool chemicals, sunscreen, body oils, splashing water, and foot traffic. Add North Carolina's humidity, and you have the perfect environment for mold, mildew, and slippery algae growth that makes your pool area look dull and creates dangerous slip hazards.</p>
+            <p>Reimagine Pro Wash & More specializes in pool deck and patio cleaning throughout Knightdale, Raleigh, Cary, Wake Forest, and Clayton. Our low-pressure cleaning process removes dirt, mold, sunscreen residue, and mildew buildup, reviving concrete, pavers, and stone pool decks to like-new condition.</p>
+            <ul class="benefits-list">
+              <li><strong>Restores Traction:</strong> Eliminates slippery algae and organic buildup</li>
+              <li><strong>Pool-Safe Methods:</strong> Protects pool water and equipment</li>
+              <li><strong>Removes Stains:</strong> Sunscreen, oil, rust, and organic staining eliminated</li>
+              <li><strong>Prevents Regrowth:</strong> Kills mold and mildew at the root</li>
+              <li><strong>All Materials:</strong> Concrete, pavers, brick, travertine, stone</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Clean -->
+    <section class="what-we-clean">
+      <div class="container">
+        <h2>Pool Deck & Patio Surfaces We Clean</h2>
+        <p class="section-intro">Professional cleaning for all pool and patio materials:</p>
+        <div class="clean-grid">
+          <div class="clean-item">
+            <h3>Concrete Pool Decks</h3>
+            <p>Smooth and broom-finish concrete surfaces around pools</p>
+          </div>
+          <div class="clean-item">
+            <h3>Paver Pool Decks</h3>
+            <p>Brick pavers, concrete pavers, and interlocking systems</p>
+          </div>
+          <div class="clean-item">
+            <h3>Stone Surfaces</h3>
+            <p>Travertine, flagstone, bluestone, and natural stone</p>
+          </div>
+          <div class="clean-item">
+            <h3>Stamped Concrete</h3>
+            <p>Decorative stamped and colored concrete pool decks</p>
+          </div>
+          <div class="clean-item">
+            <h3>Patio Areas</h3>
+            <p>Connected patios, seating areas, and entertaining spaces</p>
+          </div>
+          <div class="clean-item">
+            <h3>Pool Coping</h3>
+            <p>Pool edge coping in all materials and finishes</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <h2>Our Pool Deck Cleaning Process</h2>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Pre-Treatment</h3>
+            <p>Apply pool-safe cleaning solutions to break down sunscreen, oils, and organic growth.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Low-Pressure Wash</h3>
+            <p>Gentle cleaning removes buildup without displacing pavers or damaging surfaces.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Rinse & Protect</h3>
+            <p>Thorough rinse ensures all cleaning agents are removed and pool water stays clean.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Final Inspection</h3>
+            <p>Walk-through to ensure spotless, slip-free results you'll love.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section class="safety-section">
+      <div class="container">
+        <h2>Pool Deck Safety & Appearance</h2>
+        <div class="safety-grid">
+          <div class="safety-card">
+            <h3>Slip Prevention</h3>
+            <p>Clean pool decks provide better traction, dramatically reducing slip-and-fall accidents around your pool. Algae and mold create dangerously slippery surfaces when wet—professional cleaning eliminates these hazards.</p>
+          </div>
+          <div class="safety-card">
+            <h3>Health Protection</h3>
+            <p>Mold, mildew, and bacteria thrive in pool environments. Regular cleaning removes these organisms, creating a healthier environment for your family and guests to enjoy your outdoor space.</p>
+          </div>
+          <div class="safety-card">
+            <h3>Property Value</h3>
+            <p>A clean, well-maintained pool area is a major selling point. Professional pool deck cleaning enhances curb appeal and demonstrates proper property maintenance to potential buyers.</p>
+          </div>
+          <div class="safety-card">
+            <h3>Extended Lifespan</h3>
+            <p>Regular cleaning prevents organic growth from breaking down sealants and surfaces. This maintenance approach extends the life of your pool deck, saving thousands in premature replacement costs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="service-areas">
+      <div class="container">
+        <h2>Serving Knightdale & the Greater Triangle Area</h2>
+        <p>Professional pool deck and patio cleaning throughout the Triangle, including:</p>
+        <ul class="areas-list">
+          <li>Knightdale, NC</li>
+          <li>Raleigh, NC</li>
+          <li>Cary, NC</li>
+          <li>Wake Forest, NC</li>
+          <li>Clayton, NC</li>
+          <li>And surrounding areas within 50+ miles</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <FAQ faqs={faqs} title="Pool Deck Cleaning FAQs" />
+
+    <!-- CTA Section -->
+    <section class="service-cta">
+      <div class="container">
+        <h2>Ready for a Spotless, Slip-Free Pool Deck?</h2>
+        <p>Get a free, no-obligation estimate for professional pool deck cleaning in Knightdale and the Triangle area.</p>
+        <div class="cta-buttons">
+          <a href="/#contact" class="btn-primary">Request Free Quote</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+        <p class="satisfaction">100% Satisfaction Guarantee | Licensed & Insured</p>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .service-page {
+    min-height: 100vh;
+  }
+
+  .service-hero {
+    position: relative;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 50%, #00a1f0 100%);
+    color: white;
+    padding: 140px 20px 80px;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: url('/images/UnderGround_Pool_Deck_Cleaning.png') center/cover no-repeat;
+    opacity: 0.15;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  .service-hero h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.05rem;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #092441;
+  }
+
+  .btn-primary:hover {
+    background: #00a1f0;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: #092441;
+    transform: translateY(-2px);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .service-overview {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .overview-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .overview-content h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .overview-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+  }
+
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .benefits-list li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.05rem;
+    color: #333;
+  }
+
+  .benefits-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00a1f0;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .what-we-clean {
+    padding: 100px 20px;
+    background: #f8f9fa;
+  }
+
+  .what-we-clean h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .section-intro {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 50px;
+  }
+
+  .clean-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .clean-item {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .clean-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .clean-item h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .clean-item p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .process-section {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .process-section h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #0862b7, #00a1f0);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+  }
+
+  .step h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .step p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .safety-section {
+    padding: 100px 20px;
+    background: #f8f9fa;
+  }
+
+  .safety-section h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .safety-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .safety-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .safety-card h3 {
+    font-size: 1.5rem;
+    color: #003366;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .safety-card p {
+    color: #666;
+    line-height: 1.7;
+  }
+
+  .service-areas {
+    padding: 80px 20px;
+    background: white;
+    text-align: center;
+  }
+
+  .service-areas h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .service-areas p {
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  .areas-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .areas-list li {
+    background: #f8f9fa;
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: #003366;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .service-cta {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .service-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .service-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .satisfaction {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    font-weight: 600;
+  }
+
+  @media (max-width: 1024px) {
+    .overview-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .clean-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .safety-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .service-hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .clean-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .service-cta h2 {
+      font-size: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+</style>
