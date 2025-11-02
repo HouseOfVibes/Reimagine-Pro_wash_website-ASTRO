@@ -1,6 +1,5 @@
 ---
 title: "Fall Cleaning Made Easy: Why November Is the Perfect Month for Pressure Washing Near Knightdale"
-slug: "fall-pressure-washing-knightdale-november"
 author: "Reimagine Pro Wash Team"
 date: "2025-11-01"
 category: "Seasonal"

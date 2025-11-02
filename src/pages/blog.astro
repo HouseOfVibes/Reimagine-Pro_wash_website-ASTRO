@@ -26,7 +26,7 @@ const sortedPosts = blogPosts.sort((a, b) => new Date(b.data.date).getTime() - n
           <div class="blog-grid">
             {sortedPosts.map((post) => (
               <article class="blog-card">
-                <a href={`/blog/${post.data.slug}`} class="blog-card-link">
+                <a href={`/blog/${post.slug}`} class="blog-card-link">
                   <div class="blog-card-image">
                     <img src={post.data.image} alt={post.data.title} loading="lazy" />
                     <span class="blog-category">{post.data.category}</span>
