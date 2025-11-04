@@ -2,220 +2,696 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Contact Us | Free Estimates | Reimagine Pro Wash & More | Knightdale, NC"
-        description="Get a free pressure washing estimate in Knightdale, NC and Triangle area. Call 984-202-4980 or email info@rprowashnc.com. Licensed, insured, eco-friendly. 50+ mile service area.">
-  <main class="coming-soon-container">
-    <section class="coming-soon">
-      <div class="content">
-        <div class="icon-wrapper">
-          <i class="fas fa-envelope"></i>
-        </div>
-        <h1>Contact Page Coming Soon</h1>
-        <p class="subtitle">We're working on creating a better experience for you!</p>
-        
-        <div class="temp-contact">
-          <h2>Get in Touch Now</h2>
-          <div class="contact-methods">
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <div>
-                <h3>Call Us</h3>
-                <a href="tel:9842024980">(984) 202-4980</a>
+<Layout
+  title="Contact Us | Free Estimates | Reimagine Pro Wash & More | Knightdale, NC"
+  description="Get a free pressure washing estimate in Knightdale, NC and Triangle area. Call 984-202-4980 or email info@rprowashnc.com. Licensed, insured, eco-friendly. 50+ mile service area.">
+
+  <main class="contact-page">
+    <!-- Page Hero -->
+    <section class="contact-hero">
+      <div class="hero-content">
+        <h1>Contact Us</h1>
+        <p class="hero-subtitle">Ready to transform your property? Get a free, no-obligation estimate today.</p>
+      </div>
+    </section>
+
+    <!-- Contact Information & Form -->
+    <section class="contact-main">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Contact Info Card -->
+          <div class="contact-info-section">
+            <h2>Get In Touch</h2>
+            <p class="section-intro">We're here to answer your questions and provide expert pressure washing solutions.</p>
+
+            <div class="info-cards">
+              <div class="info-card">
+                <div class="info-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="info-content">
+                  <h3>Phone</h3>
+                  <a href="tel:9842024980">(984) 202-4980</a>
+                  <p>Call for immediate assistance</p>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info-content">
+                  <h3>Email</h3>
+                  <a href="mailto:info@rprowashnc.com">info@rprowashnc.com</a>
+                  <p>We respond within 24 hours</p>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="info-content">
+                  <h3>Business Hours</h3>
+                  <p><strong>Monday - Saturday:</strong> 7:00 AM - 7:00 PM</p>
+                  <p><strong>Sunday:</strong> By Appointment</p>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h3>Service Area</h3>
+                  <p>Knightdale, NC and surrounding areas within 50+ mile radius</p>
+                  <a href="/service-areas" class="service-areas-link">View All Service Areas →</a>
+                </div>
               </div>
             </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <h3>Email Us</h3>
-                <a href="mailto:info@rprowashnc.com">info@rprowashnc.com</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>
-                <h3>Service Area</h3>
-                <p>Knightdale, NC + 50 mile radius</p>
+
+            <!-- Social Links -->
+            <div class="social-section">
+              <h3>Follow Us</h3>
+              <div class="social-links">
+                <a href="https://www.instagram.com/reimagine_prowash/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/people/Reimagine-Pro-Wash-More/61575086936289/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+                  <i class="fab fa-facebook"></i>
+                </a>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="social-section">
-          <h3>Follow Us</h3>
-          <div class="social-links">
-            <a href="https://www.instagram.com/reimagine_prowash/" target="_blank" rel="noopener">
-              <i class="fab fa-instagram"></i> Instagram
-            </a>
-            <a href="https://www.facebook.com/people/Reimagine-Pro-Wash-More/61575086936289/" target="_blank" rel="noopener">
-              <i class="fab fa-facebook"></i> Facebook
-            </a>
+          <!-- Contact Form -->
+          <div class="contact-form-section">
+            <div class="form-card">
+              <h2>Request a Free Quote</h2>
+              <form id="contact-form" class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="(984) 202-4980">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="service">Service Needed *</label>
+                    <select id="service" name="service" required>
+                      <option value="">Select a service...</option>
+                      <option value="house-washing">House Washing</option>
+                      <option value="roof-cleaning">Roof Cleaning</option>
+                      <option value="driveway-hardscapes">Driveway & Hardscapes</option>
+                      <option value="gutter-cleaning">Gutter Cleaning</option>
+                      <option value="deck-fence">Deck & Fence Restoration</option>
+                      <option value="pool-deck">Pool Deck & Patio</option>
+                      <option value="brick-restoration">Brick Restoration</option>
+                      <option value="commercial">Commercial Services</option>
+                      <option value="other">Other / Multiple Services</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="location">Property Location</label>
+                    <input type="text" id="location" name="location" placeholder="Knightdale, Raleigh, Cary, etc.">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="message">Project Details</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your pressure washing needs..."></textarea>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Send Quote Request</button>
+              </form>
+
+              <p class="privacy-note">
+                <i class="fas fa-lock"></i> Your information is secure and will never be shared. We respect your privacy and will only use your contact information to provide you with a quote and schedule services.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section class="service-area-section">
+      <div class="container">
+        <h2>Our Service Area</h2>
+        <p class="section-subtitle">Proudly serving Knightdale, NC and surrounding communities within 50+ mile radius</p>
+
+        <div class="cities-grid">
+          <div class="city-card">
+            <h3>Primary Cities</h3>
+            <ul>
+              <li><a href="/service-areas/knightdale">Knightdale</a></li>
+              <li><a href="/service-areas/raleigh">Raleigh</a></li>
+              <li><a href="/service-areas/cary">Cary</a></li>
+              <li><a href="/service-areas/wake-forest">Wake Forest</a></li>
+              <li><a href="/service-areas/clayton">Clayton</a></li>
+            </ul>
+          </div>
+
+          <div class="city-card">
+            <h3>Extended Coverage</h3>
+            <ul>
+              <li>Durham</li>
+              <li>Garner</li>
+              <li>Apex</li>
+              <li>Holly Springs</li>
+              <li>Fuquay-Varina</li>
+              <li>Morrisville</li>
+            </ul>
+          </div>
+
+          <div class="city-card">
+            <h3>Additional Areas</h3>
+            <ul>
+              <li>Chapel Hill</li>
+              <li>Wendell</li>
+              <li>Rolesville</li>
+              <li>Youngsville</li>
+              <li>Zebulon</li>
+              <li>And more!</li>
+            </ul>
           </div>
         </div>
 
-        <a href="/" class="btn-home">Return to Homepage</a>
+        <p class="service-note">Don't see your city listed? <a href="tel:9842024980">Call us at (984) 202-4980</a> - we may still be able to serve your area!</p>
+      </div>
+    </section>
+
+    <!-- Quick CTA -->
+    <section class="quick-cta">
+      <div class="container">
+        <h2>Need Help Right Away?</h2>
+        <p>Our team is ready to assist you with all your pressure washing needs</p>
+        <div class="cta-buttons">
+          <a href="tel:9842024980" class="btn-cta phone">
+            <i class="fas fa-phone"></i>
+            Call (984) 202-4980
+          </a>
+          <a href="mailto:info@rprowashnc.com" class="btn-cta email">
+            <i class="fas fa-envelope"></i>
+            Email Us
+          </a>
+        </div>
       </div>
     </section>
   </main>
 </Layout>
 
 <style>
-  .coming-soon-container {
-    min-height: calc(100vh - 200px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
+  :root {
+    --primary-blue: #00a1f0;
+    --navy-blue: #092441;
+    --deep-blue: #003463;
+    --medium-blue: #0862b7;
+    --light-blue: #6ccdf7;
+    --mid-gray: #737a7e;
+    --off-white: #fefefb;
+    --pure-white: #ffffff;
+    --gradient-primary: linear-gradient(135deg, #092441 0%, #003463 50%, #00a1f0 100%);
   }
 
-  .coming-soon {
+  .contact-page {
+    min-height: 100vh;
+  }
+
+  .contact-hero {
+    background: var(--gradient-primary);
+    padding: 100px 20px 80px;
     text-align: center;
+    color: var(--pure-white);
+  }
+
+  .hero-content {
     max-width: 800px;
     margin: 0 auto;
   }
 
-  .icon-wrapper {
-    margin-bottom: 30px;
-  }
-
-  .icon-wrapper i {
-    font-size: 5rem;
-    color: #1E90FF;
-    opacity: 0.8;
-  }
-
-  h1 {
+  .contact-hero h1 {
+    font-family: 'Poppins', sans-serif;
     font-size: 3rem;
-    color: #003366;
-    margin-bottom: 20px;
     font-weight: bold;
+    margin-bottom: 20px;
   }
 
-  .subtitle {
+  .hero-subtitle {
     font-size: 1.3rem;
-    color: #4A4A4A;
-    margin-bottom: 50px;
+    color: var(--light-blue);
   }
 
-  .temp-contact {
+  .contact-main {
+    padding: 100px 20px;
     background: #f8f9fa;
-    padding: 40px;
-    border-radius: 15px;
-    margin-bottom: 40px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
   }
 
-  .temp-contact h2 {
-    color: #003366;
-    margin-bottom: 30px;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .contact-methods {
+  .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-bottom: 30px;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
   }
 
-  .contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    text-align: left;
-  }
-
-  .contact-item i {
+  .contact-info-section h2,
+  .contact-form-section h2 {
+    font-family: 'Poppins', sans-serif;
     font-size: 2rem;
-    color: #1E90FF;
-    margin-top: 5px;
+    font-weight: bold;
+    color: var(--navy-blue);
+    margin-bottom: 15px;
   }
 
-  .contact-item h3 {
-    margin: 0 0 5px 0;
-    color: #003366;
-    font-size: 1.2rem;
-  }
-
-  .contact-item a {
-    color: #1E90FF;
-    text-decoration: none;
+  .section-intro {
     font-size: 1.1rem;
+    color: var(--mid-gray);
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+
+  .info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+
+  .info-card {
+    display: flex;
+    gap: 20px;
+    padding: 25px;
+    background: var(--pure-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .info-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--medium-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pure-white);
+    font-size: 1.5rem;
+  }
+
+  .info-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: var(--navy-blue);
+    margin-bottom: 8px;
     font-weight: 600;
   }
 
-  .contact-item a:hover {
-    color: #003366;
-    text-decoration: underline;
+  .info-content p {
+    color: var(--mid-gray);
+    margin-bottom: 5px;
+    line-height: 1.6;
+  }
+
+  .info-content a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .info-content a:hover {
+    color: var(--medium-blue);
+  }
+
+  .service-areas-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.95rem;
   }
 
   .social-section {
-    margin-bottom: 40px;
+    text-align: center;
+    padding: 30px;
+    background: var(--pure-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   }
 
   .social-section h3 {
-    color: #003366;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    color: var(--navy-blue);
     margin-bottom: 20px;
+    font-weight: 600;
   }
 
   .social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .social-links a {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--medium-blue));
+    color: var(--pure-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .social-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 161, 240, 0.3);
+  }
+
+  .form-card {
+    background: var(--pure-white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .contact-form {
+    margin-bottom: 25px;
+  }
+
+  .form-row {
+    margin-bottom: 25px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--navy-blue);
+    margin-bottom: 8px;
+    font-size: 1rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e1e4e8;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    transition: all 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 161, 240, 0.1);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--medium-blue), var(--primary-blue));
+    color: var(--pure-white);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 161, 240, 0.3);
+  }
+
+  .privacy-note {
+    font-size: 0.9rem;
+    color: var(--mid-gray);
+    line-height: 1.6;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-blue);
+  }
+
+  .privacy-note i {
+    color: var(--primary-blue);
+    margin-right: 8px;
+  }
+
+  .service-area-section {
+    padding: 80px 20px;
+    background: var(--pure-white);
+  }
+
+  .service-area-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--navy-blue);
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--mid-gray);
+    margin-bottom: 50px;
+  }
+
+  .cities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+  }
+
+  .city-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+  }
+
+  .city-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    color: var(--navy-blue);
+    margin-bottom: 20px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-blue);
+  }
+
+  .city-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .city-card li {
+    padding: 8px 0;
+    color: var(--mid-gray);
+  }
+
+  .city-card a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .city-card a:hover {
+    color: var(--medium-blue);
+    text-decoration: underline;
+  }
+
+  .service-note {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--mid-gray);
+  }
+
+  .service-note a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .service-note a:hover {
+    text-decoration: underline;
+  }
+
+  .quick-cta {
+    padding: 80px 20px;
+    background: var(--gradient-primary);
+    text-align: center;
+    color: var(--pure-white);
+  }
+
+  .quick-cta h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .quick-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: var(--light-blue);
+  }
+
+  .cta-buttons {
     display: flex;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
   }
 
-  .social-links a {
+  .btn-cta {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    background: #1E90FF;
-    color: white;
-    text-decoration: none;
+    gap: 10px;
+    padding: 15px 35px;
     border-radius: 50px;
-    transition: all 0.3s ease;
-  }
-
-  .social-links a:hover {
-    background: #003366;
-    transform: translateY(-2px);
-  }
-
-  .btn-home {
-    display: inline-block;
-    padding: 15px 40px;
-    background: linear-gradient(45deg, #003366, #1E90FF);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
 
-  .btn-home:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  .btn-cta.phone {
+    background: var(--pure-white);
+    color: var(--navy-blue);
+  }
+
+  .btn-cta.phone:hover {
+    background: var(--light-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-cta.email {
+    background: transparent;
+    color: var(--pure-white);
+    border: 2px solid var(--pure-white);
+  }
+
+  .btn-cta.email:hover {
+    background: var(--pure-white);
+    color: var(--navy-blue);
+    transform: translateY(-3px);
   }
 
   @media (max-width: 768px) {
-    h1 {
-      font-size: 2rem;
+    .contact-hero h1 {
+      font-size: 2.2rem;
     }
 
-    .subtitle {
+    .hero-subtitle {
       font-size: 1.1rem;
     }
 
-    .icon-wrapper i {
-      font-size: 4rem;
-    }
-
-    .contact-methods {
+    .contact-grid {
       grid-template-columns: 1fr;
+      gap: 40px;
     }
 
-    .temp-contact {
-      padding: 30px 20px;
+    .cities-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-cta {
+      width: 100%;
+      max-width: 300px;
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form') as HTMLFormElement | null;
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const phone = formData.get('phone');
+        const service = formData.get('service');
+        const location = formData.get('location');
+        const message = formData.get('message');
+
+        const subject = encodeURIComponent(`Quote Request from ${name}`);
+        const body = encodeURIComponent(
+          `Name: ${name}\n` +
+          `Email: ${email}\n` +
+          `Phone: ${phone}\n` +
+          `Service Needed: ${service}\n` +
+          `Property Location: ${location || 'Not specified'}\n` +
+          `Project Details:\n${message || 'N/A'}`
+        );
+
+        const mailtoLink = `mailto:info@rprowashnc.com?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
+
+        contactForm.reset();
+      });
+    }
+  });
+</script>
