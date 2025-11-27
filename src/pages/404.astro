@@ -1,0 +1,197 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Page Not Found | Reimagine Pro Wash & More"
+  description="The page you're looking for couldn't be found. Return to our homepage or contact us for professional pressure washing services in Knightdale, NC.">
+
+  <section class="error-page">
+    <div class="container">
+      <div class="error-content">
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>Sorry, the page you're looking for doesn't exist or has been moved.</p>
+
+        <div class="error-actions">
+          <a href="/" class="btn-primary">Return Home</a>
+          <a href="/contact" class="btn-secondary">Contact Us</a>
+        </div>
+
+        <div class="helpful-links">
+          <h3>You might be looking for:</h3>
+          <ul>
+            <li><a href="/services">Our Services</a></li>
+            <li><a href="/services/house-washing">House Washing</a></li>
+            <li><a href="/services/driveway-hardscapes">Driveway Cleaning</a></li>
+            <li><a href="/service-areas">Service Areas</a></li>
+            <li><a href="/blog">Blog & Tips</a></li>
+          </ul>
+        </div>
+
+        <p class="cta-text">Need pressure washing services in Knightdale, NC? <a href="tel:9842024980">Call (984) 202-4980</a></p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .error-page {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #092441 0%, #003463 50%, #00a1f0 100%);
+    color: #ffffff;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .error-content {
+    text-align: center;
+  }
+
+  .error-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 8rem;
+    font-weight: 800;
+    color: #6ccdf7;
+    margin: 0;
+    line-height: 1;
+    text-shadow: 0 4px 20px rgba(108, 221, 247, 0.3);
+  }
+
+  .error-content h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .error-content > p {
+    font-size: 1.1rem;
+    color: #fefefb;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .error-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #00a1f0 0%, #0862b7 100%);
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 161, 240, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 161, 240, 0.4);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 2px solid #6ccdf7;
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    background: #6ccdf7;
+    color: #092441;
+    transform: translateY(-3px);
+  }
+
+  .helpful-links {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .helpful-links h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #6ccdf7;
+  }
+
+  .helpful-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .helpful-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .helpful-links li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #6ccdf7;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+    color: #fefefb;
+  }
+
+  .cta-text a {
+    color: #6ccdf7;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .cta-text a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .error-content h1 {
+      font-size: 5rem;
+    }
+
+    .error-content h2 {
+      font-size: 1.5rem;
+    }
+
+    .error-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+</style>

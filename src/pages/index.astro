@@ -4,19 +4,19 @@ import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
 import FAQ from '../components/FAQ.astro';
 import FAQSchema from '../components/FAQSchema.astro';
 import logo from '../../public/images/logo.png';
-import heroBackground from '../../public/images/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png';
-import insuredBadge from '../../public/images/Insured_ Badge_Transparent.png';
-import ecoFriendlyBadge from '../../public/images/RPW-Eco-Friendy-Badge.png';
-import multiPanelCollage from '../../public/images/RPW-Dynamic_multi-panel_before-and-after_collage_five_0 copy.png';
-import poolDeck from '../../public/images/UnderGround_Pool_Deck_Cleaning.png';
-import houseWashing from '../../public/images/House Washing.png';
-import hardscapes from '../../public/images/Hardscapes Cleaning.png';
-import gutterCleaning from '../../public/images/gutter cleaning.png';
-import commercial from '../../public/images/Commercial Pressure Washing.png';
-import deckRestoration from '../../public/images/Clean_Wooden_Sitting_Deck.png';
-import fenceCleaning from '../../public/images/Clean Fense.png';
-import brickRestoration from '../../public/images/Brick Restoration.png';
-import graffitiRemoval from '../../public/images/Before and After- Graffiti Removal.png';
+import heroBackground from '../../public/images/hero-background.png';
+import insuredBadge from '../../public/images/insured-badge.png';
+import ecoFriendlyBadge from '../../public/images/eco-friendly-badge.png';
+import multiPanelCollage from '../../public/images/before-after-collage.png';
+import poolDeck from '../../public/images/pool-deck-cleaning.png';
+import houseWashing from '../../public/images/house-washing.png';
+import hardscapes from '../../public/images/hardscapes-cleaning.png';
+import gutterCleaning from '../../public/images/gutter-cleaning.png';
+import commercial from '../../public/images/commercial-pressure-washing.png';
+import deckRestoration from '../../public/images/deck-restoration.png';
+import fenceCleaning from '../../public/images/clean-fence.png';
+import brickRestoration from '../../public/images/brick-restoration.png';
+import graffitiRemoval from '../../public/images/graffiti-removal-before-after.png';
 
 const heroBackgroundWebp = await getImage({
     src: heroBackground,
@@ -566,13 +566,13 @@ const faqs = [
             background-repeat: no-repeat;
             background-image: var(
                 --hero-background-fallback,
-                url('/images/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png')
+                url('/images/hero-background.png')
             );
             background-image: var(
                 --hero-background-image,
                 var(
                     --hero-background-fallback,
-                    url('/images/69E0CDE5-41D5-425B-A9ED-0A1634AD7D4B.png')
+                    url('/images/hero-background.png')
                 )
             );
             z-index: 0;
@@ -2045,9 +2045,9 @@ const faqs = [
                     <div class="comparison-slider">
                         <h4 class="slider-title">Sidewalk Cleaning</h4>
                         <div class="comparison-image-wrapper" data-slider="sidewalk">
-                            <img src="/images/RPW-After Sidewalk-10-7-25 copy.jpeg" alt="Professional sidewalk pressure washing results Knightdale NC - after cleaning" class="comparison-after" loading="lazy">
+                            <img src="/images/sidewalk-after.jpeg" alt="Professional sidewalk pressure washing results Knightdale NC - after cleaning" class="comparison-after" loading="lazy">
                             <div class="comparison-overlay">
-                                <img src="/images/RPW-Before Sidewalk 10-7-25 copy.jpeg" alt="Dirty sidewalk before professional pressure washing Knightdale NC" class="comparison-before" loading="lazy">
+                                <img src="/images/sidewalk-before.jpeg" alt="Dirty sidewalk before professional pressure washing Knightdale NC" class="comparison-before" loading="lazy">
                             </div>
                             <div class="comparison-slider-handle">
                                 <div class="slider-line"></div>
@@ -2067,9 +2067,9 @@ const faqs = [
                     <div class="comparison-slider">
                         <h4 class="slider-title">Driveway Restoration</h4>
                         <div class="comparison-image-wrapper" data-slider="driveway">
-                            <img src="/images/Driveway After.png" alt="Clean driveway after professional pressure washing Triangle area NC" class="comparison-after" loading="lazy">
+                            <img src="/images/driveway-after.png" alt="Clean driveway after professional pressure washing Triangle area NC" class="comparison-after" loading="lazy">
                             <div class="comparison-overlay">
-                                <img src="/images/Driveway Before.png" alt="Stained concrete driveway before pressure washing service" class="comparison-before" loading="lazy">
+                                <img src="/images/driveway-before.png" alt="Stained concrete driveway before pressure washing service" class="comparison-before" loading="lazy">
                             </div>
                             <div class="comparison-slider-handle">
                                 <div class="slider-line"></div>
@@ -2214,7 +2214,7 @@ const faqs = [
 
             <div style="text-align: center; margin-top: 40px;">
                 <p style="font-size: 1.1rem; color: var(--navy-blue); font-style: italic;">
-                    Don't see what you need? We offer many more specialized services! <a href="/contact" style="color: var(--primary-blue); text-decoration: underline;">Contact us</a> to discuss your specific project or <a href="/gallery" style="color: var(--primary-blue); text-decoration: underline;">view our gallery</a> to see our transformations.
+                    Don't see what you need? We offer many more specialized services! <a href="/contact" style="color: var(--primary-blue); text-decoration: underline;">Contact us</a> to discuss your specific project or <a href="#home" style="color: var(--primary-blue); text-decoration: underline;">see our work</a> above to view our transformations.
                 </p>
             </div>
         </div>
@@ -2304,7 +2304,7 @@ const faqs = [
     <section id="contact" class="contact-section">
         <div class="contact-container">
             <h2>Get Your Free Quote</h2>
-            <p class="contact-subtitle">Ready to transform your property? Contact us today for a free, no-obligation estimate. <a href="/gallery" style="color: var(--light-blue); text-decoration: underline;">See our work</a> in the gallery first!</p>
+            <p class="contact-subtitle">Ready to transform your property? Contact us today for a free, no-obligation estimate.</p>
 
             <div class="contact-content">
                 <div class="contact-info-card">
@@ -2426,9 +2426,9 @@ const faqs = [
                     <ul class="footer-links">
                         <li><a href="/">Home</a></li>
                         <li><a href="/#services">Our Services</a></li>
-                        <li><a href="/gallery">Before & After Gallery</a></li>
                         <li><a href="/about">About Us</a></li>
                         <li><a href="/blog">Blog & Tips</a></li>
+                        <li><a href="/service-areas">Service Areas</a></li>
                         <li><a href="/#contact">Get Free Quote</a></li>
                     </ul>
                 </div>

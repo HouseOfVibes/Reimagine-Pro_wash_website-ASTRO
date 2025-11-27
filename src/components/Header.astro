@@ -2,24 +2,31 @@
 
 ---
 
-<header class="main-header">
+<header class="main-header" role="banner">
   <div class="header-container">
     <div class="logo">
-      <a href="/">
+      <a href="/" aria-label="Reimagine Pro Wash & More - Home">
         <span class="logo-text">Reimagine Pro Wash & More</span>
       </a>
     </div>
-    
-    <nav class="main-nav">
+
+    <nav class="main-nav" aria-label="Main navigation">
       <a href="/" class="nav-link">Home</a>
       <a href="/services" class="nav-link">Services</a>
       <a href="/blog" class="nav-link">Blog</a>
       <a href="/contact" class="nav-link">Contact</a>
-      <a href="tel:9842024980" class="nav-phone">Call (984) 202-4980</a>
+      <a href="tel:9842024980" class="nav-phone" aria-label="Call us at (984) 202-4980">
+        <i class="fas fa-phone" aria-hidden="true"></i> (984) 202-4980
+      </a>
     </nav>
 
     <!-- Mobile menu button -->
-    <button class="mobile-menu-btn" id="mobile-menu-btn">
+    <button
+      class="mobile-menu-btn"
+      id="mobile-menu-btn"
+      aria-label="Toggle mobile menu"
+      aria-expanded="false"
+      aria-controls="mobile-nav">
       <span></span>
       <span></span>
       <span></span>
@@ -27,26 +34,19 @@
   </div>
 
   <!-- Mobile Navigation -->
-  <nav class="mobile-nav" id="mobile-nav">
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
     <a href="/" class="mobile-nav-link">Home</a>
     <a href="/services" class="mobile-nav-link">Services</a>
     <a href="/blog" class="mobile-nav-link">Blog</a>
     <a href="/contact" class="mobile-nav-link">Contact</a>
-    <a href="tel:9842024980" class="mobile-nav-phone">Call (984) 202-4980</a>
+    <a href="tel:9842024980" class="mobile-nav-phone" aria-label="Call us at (984) 202-4980">
+      <i class="fas fa-phone" aria-hidden="true"></i> Call (984) 202-4980
+    </a>
   </nav>
 </header>
 
 <style>
-  /* Brand Colors - Dark Theme */
-  :root {
-    --primary-blue: #1E90FF;
-    --dark-blue: #0066CC;
-    --gray: #B0B0B0;
-    --white: #FFFFFF;
-    --accent-blue: #4DA6FF;
-    --black: #000000;
-    --card-bg: #1C1C1C;
-  }
+  /* Uses CSS variables from variables.css */
 
   .main-header {
     background: var(--white);
@@ -186,15 +186,17 @@
 </style>
 
 <script>
-  // Mobile menu toggle
+  // Mobile menu toggle with accessibility
   document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileNav = document.getElementById('mobile-nav');
 
     if (mobileMenuBtn && mobileNav) {
       mobileMenuBtn.addEventListener('click', function() {
-        mobileMenuBtn.classList.toggle('active');
+        const isActive = mobileMenuBtn.classList.toggle('active');
         mobileNav.classList.toggle('active');
+        // Update aria-expanded for screen readers
+        mobileMenuBtn.setAttribute('aria-expanded', isActive.toString());
       });
     }
   });
