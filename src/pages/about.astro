@@ -1,625 +1,365 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Licensed & Insured | Reimagine Pro Wash | Knightdale, NC</title>
-    <meta name="description" content="Meet Reimagine Pro Wash & More - licensed, insured pressure washing professionals serving Knightdale and Triangle area NC. Eco-friendly solutions, expert service, and customer-focused results.">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            /* Primary Brand Colors */
-            --primary-blue: #00a1f0;
-            --navy-blue: #092441;
-            --deep-blue: #003463;
-            --medium-blue: #0862b7;
-            --light-blue: #6ccdf7;
+---
+import HomeLayout from '../layouts/HomeLayout.astro';
+---
 
-            /* Neutrals */
-            --silver: #95a3ae;
-            --charcoal: #04070c;
-            --mid-gray: #737a7e;
-            --teal-gray: #8b99a0;
-            --off-white: #fefefb;
-            --pure-white: #ffffff;
+<HomeLayout
+  title="About Us | Licensed & Insured | Reimagine Pro Wash | Knightdale, NC"
+  description="Meet Reimagine Pro Wash & More - licensed, insured pressure washing professionals serving Knightdale and Triangle area NC. Eco-friendly solutions, expert service, and customer-focused results."
+  isHomepage={false}
+>
+  <section class="page-header">
+    <h1>About Reimagine Pro Wash</h1>
+    <p>Professional pressure washing services you can trust. Insured and dedicated to excellence.</p>
+  </section>
 
-            /* Brand Gradients */
-            --gradient-primary: linear-gradient(135deg, #092441 0%, #003463 50%, #00a1f0 100%);
-            --gradient-cta: linear-gradient(135deg, #00a1f0 0%, #0862b7 100%);
-            --gradient-cta-hover: linear-gradient(135deg, #6ccdf7 0%, #00a1f0 100%);
-            --gradient-overlay-dark: linear-gradient(135deg, rgba(4,7,12,0.8) 0%, rgba(9,36,65,0.6) 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            color: var(--charcoal);
-            padding-top: 75px;
-        }
-
-        /* Header Styles - Copied from index */
-        .rpw-main-header {
-            background: var(--pure-white);
-            box-shadow: 0 2px 20px rgba(9, 36, 65, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .rpw-top-bar {
-            background: var(--gradient-primary);
-            color: var(--off-white);
-            padding: 8px 0;
-            font-size: 0.85rem;
-        }
-
-        .rpw-top-bar-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .rpw-top-bar-left {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .rpw-top-bar-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-        }
-
-        .rpw-top-bar-item i {
-            color: var(--light-blue);
-        }
-
-        .rpw-top-bar-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .rpw-social-link-top {
-            color: var(--off-white);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .rpw-social-link-top:hover {
-            color: var(--light-blue);
-            transform: translateY(-1px);
-        }
-
-        .rpw-main-nav {
-            padding: 10px 0;
-        }
-
-        .rpw-nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .rpw-logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .rpw-brand-text {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--navy-blue);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-            transition: color 0.3s ease;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .rpw-brand-tagline {
-            font-size: 0.65rem;
-            font-weight: 400;
-            color: var(--primary-blue);
-            margin-top: -5px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        .rpw-nav-menu {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            align-items: center;
-            gap: 35px;
-        }
-
-        .rpw-nav-link {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-            font-size: 1rem;
-            color: var(--navy-blue);
-            text-decoration: none;
-            padding: 10px 0;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .rpw-nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(135deg, #0862b7 0%, #00a1f0 50%, #6ccdf7 100%);
-            transition: width 0.3s ease;
-        }
-
-        .rpw-nav-link:hover::after,
-        .rpw-nav-link.active::after {
-            width: 100%;
-        }
-
-        .rpw-header-cta {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .rpw-phone-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--navy-blue);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .rpw-phone-header:hover {
-            color: var(--primary-blue);
-        }
-
-        .rpw-phone-header i {
-            color: var(--primary-blue);
-            font-size: 1.1rem;
-        }
-
-        .rpw-cta-button {
-            background: linear-gradient(135deg, #0862b7 0%, #00a1f0 50%, #6ccdf7 100%);
-            color: var(--pure-white);
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 161, 240, 0.3);
-        }
-
-        .rpw-cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 161, 240, 0.4);
-        }
-
-        /* Page Header */
-        .page-header {
-            background: var(--gradient-primary);
-            padding: 80px 20px 60px;
-            text-align: center;
-            color: var(--pure-white);
-        }
-
-        .page-header h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .page-header p {
-            font-size: 1.2rem;
-            color: var(--light-blue);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* About Content */
-        .about-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        .about-section {
-            margin-bottom: 80px;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-
-        .about-text h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--navy-blue);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--navy-blue);
-            margin-bottom: 1rem;
-            margin-top: 2rem;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--mid-gray);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-image {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(9, 36, 65, 0.2);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Values Section */
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .value-card {
-            background: var(--pure-white);
-            border-radius: 15px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(9, 36, 65, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .value-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 161, 240, 0.2);
-        }
-
-        .value-icon {
-            font-size: 3rem;
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-        }
-
-        .value-card h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--navy-blue);
-            margin-bottom: 15px;
-        }
-
-        .value-card p {
-            color: var(--mid-gray);
-            line-height: 1.6;
-        }
-
-        /* CTA Section */
-        .about-cta {
-            background: var(--gradient-primary);
-            padding: 80px 20px;
-            text-align: center;
-            border-radius: 15px;
-            margin-top: 60px;
-        }
-
-        .about-cta h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--pure-white);
-            margin-bottom: 1rem;
-        }
-
-        .about-cta p {
-            font-size: 1.2rem;
-            color: var(--light-blue);
-            margin-bottom: 2rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: var(--pure-white);
-            color: var(--navy-blue);
-            padding: 15px 40px;
-            border-radius: 25px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            background: var(--light-blue);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--pure-white);
-            padding: 15px 40px;
-            border-radius: 25px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            border: 2px solid var(--pure-white);
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-secondary:hover {
-            background: var(--pure-white);
-            color: var(--navy-blue);
-            transform: translateY(-3px);
-        }
-
-        @media (max-width: 768px) {
-            .rpw-top-bar {
-                display: none;
-            }
-
-            body {
-                padding-top: 60px;
-            }
-
-            .page-header h1 {
-                font-size: 2rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .about-text h2 {
-                font-size: 2rem;
-            }
-
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-cta h2 {
-                font-size: 2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn-primary,
-            .btn-secondary {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header class="rpw-main-header">
-        <!-- Top Bar -->
-        <div class="rpw-top-bar">
-            <div class="rpw-top-bar-content">
-                <div class="rpw-top-bar-left">
-                    <div class="rpw-top-bar-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Serving 50+ miles from Knightdale, NC</span>
-                    </div>
-                </div>
-                <div class="rpw-top-bar-right">
-                    <a href="https://www.instagram.com/reimagine_prowash/" target="_blank" class="rpw-social-link-top">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/people/Reimagine-Pro-Wash-More/61575086936289/" target="_blank" class="rpw-social-link-top">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                </div>
-            </div>
+  <div class="about-content">
+    <section class="about-section">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>Our Story</h2>
+          <p>Welcome to Reimagine Pro Wash & More, your trusted partner for professional pressure washing services in Knightdale, NC and surrounding areas. We are a locally owned and operated business dedicated to transforming properties through expert cleaning solutions.</p>
+          <p>Founded on the principles of quality, reliability, and customer satisfaction, we've built our reputation by delivering exceptional results on every project. Whether it's a residential driveway or a commercial building, we approach each job with the same level of care and attention to detail. <a href="/services" class="text-link">Explore our full range of services</a> to see how we can help your property.</p>
         </div>
-
-        <!-- Main Navigation -->
-        <nav class="rpw-main-nav">
-            <div class="rpw-nav-content">
-                <div class="rpw-logo-container">
-                    <a href="/" style="text-decoration: none;">
-                        <div class="rpw-brand-text">REIMAGINE PRO WASH</div>
-                        <div class="rpw-brand-tagline">Refresh. Renew. Reimagine.</div>
-                    </a>
-                </div>
-
-                <ul class="rpw-nav-menu">
-                    <li class="rpw-nav-item">
-                        <a href="/" class="rpw-nav-link">Home</a>
-                    </li>
-                    <li class="rpw-nav-item">
-                        <a href="/#services" class="rpw-nav-link">Services</a>
-                    </li>
-                    <li class="rpw-nav-item">
-                        <a href="/about" class="rpw-nav-link active">About</a>
-                    </li>
-                    <li class="rpw-nav-item">
-                        <a href="/blog" class="rpw-nav-link">Blog</a>
-                    </li>
-                    <li class="rpw-nav-item">
-                        <a href="/gallery" class="rpw-nav-link">Gallery</a>
-                    </li>
-                    <li class="rpw-nav-item">
-                        <a href="/#contact" class="rpw-nav-link">Contact</a>
-                    </li>
-                </ul>
-
-                <div class="rpw-header-cta">
-                    <a href="tel:+19842024980" class="rpw-phone-header">
-                        <i class="fas fa-phone"></i>
-                        <span>(984) 202-4980</span>
-                    </a>
-                    <a href="/#contact" class="rpw-cta-button">Get Free Quote</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <section class="page-header">
-        <h1>About Reimagine Pro Wash</h1>
-        <p>Professional pressure washing services you can trust. Insured and dedicated to excellence.</p>
+        <div class="about-image">
+          <img src="/images/hero-background.png" alt="Professional pressure washing team at work in Knightdale Triangle area NC" loading="lazy">
+        </div>
+      </div>
     </section>
 
-    <div class="about-content">
-        <section class="about-section">
-            <div class="about-grid">
-                <div class="about-text">
-                    <h2>Our Story</h2>
-                    <p>Welcome to Reimagine Pro Wash & More, your trusted partner for professional pressure washing services in Knightdale, NC and surrounding areas. We are a locally owned and operated business dedicated to transforming properties through expert cleaning solutions.</p>
-                    <p>Founded on the principles of quality, reliability, and customer satisfaction, we've built our reputation by delivering exceptional results on every project. Whether it's a residential driveway or a commercial building, we approach each job with the same level of care and attention to detail. <a href="/#services" style="color: var(--primary-blue); text-decoration: underline;">Explore our full range of services</a> to see how we can help your property.</p>
-                </div>
-                <div class="about-image">
-                    <img src="/images/hero-background.png" alt="Professional pressure washing team at work in Knightdale Triangle area NC">
-                </div>
-            </div>
-        </section>
+    <section class="about-section">
+      <div class="about-text centered">
+        <h2>Why Choose Us?</h2>
+        <p>At Reimagine Pro Wash, we don't just clean surfaces—we restore them. Our team combines industry expertise with eco-friendly cleaning solutions to deliver results that exceed expectations. We're fully insured, giving you peace of mind with every service.</p>
+      </div>
 
-        <section class="about-section">
-            <div class="about-text" style="text-align: center; max-width: 900px; margin: 0 auto;">
-                <h2>Why Choose Us?</h2>
-                <p>At Reimagine Pro Wash, we don't just clean surfaces—we restore them. Our team combines industry expertise with eco-friendly cleaning solutions to deliver results that exceed expectations. We're fully insured, giving you peace of mind with every service. <a href="/gallery" style="color: var(--primary-blue); text-decoration: underline;">View our before and after gallery</a> to see the transformations we create.</p>
-            </div>
-
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Fully Insured</h3>
-                    <p>Fully insured for your protection. We carry comprehensive liability coverage on every job.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Eco-Friendly</h3>
-                    <p>We use environmentally safe cleaning solutions that are tough on dirt but gentle on the planet.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>Quality Guaranteed</h3>
-                    <p>We stand behind our work with a satisfaction guarantee. Your happiness is our priority.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Professional Team</h3>
-                    <p>Our experienced technicians are trained in the latest pressure washing techniques and safety protocols.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Reliable Service</h3>
-                    <p>We show up on time, complete work efficiently, and communicate clearly throughout the process.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3>Fair Pricing</h3>
-                    <p>Transparent, competitive pricing with no hidden fees. We provide detailed quotes before starting any work.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="about-section">
-            <div class="about-grid" style="grid-template-columns: 1fr 1fr;">
-                <div class="about-image">
-                    <img src="/images/before-after-collage.png" alt="Before and after pressure washing results portfolio Reimagine Pro Wash Knightdale NC">
-                </div>
-                <div class="about-text">
-                    <h2>Our Commitment</h2>
-                    <p>We're committed to providing the highest quality pressure washing services while maintaining the utmost respect for your property and the environment. Every project is an opportunity to demonstrate our dedication to excellence.</p>
-
-                    <h3>What Sets Us Apart</h3>
-                    <p>Our attention to detail, use of professional-grade equipment, and commitment to eco-friendly practices make us the preferred choice for property owners throughout the region. We don't just meet expectations—we exceed them.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="about-cta">
-            <h2>Ready to Transform Your Property?</h2>
-            <p>Let us show you the Reimagine Pro Wash difference</p>
-            <div class="cta-buttons">
-                <a href="/#contact" class="btn-primary">Get Free Quote</a>
-                <a href="tel:+19842024980" class="btn-secondary">Call (984) 202-4980</a>
-            </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          </div>
+          <h3>Fully Insured</h3>
+          <p>Fully insured for your protection. We carry comprehensive liability coverage on every job.</p>
         </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-leaf" aria-hidden="true"></i>
+          </div>
+          <h3>Eco-Friendly</h3>
+          <p>We use environmentally safe cleaning solutions that are tough on dirt but gentle on the planet.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-award" aria-hidden="true"></i>
+          </div>
+          <h3>Quality Guaranteed</h3>
+          <p>We stand behind our work with a satisfaction guarantee. Your happiness is our priority.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-users" aria-hidden="true"></i>
+          </div>
+          <h3>Professional Team</h3>
+          <p>Our experienced technicians are trained in the latest pressure washing techniques and safety protocols.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+          </div>
+          <h3>Reliable Service</h3>
+          <p>We show up on time, complete work efficiently, and communicate clearly throughout the process.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+          </div>
+          <h3>Fair Pricing</h3>
+          <p>Transparent, competitive pricing with no hidden fees. We provide detailed quotes before starting any work.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="/images/before-after-collage.png" alt="Before and after pressure washing results portfolio Reimagine Pro Wash Knightdale NC" loading="lazy">
+        </div>
+        <div class="about-text">
+          <h2>Our Commitment</h2>
+          <p>We're committed to providing the highest quality pressure washing services while maintaining the utmost respect for your property and the environment. Every project is an opportunity to demonstrate our dedication to excellence.</p>
+
+          <h3>What Sets Us Apart</h3>
+          <p>Our attention to detail, use of professional-grade equipment, and commitment to eco-friendly practices make us the preferred choice for property owners throughout the region. We don't just meet expectations—we exceed them.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="about-cta">
+      <h2>Ready to Transform Your Property?</h2>
+      <p>Let us show you the Reimagine Pro Wash difference</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn-primary">Get Free Quote</a>
+        <a href="tel:+19842024980" class="btn-secondary">Call (984) 202-4980</a>
+      </div>
     </div>
-</body>
-</html>
+  </div>
+</HomeLayout>
+
+<style>
+  /* Page Header */
+  .page-header {
+    background: var(--gradient-primary, linear-gradient(135deg, #092441 0%, #003463 50%, #00a1f0 100%));
+    padding: 80px 20px 60px;
+    text-align: center;
+    color: var(--pure-white, #ffffff);
+  }
+
+  .page-header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .page-header p {
+    font-size: 1.2rem;
+    color: var(--light-blue, #6ccdf7);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* About Content */
+  .about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+  }
+
+  .about-section {
+    margin-bottom: 80px;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  .about-text h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--navy-blue, #092441);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--navy-blue, #092441);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--mid-gray, #737a7e);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text.centered {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .text-link {
+    color: var(--primary-blue, #00a1f0);
+    text-decoration: underline;
+  }
+
+  .text-link:hover {
+    color: var(--deep-blue, #003463);
+  }
+
+  .about-image {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(9, 36, 65, 0.2);
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Values Section */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .value-card {
+    background: var(--pure-white, #ffffff);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(9, 36, 65, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 161, 240, 0.2);
+  }
+
+  .value-icon {
+    font-size: 3rem;
+    color: var(--primary-blue, #00a1f0);
+    margin-bottom: 20px;
+  }
+
+  .value-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--navy-blue, #092441);
+    margin-bottom: 15px;
+  }
+
+  .value-card p {
+    color: var(--mid-gray, #737a7e);
+    line-height: 1.6;
+  }
+
+  /* CTA Section */
+  .about-cta {
+    background: var(--gradient-primary, linear-gradient(135deg, #092441 0%, #003463 50%, #00a1f0 100%));
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 60px;
+  }
+
+  .about-cta h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--pure-white, #ffffff);
+    margin-bottom: 1rem;
+  }
+
+  .about-cta p {
+    font-size: 1.2rem;
+    color: var(--light-blue, #6ccdf7);
+    margin-bottom: 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--pure-white, #ffffff);
+    color: var(--navy-blue, #092441);
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--light-blue, #6ccdf7);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--pure-white, #ffffff);
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 2px solid var(--pure-white, #ffffff);
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-secondary:hover {
+    background: var(--pure-white, #ffffff);
+    color: var(--navy-blue, #092441);
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 768px) {
+    .page-header {
+      padding: 60px 20px 40px;
+    }
+
+    .page-header h1 {
+      font-size: 2rem;
+    }
+
+    .about-content {
+      padding: 40px 20px;
+    }
+
+    .about-section {
+      margin-bottom: 40px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-cta {
+      padding: 40px 20px;
+    }
+
+    .about-cta h2 {
+      font-size: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+    }
+  }
+</style>
