@@ -1,16 +1,33 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import HomeHeader from '../components/HomeHeader.astro';
+import HomeFooter from '../components/HomeFooter.astro';
 import SEO from '../components/SEO.astro';
 import CookieConsent from '../components/CookieConsent.astro';
-const { title, description, image, author, type } = Astro.props;
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  author?: string;
+  type?: string;
+  isHomepage?: boolean;
+}
+
+const {
+  title,
+  description,
+  image,
+  author,
+  type,
+  isHomepage = false
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,13 +35,21 @@ const { title, description, image, author, type } = Astro.props;
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics 4 with Consent Mode -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-8ZYCWEHB9H"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+
+      // Set default consent to denied (will be updated by cookie banner)
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
+
       gtag('js', new Date());
-      gtag('config', 'G-8ZYCWEHB9H');
+      gtag('config', 'G-8ZYCWEHB9H', {
+        'anonymize_ip': true
+      });
     </script>
 
     <SEO
@@ -42,16 +67,58 @@ const { title, description, image, author, type } = Astro.props;
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/src/styles/variables.css" />
-    <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Page-specific styles from slot -->
+    <slot name="head" />
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <Header />
+    <HomeHeader isHomepage={isHomepage} />
     <main id="main-content">
       <slot />
     </main>
-    <Footer />
+    <HomeFooter isHomepage={isHomepage} />
     <CookieConsent />
   </body>
 </html>
+
+<style is:global>
+  /* Base styles for HomeLayout pages */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--charcoal, #04070c);
+    padding-top: 75px;
+  }
+
+  /* Skip Link - Accessibility */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--navy-blue, #092441);
+    color: var(--pure-white, #ffffff);
+    padding: 8px 16px;
+    z-index: 10000;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 0 0 4px 0;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding-top: 60px;
+    }
+  }
+</style>

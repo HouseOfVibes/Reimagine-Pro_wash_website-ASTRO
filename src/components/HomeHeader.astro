@@ -1,0 +1,538 @@
+---
+interface Props {
+  isHomepage?: boolean;
+}
+
+const { isHomepage = false } = Astro.props;
+---
+
+<header class="rpw-main-header" role="banner">
+  <!-- Top Bar -->
+  <div class="rpw-top-bar">
+    <div class="rpw-top-bar-content">
+      <div class="rpw-top-bar-left">
+        <div class="rpw-top-bar-item">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <span>Serving 50+ miles from Knightdale, NC</span>
+        </div>
+      </div>
+      <div class="rpw-top-bar-right">
+        <a href="https://www.instagram.com/reimagine_prowash/" target="_blank" rel="noopener noreferrer" class="rpw-social-link-top" aria-label="Follow us on Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.facebook.com/people/Reimagine-Pro-Wash-More/61575086936289/" target="_blank" rel="noopener noreferrer" class="rpw-social-link-top" aria-label="Follow us on Facebook">
+          <i class="fab fa-facebook" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="rpw-main-nav" aria-label="Main navigation">
+    <div class="rpw-nav-content">
+      <div class="rpw-logo-container">
+        <a href={isHomepage ? "#home" : "/"} style="text-decoration: none;" aria-label="Reimagine Pro Wash - Home">
+          <div class="rpw-brand-text">REIMAGINE PRO WASH</div>
+          <div class="rpw-brand-tagline">Refresh. Renew. Reimagine.</div>
+        </a>
+      </div>
+
+      <ul class="rpw-nav-menu">
+        <li class="rpw-nav-item">
+          <a href={isHomepage ? "#home" : "/"} class="rpw-nav-link">Home</a>
+        </li>
+        <li class="rpw-nav-item">
+          <a href={isHomepage ? "#services" : "/services"} class="rpw-nav-link">Services</a>
+        </li>
+        <li class="rpw-nav-item">
+          <a href={isHomepage ? "#blog" : "/blog"} class="rpw-nav-link">Blog</a>
+        </li>
+        <li class="rpw-nav-item">
+          <a href={isHomepage ? "#service-area" : "/service-areas"} class="rpw-nav-link">Service Area</a>
+        </li>
+        <li class="rpw-nav-item">
+          <a href={isHomepage ? "#contact" : "/contact"} class="rpw-nav-link">Contact</a>
+        </li>
+      </ul>
+
+      <div class="rpw-header-cta">
+        <a href="tel:+19842024980" class="rpw-phone-header" aria-label="Call us at (984) 202-4980">
+          <i class="fas fa-phone" aria-hidden="true"></i>
+          <span>(984) 202-4980</span>
+        </a>
+        <a href={isHomepage ? "#contact" : "/contact"} class="rpw-cta-button">Get Free Quote</a>
+      </div>
+
+      <button class="rpw-mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="rpw-mobile-menu">
+        <span class="rpw-hamburger"></span>
+        <span class="rpw-hamburger"></span>
+        <span class="rpw-hamburger"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="rpw-mobile-menu" id="rpw-mobile-menu">
+      <div class="rpw-mobile-menu-content">
+        <ul class="rpw-mobile-nav-menu">
+          <li class="rpw-mobile-nav-item">
+            <a href={isHomepage ? "#home" : "/"} class="rpw-mobile-nav-link">Home</a>
+          </li>
+          <li class="rpw-mobile-nav-item">
+            <a href={isHomepage ? "#services" : "/services"} class="rpw-mobile-nav-link">Services</a>
+          </li>
+          <li class="rpw-mobile-nav-item">
+            <a href={isHomepage ? "#blog" : "/blog"} class="rpw-mobile-nav-link">Blog</a>
+          </li>
+          <li class="rpw-mobile-nav-item">
+            <a href={isHomepage ? "#service-area" : "/service-areas"} class="rpw-mobile-nav-link">Service Area</a>
+          </li>
+          <li class="rpw-mobile-nav-item">
+            <a href={isHomepage ? "#contact" : "/contact"} class="rpw-mobile-nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="rpw-mobile-cta">
+          <a href="tel:+19842024980" class="rpw-mobile-phone" aria-label="Call us at (984) 202-4980">
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <span>(984) 202-4980</span>
+          </a>
+          <a href={isHomepage ? "#contact" : "/contact"} class="rpw-cta-button">Get Free Quote</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  /* Header Styles */
+  .rpw-main-header {
+    background: var(--pure-white, #ffffff);
+    box-shadow: 0 2px 20px rgba(9, 36, 65, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+
+  .rpw-main-header.scrolled {
+    box-shadow: 0 2px 30px rgba(9, 36, 65, 0.15);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .rpw-top-bar {
+    background: var(--gradient-primary, linear-gradient(135deg, #092441 0%, #003463 50%, #00a1f0 100%));
+    color: var(--off-white, #fefefb);
+    padding: 8px 0;
+    font-size: 0.85rem;
+  }
+
+  .rpw-top-bar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .rpw-top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .rpw-top-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+  }
+
+  .rpw-top-bar-item i {
+    color: var(--light-blue, #6ccdf7);
+  }
+
+  .rpw-top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .rpw-social-link-top {
+    color: var(--off-white, #fefefb);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .rpw-social-link-top:hover {
+    color: var(--light-blue, #6ccdf7);
+    transform: translateY(-1px);
+  }
+
+  .rpw-main-nav {
+    padding: 10px 0;
+  }
+
+  .rpw-nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .rpw-logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .rpw-brand-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--navy-blue, #092441);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+    background: var(--gradient-primary, linear-gradient(135deg, #092441 0%, #003463 50%, #00a1f0 100%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .rpw-brand-text:hover {
+    opacity: 0.8;
+  }
+
+  .rpw-brand-tagline {
+    font-size: 0.65rem;
+    font-weight: 400;
+    color: var(--primary-blue, #00a1f0);
+    margin-top: -5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .rpw-nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .rpw-nav-item {
+    position: relative;
+  }
+
+  .rpw-nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--navy-blue, #092441);
+    text-decoration: none;
+    padding: 10px 0;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .rpw-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #0862b7 0%, #00a1f0 50%, #6ccdf7 100%);
+    transition: width 0.3s ease;
+  }
+
+  .rpw-nav-link:hover {
+    color: var(--primary-blue, #00a1f0);
+  }
+
+  .rpw-nav-link:hover::after,
+  .rpw-nav-link.active::after {
+    width: 100%;
+  }
+
+  .rpw-header-cta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .rpw-phone-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--navy-blue, #092441);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .rpw-phone-header:hover {
+    color: var(--primary-blue, #00a1f0);
+  }
+
+  .rpw-phone-header i {
+    color: var(--primary-blue, #00a1f0);
+    font-size: 1.1rem;
+  }
+
+  .rpw-cta-button {
+    background: linear-gradient(135deg, #0862b7 0%, #00a1f0 50%, #6ccdf7 100%);
+    color: var(--pure-white, #ffffff);
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 161, 240, 0.3);
+    border: none;
+    cursor: pointer;
+  }
+
+  .rpw-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 161, 240, 0.4);
+  }
+
+  .rpw-mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
+  }
+
+  .rpw-hamburger {
+    width: 25px;
+    height: 3px;
+    background: var(--navy-blue, #092441);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+  }
+
+  .rpw-mobile-menu-toggle.active .rpw-hamburger:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .rpw-mobile-menu-toggle.active .rpw-hamburger:nth-child(2) {
+    opacity: 0;
+  }
+
+  .rpw-mobile-menu-toggle.active .rpw-hamburger:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .rpw-mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--pure-white, #ffffff);
+    box-shadow: 0 5px 20px rgba(9, 36, 65, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .rpw-mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .rpw-mobile-menu-content {
+    padding: 20px;
+  }
+
+  .rpw-mobile-nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+
+  .rpw-mobile-nav-item {
+    margin-bottom: 15px;
+  }
+
+  .rpw-mobile-nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--navy-blue, #092441);
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(149, 163, 174, 0.1);
+    transition: color 0.3s ease;
+  }
+
+  .rpw-mobile-nav-link:hover {
+    color: var(--primary-blue, #00a1f0);
+  }
+
+  .rpw-mobile-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .rpw-mobile-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--navy-blue, #092441);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+
+  .rpw-mobile-phone i {
+    color: var(--primary-blue, #00a1f0);
+  }
+
+  @media (max-width: 768px) {
+    .rpw-top-bar {
+      display: none;
+    }
+
+    .rpw-main-nav {
+      padding: 8px 0;
+      position: relative;
+    }
+
+    .rpw-brand-text {
+      font-size: 1.2rem;
+    }
+
+    .rpw-brand-tagline {
+      font-size: 0.55rem;
+    }
+
+    .rpw-nav-menu,
+    .rpw-header-cta .rpw-phone-header {
+      display: none;
+    }
+
+    .rpw-mobile-menu-toggle {
+      display: flex;
+    }
+
+    .rpw-header-cta {
+      gap: 10px;
+    }
+
+    .rpw-cta-button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .rpw-nav-content {
+      padding: 0 15px;
+    }
+
+    .rpw-brand-text {
+      font-size: 1rem;
+    }
+
+    .rpw-brand-tagline {
+      font-size: 0.5rem;
+    }
+
+    .rpw-cta-button {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector<HTMLElement>('.rpw-main-header');
+    const mobileToggle = document.querySelector<HTMLButtonElement>('.rpw-mobile-menu-toggle');
+    const mobileMenu = document.querySelector<HTMLElement>('.rpw-mobile-menu');
+    const navLinks = document.querySelectorAll<HTMLElement>('.rpw-nav-link, .rpw-mobile-nav-link');
+
+    if (!header || !mobileMenu) return;
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', function() {
+        const isActive = mobileToggle.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        mobileToggle.setAttribute('aria-expanded', isActive.toString());
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+      });
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (mobileToggle && !mobileToggle.contains(event.target as Node) && !mobileMenu.contains(event.target as Node)) {
+        mobileToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const targetId = href.substring(1);
+          const targetSection = document.getElementById(targetId);
+
+          if (targetSection) {
+            const headerHeight = header.offsetHeight;
+            const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+
+            // Close mobile menu after clicking
+            if (mobileToggle) {
+              mobileToggle.classList.remove('active');
+              mobileMenu.classList.remove('active');
+              mobileToggle.setAttribute('aria-expanded', 'false');
+              document.body.style.overflow = '';
+            }
+
+            // Update active nav link
+            navLinks.forEach(navLink => navLink.classList.remove('active'));
+            this.classList.add('active');
+          }
+        }
+      });
+    });
+  });
+</script>

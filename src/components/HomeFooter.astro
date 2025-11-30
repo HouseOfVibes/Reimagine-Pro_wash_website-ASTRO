@@ -1,0 +1,390 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../public/images/logo.png';
+
+interface Props {
+  isHomepage?: boolean;
+}
+
+const { isHomepage = false } = Astro.props;
+---
+
+<footer class="rpw-footer" role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-grid">
+      <!-- Company Info -->
+      <div class="footer-column">
+        <div class="footer-brand">
+          <Image src={logo} alt="Reimagine Pro Wash Logo" class="footer-logo" width={120} height={120} loading="lazy" />
+          <h3>REIMAGINE PRO WASH</h3>
+          <p class="footer-tagline">Refresh. Renew. Reimagine.</p>
+        </div>
+        <p class="footer-description">
+          Professional pressure washing services in Knightdale, NC and surrounding areas. Insured and committed to excellence.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/reimagine_prowash/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Follow us on Instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.facebook.com/people/Reimagine-Pro-Wash-More/61575086936289/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Follow us on Facebook">
+            <i class="fab fa-facebook" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href={isHomepage ? "/#services" : "/services"}>Our Services</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/blog">Blog & Tips</a></li>
+          <li><a href="/service-areas">Service Areas</a></li>
+          <li><a href={isHomepage ? "/#contact" : "/contact"}>Get Free Quote</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-column">
+        <h4>Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="/services/house-washing">House Washing</a></li>
+          <li><a href="/services/pool-deck-patio">Pool Deck Cleaning</a></li>
+          <li><a href="/services/driveway-hardscapes">Driveway Cleaning</a></li>
+          <li><a href="/services/deck-fence-restoration">Deck Restoration</a></li>
+          <li><a href="/services/gutter-cleaning">Gutter Cleaning</a></li>
+          <li><a href="/services">All Services</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul class="footer-contact">
+          <li>
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <a href="tel:+19842024980">(984) 202-4980</a>
+          </li>
+          <li>
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:info@rprowashnc.com">info@rprowashnc.com</a>
+          </li>
+          <li>
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>Serving 50+ miles from<br>Knightdale, NC</span>
+          </li>
+        </ul>
+        <a href={isHomepage ? "/#contact" : "/contact"} class="footer-cta-btn">Get Free Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <p>&copy; 2025 Reimagine Pro Wash & More. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <span>|</span>
+        <a href="/terms-of-service">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* Footer Styles */
+  .rpw-footer {
+    background: var(--gradient-primary, linear-gradient(135deg, #092441 0%, #003463 50%, #00a1f0 100%));
+    color: var(--pure-white, #ffffff);
+    padding: 60px 20px 0;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .footer-column h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--pure-white, #ffffff);
+    margin-bottom: 20px;
+  }
+
+  .footer-brand {
+    margin-bottom: 20px;
+  }
+
+  .footer-logo {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 20px rgba(108, 221, 247, 0.3));
+  }
+
+  .footer-brand h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--pure-white, #ffffff);
+    margin-bottom: 5px;
+    letter-spacing: -0.02em;
+  }
+
+  .footer-tagline {
+    font-size: 0.85rem;
+    color: var(--light-blue, #6ccdf7);
+    font-style: italic;
+    margin-bottom: 15px;
+  }
+
+  .footer-description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 15px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pure-white, #ffffff);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .social-icon:hover {
+    background: var(--light-blue, #6ccdf7);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(108, 221, 247, 0.3);
+  }
+
+  .social-icon i {
+    font-size: 1.2rem;
+  }
+
+  .footer-links,
+  .footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li,
+  .footer-contact li {
+    margin-bottom: 12px;
+  }
+
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+  }
+
+  .footer-links a:hover {
+    color: var(--light-blue, #6ccdf7);
+    padding-left: 5px;
+  }
+
+  .footer-contact li {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+  }
+
+  .footer-contact i {
+    color: var(--light-blue, #6ccdf7);
+    margin-top: 3px;
+    min-width: 16px;
+  }
+
+  .footer-contact a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-contact a:hover {
+    color: var(--light-blue, #6ccdf7);
+  }
+
+  .footer-cta-btn {
+    display: inline-block;
+    background: var(--pure-white, #ffffff);
+    color: var(--navy-blue, #092441);
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    border: 2px solid var(--pure-white, #ffffff);
+  }
+
+  .footer-cta-btn:hover {
+    background: transparent;
+    color: var(--pure-white, #ffffff);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+  }
+
+  .footer-bottom {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .footer-bottom p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+
+  .footer-bottom-links a:hover {
+    color: var(--light-blue, #6ccdf7);
+  }
+
+  .footer-bottom-links span {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  @media (max-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .rpw-footer {
+      padding: 40px 20px 0;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+      padding-bottom: 25px;
+    }
+
+    .footer-column h4 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand {
+      margin-bottom: 15px;
+    }
+
+    .footer-logo {
+      max-width: 80px;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.1rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.75rem;
+      margin-bottom: 10px;
+    }
+
+    .footer-description {
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+    }
+
+    .footer-social {
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .social-icon {
+      width: 35px;
+      height: 35px;
+    }
+
+    .social-icon i {
+      font-size: 1rem;
+    }
+
+    .footer-links li,
+    .footer-contact li {
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+    }
+
+    .footer-cta-btn {
+      padding: 10px 25px;
+      font-size: 0.9rem;
+    }
+
+    /* Hide Quick Links and Services columns on mobile */
+    .footer-column:nth-child(2),
+    .footer-column:nth-child(3) {
+      display: none;
+    }
+
+    .footer-bottom-content {
+      flex-direction: column;
+      text-align: center;
+      padding: 15px 20px;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+    }
+
+    .footer-bottom-links {
+      justify-content: center;
+    }
+  }
+</style>

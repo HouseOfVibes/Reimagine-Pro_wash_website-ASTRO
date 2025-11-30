@@ -1,0 +1,32 @@
+/* Reimagine Pro Wash - CSS Variables */
+/* Single source of truth for all brand colors and design tokens */
+
+:root {
+  /* Primary Brand Colors */
+  --primary-blue: #00a1f0;
+  --navy-blue: #092441;
+  --deep-blue: #003463;
+  --medium-blue: #0862b7;
+  --light-blue: #6ccdf7;
+  --dark-blue: #003366;
+
+  /* Neutrals */
+  --silver: #95a3ae;
+  --charcoal: #04070c;
+  --mid-gray: #737a7e;
+  --teal-gray: #8b99a0;
+  --gray: #4A4A4A;
+  --light-gray: #F5F5F5;
+  --off-white: #fefefb;
+  --pure-white: #ffffff;
+  --white: #ffffff;
+  --black: #000000;
+  --card-bg: #1C1C1C;
+  --accent-blue: #87CEEB;
+
+  /* Brand Gradients */
+  --gradient-primary: linear-gradient(135deg, #092441 0%, #003463 50%, #00a1f0 100%);
+  --gradient-cta: linear-gradient(135deg, #00a1f0 0%, #0862b7 100%);
+  --gradient-cta-hover: linear-gradient(135deg, #6ccdf7 0%, #00a1f0 100%);
+  --gradient-overlay-dark: linear-gradient(135deg, rgba(4,7,12,0.8) 0%, rgba(9,36,65,0.6) 100%);
+}
