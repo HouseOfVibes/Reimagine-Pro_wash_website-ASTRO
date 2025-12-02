@@ -1,10 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import HomeLayout from '../layouts/HomeLayout.astro';
 ---
 
-<Layout
+<HomeLayout
   title="Terms of Service | Reimagine Pro Wash & More | Knightdale, NC"
   description="Terms of Service for Reimagine Pro Wash & More. Read our terms and conditions for using our website and pressure washing services in Knightdale, NC."
+  isHomepage={false}
 >
   <section class="page-header">
     <h1>Terms of Service</h1>
@@ -137,7 +138,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
   </div>
-</Layout>
+</HomeLayout>
 
 <style>
   .page-header {

@@ -1,10 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import HomeLayout from '../layouts/HomeLayout.astro';
 ---
 
-<Layout
+<HomeLayout
   title="Privacy Policy | Reimagine Pro Wash & More | Knightdale, NC"
   description="Privacy Policy for Reimagine Pro Wash & More. Learn how we collect, use, and protect your personal information when you use our pressure washing services."
+  isHomepage={false}
 >
   <section class="page-header">
     <h1>Privacy Policy</h1>
@@ -129,7 +130,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
   </div>
-</Layout>
+</HomeLayout>
 
 <style>
   .page-header {
