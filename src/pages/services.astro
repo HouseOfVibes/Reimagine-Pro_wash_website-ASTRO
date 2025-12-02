@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import HomeLayout from '../layouts/HomeLayout.astro';
 
 const services = [
   {
@@ -54,9 +54,11 @@ const services = [
 ];
 ---
 
-<Layout
+<HomeLayout
   title="Professional Pressure Washing Services | Reimagine Pro Wash & More | Knightdale, NC"
-  description="Comprehensive pressure washing services including house washing, roof cleaning, driveways, gutters, decks, pool decks, and brick restoration. Serving Knightdale, Raleigh, Cary, Wake Forest, Clayton NC.">
+  description="Comprehensive pressure washing services including house washing, roof cleaning, driveways, gutters, decks, pool decks, and brick restoration. Serving Knightdale, Raleigh, Cary, Wake Forest, Clayton NC."
+  isHomepage={false}
+>
 
   <main class="services-page">
     <!-- Hero Section -->
@@ -150,7 +152,7 @@ const services = [
       </div>
     </section>
   </main>
-</Layout>
+</HomeLayout>
 
 <style>
   .services-page {

@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import HomeLayout from '../../layouts/HomeLayout.astro';
 
 const cities = [
   {
@@ -35,7 +35,8 @@ const cities = [
 ];
 ---
 
-<Layout
+<HomeLayout
+  isHomepage={false}
   title="Service Areas | Professional Pressure Washing | Knightdale, Raleigh, Cary, Wake Forest, Clayton NC"
   description="Reimagine Pro Wash serves Knightdale, Raleigh, Cary, Wake Forest, Clayton, and surrounding Triangle areas within 50+ miles. Professional pressure washing for residential and commercial properties.">
 
@@ -159,7 +160,7 @@ const cities = [
       </div>
     </section>
   </main>
-</Layout>
+</HomeLayout>
 
 <style>
   .service-areas-page {

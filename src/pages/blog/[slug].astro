@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import HomeLayout from '../../layouts/HomeLayout.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -14,10 +14,11 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Layout
+<HomeLayout
   title={`${post.data.title} | Reimagine Pro Wash Blog`}
   description={post.data.description}
   image={post.data.image}
+  isHomepage={false}
   author={post.data.author}
   type="article">
 
@@ -98,7 +99,7 @@ const { Content } = await post.render();
       </div>
     </article>
   </main>
-</Layout>
+</HomeLayout>
 
 <style>
   .blog-post-main {

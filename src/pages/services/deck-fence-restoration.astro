@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import HomeLayout from '../../layouts/HomeLayout.astro';
 import ServiceSchema from '../../components/ServiceSchema.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
@@ -36,7 +36,8 @@ const faqs = [
 ];
 ---
 
-<Layout
+<HomeLayout
+  isHomepage={false}
   title="Deck & Fence Cleaning & Restoration in Knightdale, NC | Reimagine Pro Wash"
   description="Professional deck and fence cleaning and restoration in Knightdale, NC. Remove dirt, mold, and gray oxidation. Wood, composite, and vinyl. Free estimates in Knightdale, Raleigh, Cary, Wake Forest.">
 
@@ -209,7 +210,7 @@ const faqs = [
       </div>
     </section>
   </main>
-</Layout>
+</HomeLayout>
 
 <style>
   .service-page {

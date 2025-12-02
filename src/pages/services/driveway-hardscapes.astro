@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import HomeLayout from '../../layouts/HomeLayout.astro';
 import ServiceSchema from '../../components/ServiceSchema.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
@@ -36,7 +36,8 @@ const faqs = [
 ];
 ---
 
-<Layout
+<HomeLayout
+  isHomepage={false}
   title="Driveway & Hardscape Pressure Washing in Knightdale, NC | Reimagine Pro Wash"
   description="Professional driveway and hardscape cleaning in Knightdale, NC. Remove oil stains, tire marks, and algae from concrete, pavers, and stone. Free estimates in Knightdale, Raleigh, Cary, Wake Forest.">
 
@@ -209,7 +210,7 @@ const faqs = [
       </div>
     </section>
   </main>
-</Layout>
+</HomeLayout>
 
 <style>
   .service-page {

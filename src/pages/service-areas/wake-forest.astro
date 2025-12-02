@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import HomeLayout from '../../layouts/HomeLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 
 const breadcrumbItems = [
@@ -35,7 +35,8 @@ const localSchema = {
 };
 ---
 
-<Layout
+<HomeLayout
+  isHomepage={false}
   title="Pressure Washing in Wake Forest, NC | Reimagine Pro Wash & More"
   description="Professional pressure washing services in Wake Forest, NC. House washing, roof cleaning, driveways, gutters, decks, and more. Serving Heritage, Holding Village, Traditions. Licensed & insured. Free estimates.">
 
@@ -179,7 +180,7 @@ const localSchema = {
       </div>
     </section>
   </main>
-</Layout>
+</HomeLayout>
 
 <style>
   .city-page {

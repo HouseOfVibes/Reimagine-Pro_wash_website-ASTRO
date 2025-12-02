@@ -1,10 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import HomeLayout from '../layouts/HomeLayout.astro';
 ---
 
-<Layout
+<HomeLayout
   title="Contact Us | Free Estimates | Reimagine Pro Wash & More | Knightdale, NC"
-  description="Get a free pressure washing estimate in Knightdale, NC and Triangle area. Call 984-202-4980 or email info@rprowashnc.com. Licensed, insured, eco-friendly. 50+ mile service area.">
+  description="Get a free pressure washing estimate in Knightdale, NC and Triangle area. Call 984-202-4980 or email info@rprowashnc.com. Licensed, insured, eco-friendly. 50+ mile service area."
+  isHomepage={false}
+>
 
   <main class="contact-page">
     <!-- Page Hero -->
@@ -219,7 +221,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
   </main>
-</Layout>
+</HomeLayout>
 
 <style>
   :root {

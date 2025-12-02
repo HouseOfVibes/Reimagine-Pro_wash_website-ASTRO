@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import HomeLayout from '../../layouts/HomeLayout.astro';
 import ServiceSchema from '../../components/ServiceSchema.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
@@ -36,7 +36,8 @@ const faqs = [
 ];
 ---
 
-<Layout
+<HomeLayout
+  isHomepage={false}
   title="House Washing in Knightdale, NC | Soft Wash Experts | Reimagine Pro Wash"
   description="Professional soft wash house cleaning in Knightdale, NC. Remove mold, mildew, and grime from vinyl, brick, and stucco safely. Licensed & insured. Free estimates in Knightdale, Raleigh, Cary, Wake Forest.">
 
@@ -184,7 +185,7 @@ const faqs = [
       </div>
     </section>
   </main>
-</Layout>
+</HomeLayout>
 
 <style>
   .service-page {
