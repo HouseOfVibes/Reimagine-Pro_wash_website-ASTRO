@@ -12,7 +12,19 @@
 
     <nav class="main-nav" aria-label="Main navigation">
       <a href="/" class="nav-link">Home</a>
-      <a href="/services" class="nav-link">Services</a>
+      <div class="nav-dropdown">
+        <a href="/services" class="nav-link">Services</a>
+        <div class="dropdown-content">
+          <a href="/services/house-washing">House Washing</a>
+          <a href="/services/roof-cleaning">Roof Cleaning</a>
+          <a href="/services/driveway-hardscapes">Driveway & Hardscapes</a>
+          <a href="/services/gutter-cleaning">Gutter Cleaning</a>
+          <a href="/services/deck-fence-restoration">Deck & Fence Restoration</a>
+          <a href="/services/pool-deck-patio">Pool Deck & Patio</a>
+          <a href="/services/brick-restoration">Brick Restoration</a>
+        </div>
+      </div>
+      <a href="/gallery" class="nav-link">Gallery</a>
       <a href="/blog" class="nav-link">Blog</a>
       <a href="/contact" class="nav-link">Contact</a>
       <a href="tel:9842024980" class="nav-phone" aria-label="Call us at (984) 202-4980">
@@ -36,7 +48,19 @@
   <!-- Mobile Navigation -->
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
     <a href="/" class="mobile-nav-link">Home</a>
-    <a href="/services" class="mobile-nav-link">Services</a>
+    <div class="mobile-dropdown">
+      <a href="/services" class="mobile-nav-link">Services</a>
+      <div class="mobile-dropdown-content">
+        <a href="/services/house-washing" class="mobile-nav-sublink">House Washing</a>
+        <a href="/services/roof-cleaning" class="mobile-nav-sublink">Roof Cleaning</a>
+        <a href="/services/driveway-hardscapes" class="mobile-nav-sublink">Driveway & Hardscapes</a>
+        <a href="/services/gutter-cleaning" class="mobile-nav-sublink">Gutter Cleaning</a>
+        <a href="/services/deck-fence-restoration" class="mobile-nav-sublink">Deck & Fence Restoration</a>
+        <a href="/services/pool-deck-patio" class="mobile-nav-sublink">Pool Deck & Patio</a>
+        <a href="/services/brick-restoration" class="mobile-nav-sublink">Brick Restoration</a>
+      </div>
+    </div>
+    <a href="/gallery" class="mobile-nav-link">Gallery</a>
     <a href="/blog" class="mobile-nav-link">Blog</a>
     <a href="/contact" class="mobile-nav-link">Contact</a>
     <a href="tel:9842024980" class="mobile-nav-phone" aria-label="Call us at (984) 202-4980">
@@ -115,6 +139,43 @@
     background: var(--dark-blue);
   }
 
+  /* Dropdown Menu */
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    min-width: 240px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    padding: 10px 0;
+    margin-top: 10px;
+    z-index: 1000;
+  }
+
+  .nav-dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--gray);
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .dropdown-content a:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+  }
+
   /* Mobile Menu */
   .mobile-menu-btn {
     display: none;
@@ -157,6 +218,34 @@
     text-align: center;
   }
 
+  /* Mobile Dropdown */
+  .mobile-dropdown {
+    border-bottom: 1px solid var(--primary-blue);
+  }
+
+  .mobile-dropdown-content {
+    display: none;
+    background: rgba(30, 144, 255, 0.05);
+    padding-left: 20px;
+  }
+
+  .mobile-dropdown.active .mobile-dropdown-content {
+    display: block;
+  }
+
+  .mobile-nav-sublink {
+    display: block;
+    padding: 12px 0;
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(30, 144, 255, 0.2);
+  }
+
+  .mobile-nav-sublink:hover {
+    color: var(--primary-blue);
+  }
+
   /* Responsive */
   @media (max-width: 768px) {
     .main-nav {
@@ -197,6 +286,16 @@
         mobileNav.classList.toggle('active');
         // Update aria-expanded for screen readers
         mobileMenuBtn.setAttribute('aria-expanded', isActive.toString());
+      });
+    }
+
+    // Mobile dropdown toggle
+    const mobileDropdown = document.querySelector('.mobile-dropdown');
+    if (mobileDropdown) {
+      const dropdownLink = mobileDropdown.querySelector('.mobile-nav-link');
+      dropdownLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        mobileDropdown.classList.toggle('active');
       });
     }
   });
