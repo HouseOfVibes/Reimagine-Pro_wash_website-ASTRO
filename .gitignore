@@ -48,3 +48,21 @@ coverage/
 # Temporary folders
 tmp/
 temp/
+
+# Planning and documentation (not needed for live site)
+/Planning/
+/Website Images/
+
+# Documentation and template files
+ANALYTICS-SETUP-TEMPLATE.md
+BLOG-POST-TEMPLATE.md
+CLIENT-INFO-NEEDED.md
+DEPLOYMENT.md
+SEO-IMPLEMENTATION-SUMMARY.md
+WEBSITE-REVIEW-REPORT.md
+color-palette.md
+typography.md
+
+# Test files
+test.html
+test-index.html
