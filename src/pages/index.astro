@@ -73,6 +73,41 @@ const faqs = [
     <!-- Meta Description for SEO -->
     <meta name="description" content="Professional pressure washing services in Knightdale, NC and Triangle region. Licensed, insured, eco-friendly solutions. 50+ mile service area. Free estimates! Call 984-202-4980.">
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rprowashnc.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rprowashnc.com/" />
+    <meta property="og:title" content="Reimagine Pro Wash - Professional Pressure Washing Services | Knightdale, NC" />
+    <meta property="og:description" content="Professional pressure washing services in Knightdale, NC and Triangle region. Licensed, insured, eco-friendly solutions. 50+ mile service area. Free estimates!" />
+    <meta property="og:image" content="https://rprowashnc.com/images/og-image.png" />
+    <meta property="og:site_name" content="Reimagine Pro Wash & More" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://rprowashnc.com/" />
+    <meta name="twitter:title" content="Reimagine Pro Wash - Professional Pressure Washing Services | Knightdale, NC" />
+    <meta name="twitter:description" content="Professional pressure washing services in Knightdale, NC and Triangle region. Licensed, insured, eco-friendly solutions. 50+ mile service area. Free estimates!" />
+    <meta name="twitter:image" content="https://rprowashnc.com/images/og-image.png" />
+
+    <!-- Google Analytics 4 with Consent Mode v2 -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-8ZYCWEHB9H"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // Set default consent to denied (will be updated by cookie banner)
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
+
+      gtag('js', new Date());
+      gtag('config', 'G-8ZYCWEHB9H', {
+        'anonymize_ip': true
+      });
+    </script>
+
     <!-- LocalBusiness Schema for SEO -->
     <LocalBusinessSchema />
     <FAQSchema faqs={faqs} />

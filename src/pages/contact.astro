@@ -88,50 +88,80 @@ import Layout from '../layouts/Layout.astro';
           <div class="contact-form-section">
             <div class="form-card">
               <h2>Request a Free Quote</h2>
-              <form id="contact-form" class="contact-form">
+
+              <!-- Success Message (hidden by default) -->
+              <div id="form-success" class="form-message success" style="display: none;" role="alert" aria-live="polite">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                  <strong>Thank you for your inquiry!</strong>
+                  <p>Your email client should open shortly. If it doesn't, please email us directly at <a href="mailto:info@rprowashnc.com">info@rprowashnc.com</a> or call <a href="tel:9842024980">(984) 202-4980</a>.</p>
+                </div>
+              </div>
+
+              <!-- Error Message (hidden by default) -->
+              <div id="form-error" class="form-message error" style="display: none;" role="alert" aria-live="polite">
+                <i class="fas fa-exclamation-circle"></i>
+                <div>
+                  <strong>Please fix the errors below.</strong>
+                </div>
+              </div>
+
+              <form id="contact-form" class="contact-form" novalidate>
+                <!-- Honeypot field for spam protection (hidden from real users) -->
+                <div class="form-group hp-field" aria-hidden="true">
+                  <label for="website">Website</label>
+                  <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                </div>
+
                 <div class="form-row">
                   <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    <label for="name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe" aria-required="true" aria-describedby="name-error">
+                    <span id="name-error" class="field-error" role="alert"></span>
                   </div>
                 </div>
 
                 <div class="form-row">
                   <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com" aria-required="true" aria-describedby="email-error">
+                    <span id="email-error" class="field-error" role="alert"></span>
                   </div>
                 </div>
 
                 <div class="form-row">
                   <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="(984) 202-4980">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required placeholder="(984) 202-4980" pattern="[\d\s\-\(\)\+]+" aria-required="true" aria-describedby="phone-error phone-hint">
+                    <span id="phone-hint" class="field-hint">Format: (123) 456-7890</span>
+                    <span id="phone-error" class="field-error" role="alert"></span>
                   </div>
                 </div>
 
                 <div class="form-row">
                   <div class="form-group">
-                    <label for="service">Service Needed *</label>
-                    <select id="service" name="service" required>
+                    <label for="service">Service Needed <span class="required">*</span></label>
+                    <select id="service" name="service" required aria-required="true" aria-describedby="service-error">
                       <option value="">Select a service...</option>
-                      <option value="house-washing">House Washing</option>
-                      <option value="roof-cleaning">Roof Cleaning</option>
-                      <option value="driveway-hardscapes">Driveway & Hardscapes</option>
-                      <option value="gutter-cleaning">Gutter Cleaning</option>
-                      <option value="deck-fence">Deck & Fence Restoration</option>
-                      <option value="pool-deck">Pool Deck & Patio</option>
-                      <option value="brick-restoration">Brick Restoration</option>
-                      <option value="commercial">Commercial Services</option>
-                      <option value="other">Other / Multiple Services</option>
+                      <option value="House Washing">House Washing</option>
+                      <option value="Roof Cleaning">Roof Cleaning</option>
+                      <option value="Driveway & Hardscapes">Driveway & Hardscapes</option>
+                      <option value="Gutter Cleaning">Gutter Cleaning</option>
+                      <option value="Deck & Fence Restoration">Deck & Fence Restoration</option>
+                      <option value="Pool Deck & Patio">Pool Deck & Patio</option>
+                      <option value="Brick Restoration">Brick Restoration</option>
+                      <option value="Commercial Services">Commercial Services</option>
+                      <option value="Other / Multiple Services">Other / Multiple Services</option>
                     </select>
+                    <span id="service-error" class="field-error" role="alert"></span>
                   </div>
                 </div>
 
                 <div class="form-row">
                   <div class="form-group">
                     <label for="location">Property Location</label>
-                    <input type="text" id="location" name="location" placeholder="Knightdale, Raleigh, Cary, etc.">
+                    <input type="text" id="location" name="location" placeholder="Knightdale, Raleigh, Cary, etc." aria-describedby="location-hint">
+                    <span id="location-hint" class="field-hint">City or neighborhood where service is needed</span>
                   </div>
                 </div>
 
@@ -142,7 +172,10 @@ import Layout from '../layouts/Layout.astro';
                   </div>
                 </div>
 
-                <button type="submit" class="btn-submit">Send Quote Request</button>
+                <button type="submit" class="btn-submit" id="submit-btn">
+                  <span class="btn-text">Send Quote Request</span>
+                  <span class="btn-loading" style="display: none;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+                </button>
               </form>
 
               <p class="privacy-note">
@@ -484,6 +517,97 @@ import Layout from '../layouts/Layout.astro';
     margin-right: 8px;
   }
 
+  /* Form validation and feedback styles */
+  .required {
+    color: #dc3545;
+  }
+
+  .field-error {
+    display: block;
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    min-height: 1.2em;
+  }
+
+  .field-hint {
+    display: block;
+    color: var(--mid-gray);
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+
+  .form-group input.error,
+  .form-group select.error,
+  .form-group textarea.error {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+  }
+
+  .form-group input.valid,
+  .form-group select.valid {
+    border-color: #28a745;
+  }
+
+  /* Honeypot field - hidden from real users */
+  .hp-field {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  /* Form messages */
+  .form-message {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+  }
+
+  .form-message.success {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+  }
+
+  .form-message.success i {
+    color: #28a745;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .form-message.error {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+  }
+
+  .form-message.error i {
+    color: #dc3545;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .form-message p {
+    margin: 5px 0 0;
+    font-size: 0.95rem;
+  }
+
+  .form-message a {
+    color: inherit;
+    font-weight: 600;
+  }
+
+  /* Button loading state */
+  .btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
   .service-area-section {
     padding: 80px 20px;
     background: var(--pure-white);
@@ -664,12 +788,119 @@ import Layout from '../layouts/Layout.astro';
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contact-form') as HTMLFormElement | null;
+    const successMessage = document.getElementById('form-success');
+    const errorMessage = document.getElementById('form-error');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = submitBtn?.querySelector('.btn-text');
+    const btnLoading = submitBtn?.querySelector('.btn-loading');
 
+    // Validation rules
+    const validators = {
+      name: (value: string) => {
+        if (!value.trim()) return 'Please enter your full name';
+        if (value.trim().length < 2) return 'Name must be at least 2 characters';
+        return '';
+      },
+      email: (value: string) => {
+        if (!value.trim()) return 'Please enter your email address';
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) return 'Please enter a valid email address';
+        return '';
+      },
+      phone: (value: string) => {
+        if (!value.trim()) return 'Please enter your phone number';
+        const phoneClean = value.replace(/[\s\-\(\)\+]/g, '');
+        if (phoneClean.length < 10) return 'Please enter a valid phone number';
+        return '';
+      },
+      service: (value: string) => {
+        if (!value) return 'Please select a service';
+        return '';
+      }
+    };
+
+    // Validate a single field
+    function validateField(name: string, value: string): boolean {
+      const validator = validators[name as keyof typeof validators];
+      if (!validator) return true;
+
+      const error = validator(value);
+      const errorElement = document.getElementById(`${name}-error`);
+      const inputElement = document.getElementById(name);
+
+      if (errorElement) {
+        errorElement.textContent = error;
+      }
+
+      if (inputElement) {
+        inputElement.classList.remove('error', 'valid');
+        if (error) {
+          inputElement.classList.add('error');
+        } else if (value.trim()) {
+          inputElement.classList.add('valid');
+        }
+      }
+
+      return !error;
+    }
+
+    // Add real-time validation on blur
     if (contactForm) {
+      const inputs = contactForm.querySelectorAll('input, select');
+      inputs.forEach((input) => {
+        input.addEventListener('blur', function(e) {
+          const target = e.target as HTMLInputElement | HTMLSelectElement;
+          validateField(target.name, target.value);
+        });
+
+        // Clear error on input
+        input.addEventListener('input', function(e) {
+          const target = e.target as HTMLInputElement | HTMLSelectElement;
+          const errorElement = document.getElementById(`${target.name}-error`);
+          if (errorElement) errorElement.textContent = '';
+          target.classList.remove('error');
+        });
+      });
+
       contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
+        // Check honeypot - if filled, it's likely spam
+        const honeypot = (document.getElementById('website') as HTMLInputElement)?.value;
+        if (honeypot) {
+          // Silently ignore spam submissions
+          console.log('Spam submission blocked');
+          return;
+        }
+
         const formData = new FormData(contactForm);
+        let isValid = true;
+
+        // Validate all required fields
+        ['name', 'email', 'phone', 'service'].forEach((fieldName) => {
+          const value = formData.get(fieldName) as string || '';
+          if (!validateField(fieldName, value)) {
+            isValid = false;
+          }
+        });
+
+        // Hide any existing messages
+        if (successMessage) successMessage.style.display = 'none';
+        if (errorMessage) errorMessage.style.display = 'none';
+
+        if (!isValid) {
+          if (errorMessage) errorMessage.style.display = 'flex';
+          // Focus first error field
+          const firstError = contactForm.querySelector('.error') as HTMLElement;
+          if (firstError) firstError.focus();
+          return;
+        }
+
+        // Show loading state
+        if (submitBtn) submitBtn.setAttribute('disabled', 'true');
+        if (btnText) (btnText as HTMLElement).style.display = 'none';
+        if (btnLoading) (btnLoading as HTMLElement).style.display = 'inline';
+
         const name = formData.get('name');
         const email = formData.get('email');
         const phone = formData.get('phone');
@@ -683,14 +914,39 @@ import Layout from '../layouts/Layout.astro';
           `Email: ${email}\n` +
           `Phone: ${phone}\n` +
           `Service Needed: ${service}\n` +
-          `Property Location: ${location || 'Not specified'}\n` +
+          `Property Location: ${location || 'Not specified'}\n\n` +
           `Project Details:\n${message || 'N/A'}`
         );
 
         const mailtoLink = `mailto:info@rprowashnc.com?subject=${subject}&body=${body}`;
+
+        // Track form submission in GA4
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', {
+            'event_category': 'Contact',
+            'event_label': service,
+            'value': 1
+          });
+        }
+
+        // Show success message
+        if (successMessage) successMessage.style.display = 'flex';
+
+        // Open mailto link
         window.location.href = mailtoLink;
 
-        contactForm.reset();
+        // Reset form after a short delay
+        setTimeout(() => {
+          contactForm.reset();
+          if (submitBtn) submitBtn.removeAttribute('disabled');
+          if (btnText) (btnText as HTMLElement).style.display = 'inline';
+          if (btnLoading) (btnLoading as HTMLElement).style.display = 'none';
+
+          // Clear validation states
+          contactForm.querySelectorAll('.valid, .error').forEach(el => {
+            el.classList.remove('valid', 'error');
+          });
+        }, 1000);
       });
     }
   });

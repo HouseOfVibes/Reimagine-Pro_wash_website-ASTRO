@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  datePublished: string;
+  dateModified?: string;
+  author: string;
+  slug: string;
+}
+
+const { title, description, image, datePublished, dateModified, author, slug } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "image": image.startsWith('http') ? image : `https://rprowashnc.com${image}`,
+  "datePublished": datePublished,
+  "dateModified": dateModified || datePublished,
+  "author": {
+    "@type": "Organization",
+    "name": author,
+    "url": "https://rprowashnc.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Reimagine Pro Wash & More",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rprowashnc.com/images/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://rprowashnc.com/blog/${slug}`
+  },
+  "url": `https://rprowashnc.com/blog/${slug}`,
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "Reimagine Pro Wash Blog",
+    "url": "https://rprowashnc.com/blog"
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
