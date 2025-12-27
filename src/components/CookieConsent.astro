@@ -218,11 +218,7 @@
             }
         });
 
-        // Set default consent state before analytics loads
-        if (window.gtag) {
-            window.gtag('consent', 'default', {
-                'analytics_storage': 'denied'
-            });
-        }
+        // Note: Default consent state is now set in the layout files before gtag loads
+        // This ensures proper consent mode initialization
     })();
 </script>

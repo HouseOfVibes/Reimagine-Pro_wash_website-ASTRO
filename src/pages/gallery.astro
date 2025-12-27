@@ -1,0 +1,315 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const galleryImages = [
+  {
+    src: "/images/house-washing.png",
+    alt: "Professional house washing service showing clean home exterior in Knightdale NC",
+    category: "House Washing"
+  },
+  {
+    src: "/images/driveway-before.png",
+    alt: "Driveway before pressure washing - showing dirt and stains",
+    category: "Before"
+  },
+  {
+    src: "/images/driveway-after.png",
+    alt: "Driveway after pressure washing - clean and restored",
+    category: "After"
+  },
+  {
+    src: "/images/hardscapes-cleaning.png",
+    alt: "Professional hardscapes cleaning service for patios and walkways",
+    category: "Hardscapes"
+  },
+  {
+    src: "/images/deck-restoration.png",
+    alt: "Deck restoration and cleaning service showing restored wood deck",
+    category: "Deck Restoration"
+  },
+  {
+    src: "/images/pool-deck-cleaning.png",
+    alt: "Pool deck cleaning service for safe and beautiful pool areas",
+    category: "Pool Deck"
+  },
+  {
+    src: "/images/gutter-cleaning.png",
+    alt: "Professional gutter cleaning service",
+    category: "Gutter Cleaning"
+  },
+  {
+    src: "/images/brick-restoration.png",
+    alt: "Brick restoration and cleaning service",
+    category: "Brick Restoration"
+  },
+  {
+    src: "/images/clean-fence.png",
+    alt: "Clean fence after professional pressure washing",
+    category: "Fence Cleaning"
+  },
+  {
+    src: "/images/graffiti-removal-before-after.png",
+    alt: "Graffiti removal before and after comparison",
+    category: "Graffiti Removal"
+  },
+  {
+    src: "/images/before-after-collage.png",
+    alt: "Before and after pressure washing results collage",
+    category: "Before & After"
+  },
+  {
+    src: "/images/commercial-pressure-washing.png",
+    alt: "Commercial pressure washing service for businesses",
+    category: "Commercial"
+  }
+];
+---
+
+<Layout
+  title="Gallery | Our Work | Reimagine Pro Wash & More | Knightdale, NC"
+  description="View our pressure washing gallery showcasing before and after results. Professional house washing, driveway cleaning, deck restoration, and more in Knightdale, NC and the Triangle area.">
+
+  <main class="gallery-page">
+    <!-- Hero Section -->
+    <section class="gallery-hero">
+      <div class="hero-content">
+        <h1>Our Work Gallery</h1>
+        <p class="hero-subtitle">See the Reimagine Pro Wash difference - real results from real projects</p>
+      </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="gallery-intro">
+          <h2>Before & After Transformations</h2>
+          <p>Browse through our portfolio of completed pressure washing projects throughout Knightdale, Raleigh, Cary, Wake Forest, and the greater Triangle area.</p>
+        </div>
+
+        <div class="gallery-grid">
+          {galleryImages.map((image) => (
+            <div class="gallery-item">
+              <img src={image.src} alt={image.alt} loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="gallery-category">{image.category}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gallery-cta">
+      <div class="container">
+        <h2>Ready for Your Own Transformation?</h2>
+        <p>Get a free, no-obligation estimate for professional pressure washing services.</p>
+        <div class="cta-buttons">
+          <a href="/contact" class="btn-primary">Get Free Quote</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .gallery-page {
+    min-height: 100vh;
+  }
+
+  .gallery-hero {
+    background: linear-gradient(135deg, #092441 0%, #0862b7 50%, #00a1f0 100%);
+    color: white;
+    padding: 140px 20px 80px;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .gallery-hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.95;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .gallery-section {
+    padding: 100px 20px;
+    background: #f8f9fa;
+  }
+
+  .gallery-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+  }
+
+  .gallery-intro h2 {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .gallery-intro p {
+    font-size: 1.15rem;
+    color: #666;
+    line-height: 1.8;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 4/3;
+    cursor: pointer;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(9, 36, 65, 0.8) 0%, transparent 50%);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .gallery-item:hover .gallery-overlay {
+    opacity: 1;
+  }
+
+  .gallery-category {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .gallery-cta {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .gallery-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .gallery-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.05rem;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #092441;
+  }
+
+  .btn-primary:hover {
+    background: #00a1f0;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: #092441;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .gallery-hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .gallery-intro h2 {
+      font-size: 2rem;
+    }
+
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-cta h2 {
+      font-size: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+</style>
