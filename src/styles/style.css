@@ -260,7 +260,5 @@ a:hover {
   animation: spin 1s linear infinite;
 }
 
-/* Smooth Transitions */
-* {
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-}
+/* Note: Transitions are applied to specific elements (a, button, .btn, .card) rather than
+   using a universal selector (*) which can cause performance issues */
