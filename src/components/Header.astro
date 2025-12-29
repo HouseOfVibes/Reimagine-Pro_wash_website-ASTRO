@@ -289,14 +289,16 @@
       });
     }
 
-    // Mobile dropdown toggle
-    const mobileDropdown = document.querySelector('.mobile-dropdown');
-    if (mobileDropdown) {
-      const dropdownLink = mobileDropdown.querySelector('.mobile-nav-link');
-      dropdownLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        mobileDropdown.classList.toggle('active');
-      });
-    }
+    // Mobile dropdown toggle - handle all dropdowns
+    const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+    mobileDropdowns.forEach(dropdown => {
+      const dropdownLink = dropdown.querySelector('.mobile-nav-link');
+      if (dropdownLink) {
+        dropdownLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          dropdown.classList.toggle('active');
+        });
+      }
+    });
   });
 </script>

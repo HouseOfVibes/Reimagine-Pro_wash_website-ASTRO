@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -12,6 +13,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+const articleUrl = `https://rprowashnc.com/blog/${post.slug}`;
 ---
 
 <Layout
@@ -20,6 +22,15 @@ const { Content } = await post.render();
   image={post.data.image}
   author={post.data.author}
   type="article">
+
+  <ArticleSchema
+    title={post.data.title}
+    description={post.data.description}
+    image={post.data.image}
+    datePublished={post.data.date}
+    author={post.data.author}
+    url={articleUrl}
+  />
 
   <main class="blog-post-main">
     <!-- Hero Section -->
@@ -84,7 +95,7 @@ const { Content } = await post.render();
           <h3>Ready to Transform Your Property?</h3>
           <p>Let Reimagine Pro Wash bring these tips to life with professional pressure washing services.</p>
           <div class="cta-buttons">
-            <a href="/#contact" class="btn-primary">Get Free Quote</a>
+            <a href="/contact" class="btn-primary">Get Free Quote</a>
             <a href="tel:+19842024980" class="btn-secondary">Call (984) 202-4980</a>
           </div>
         </div>
