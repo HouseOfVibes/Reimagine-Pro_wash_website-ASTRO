@@ -340,9 +340,12 @@ const services = [
     display: inline-block;
   }
 
-  .service-link:hover {
+  .service-link:hover,
+  .service-link:focus {
     color: #0862b7;
     transform: translateX(5px);
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
   }
 
   .why-section {
