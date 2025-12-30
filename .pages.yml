@@ -41,5 +41,5 @@ content:
         description: "Add relevant tags separated by comma"
 
 media:
-  input: public/images/blog
-  output: /images/blog
+  input: src/content/blog/images
+  output: /blog/images
