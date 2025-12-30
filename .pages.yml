@@ -1,0 +1,45 @@
+content:
+  - name: blog
+    label: Blog Posts
+    path: src/content/blog
+    type: collection
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: author
+        label: Author
+        type: string
+        default: "Reimagine Pro Wash Team"
+      - name: date
+        label: Publish Date
+        type: date
+        required: true
+      - name: category
+        label: Category
+        type: string
+        options:
+          - Seasonal
+          - Tips & Tricks
+          - Before & After
+          - Services
+          - Community
+      - name: description
+        label: Description
+        type: string
+        required: true
+        description: "SEO meta description (150-160 characters recommended)"
+      - name: image
+        label: Featured Image
+        type: image
+        description: "Blog post featured image"
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+        description: "Add relevant tags separated by comma"
+
+media:
+  input: public/images/blog
+  output: /images/blog
