@@ -5,6 +5,7 @@ import FAQSchema from '../../components/FAQSchema.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 import FAQ from '../../components/FAQ.astro';
+import RelatedServices from '../../components/RelatedServices.astro';
 
 const breadcrumbItems = [
   { name: 'Home', url: '/' },
@@ -210,6 +211,9 @@ const faqs = [
 
     <!-- FAQ Section -->
     <FAQ faqs={faqs} title="Gutter Cleaning FAQs" />
+
+    <!-- Related Services -->
+    <RelatedServices currentService="gutter-cleaning" />
 
     <!-- CTA Section -->
     <section class="service-cta">

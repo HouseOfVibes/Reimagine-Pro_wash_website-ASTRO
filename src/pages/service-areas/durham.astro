@@ -1,0 +1,523 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Service Areas', url: '/service-areas' },
+  { name: 'Durham, NC', url: '/service-areas/durham' }
+];
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Reimagine Pro Wash & More",
+  "image": "https://rprowashnc.com/images/og-image.png",
+  "url": "https://rprowashnc.com/",
+  "telephone": "+1-984-202-4980",
+  "email": "info@rprowashnc.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Durham",
+    "addressRegion": "NC",
+    "postalCode": "27701",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Durham, NC"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "35.9940",
+    "longitude": "-78.8986"
+  }
+};
+---
+
+<Layout
+  title="Pressure Washing in Durham, NC | Reimagine Pro Wash & More"
+  description="Professional pressure washing services in Durham, NC. House washing, roof cleaning, driveways, gutters, decks, and more. Serving Bull City neighborhoods. Licensed & insured. Free estimates.">
+
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <script type="application/ld+json" set:html={JSON.stringify(localSchema)} />
+
+  <main class="city-page">
+    <!-- Hero Section -->
+    <section class="city-hero">
+      <div class="hero-content">
+        <div class="breadcrumb">
+          <a href="/">Home</a> / <a href="/service-areas">Service Areas</a> / <span>Durham, NC</span>
+        </div>
+        <h1>Professional Pressure Washing in Durham, NC</h1>
+        <p class="hero-subtitle">Expert exterior cleaning services for Bull City homes and businesses</p>
+        <div class="hero-cta">
+          <a href="/contact" class="btn-primary">Get Free Estimate</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Introduction -->
+    <section class="local-intro">
+      <div class="container">
+        <h2>Your Trusted Durham Pressure Washing Company</h2>
+        <p>Reimagine Pro Wash & More proudly serves Durham, NC—the Bull City. From the historic charm of Trinity Park and Watts-Hillandale to modern developments in Research Triangle Park and Southpoint, we understand Durham's diverse architecture and the unique cleaning challenges our climate presents.</p>
+        <p>Whether you own a historic craftsman bungalow near Duke University, a contemporary home in Hope Valley, or a commercial property downtown, our professional team delivers exceptional exterior cleaning results. We use eco-friendly solutions and commercial-grade equipment to protect your investment while keeping Durham beautiful.</p>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="city-services">
+      <div class="container">
+        <h2>Pressure Washing Services in Durham</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>House Washing</h3>
+            <p>Soft wash cleaning safely removes dirt, mold, and mildew from vinyl, brick, and stucco siding throughout Durham neighborhoods.</p>
+            <a href="/services/house-washing" class="service-link">Learn More →</a>
+          </div>
+          <div class="service-card">
+            <h3>Roof Cleaning</h3>
+            <p>Eliminate black streaks and algae from your Durham roof with our gentle soft wash method that protects shingles.</p>
+            <a href="/services/roof-cleaning" class="service-link">Learn More →</a>
+          </div>
+          <div class="service-card">
+            <h3>Driveway & Patio Cleaning</h3>
+            <p>Remove oil stains, tire marks, and algae from concrete driveways and hardscapes around your Durham property.</p>
+            <a href="/services/driveway-hardscapes" class="service-link">Learn More →</a>
+          </div>
+          <div class="service-card">
+            <h3>Gutter Cleaning</h3>
+            <p>Protect your Durham home from water damage with professional gutter cleaning and downspout flushing.</p>
+            <a href="/services/gutter-cleaning" class="service-link">Learn More →</a>
+          </div>
+          <div class="service-card">
+            <h3>Deck & Fence Restoration</h3>
+            <p>Restore the beauty of your wood, composite, or vinyl deck and fence with our specialized cleaning services.</p>
+            <a href="/services/deck-fence-restoration" class="service-link">Learn More →</a>
+          </div>
+          <div class="service-card">
+            <h3>Commercial Services</h3>
+            <p>Keep your Durham business looking professional with regular building washing, sidewalk cleaning, and parking lot maintenance.</p>
+            <a href="/services" class="service-link">View All Services →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-city">
+      <div class="container">
+        <h2>Why Durham Chooses Reimagine Pro Wash</h2>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-icon"><i class="fas fa-university"></i></div>
+            <h3>Bull City Expertise</h3>
+            <p>We understand Durham's diverse architecture, from historic districts to modern RTP developments.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>Licensed & Insured</h3>
+            <p>Fully licensed and insured for your complete protection and peace of mind.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="fas fa-leaf"></i></div>
+            <h3>Eco-Friendly Solutions</h3>
+            <p>Biodegradable products safe for Durham families, pets, and landscaping.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="fas fa-star"></i></div>
+            <h3>Satisfaction Guaranteed</h3>
+            <p>We're not satisfied until you are. Quality results, every time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="city-areas">
+      <div class="container">
+        <h2>Serving All of Durham</h2>
+        <p>We proudly serve residential and commercial properties throughout Durham, including:</p>
+        <div class="neighborhoods">
+          <ul>
+            <li>Downtown Durham</li>
+            <li>Duke University area</li>
+            <li>Trinity Park</li>
+            <li>Watts-Hillandale</li>
+            <li>Hope Valley</li>
+            <li>Woodcroft</li>
+            <li>Southpoint area</li>
+          </ul>
+          <ul>
+            <li>Research Triangle Park</li>
+            <li>North Durham</li>
+            <li>Parkwood</li>
+            <li>Brightleaf Square</li>
+            <li>American Tobacco District</li>
+            <li>Forest Hills</li>
+            <li>And all surrounding areas</li>
+          </ul>
+        </div>
+        <p class="service-note">We also serve nearby Raleigh, Chapel Hill, Knightdale, Cary, and all areas within our 50+ mile service radius.</p>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="city-cta">
+      <div class="container">
+        <h2>Ready to Transform Your Durham Property?</h2>
+        <p>Get a free, no-obligation estimate for professional pressure washing services in Durham, NC.</p>
+        <div class="cta-buttons">
+          <a href="/contact" class="btn-primary">Request Free Quote</a>
+          <a href="tel:9842024980" class="btn-secondary">Call (984) 202-4980</a>
+        </div>
+        <p class="satisfaction">100% Satisfaction Guarantee | Licensed & Insured | Locally Owned</p>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .city-page {
+    min-height: 100vh;
+  }
+
+  .city-hero {
+    position: relative;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 50%, #00a1f0 100%);
+    color: white;
+    padding: 140px 20px 80px;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .breadcrumb {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+
+  .breadcrumb a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .breadcrumb a:hover {
+    opacity: 0.7;
+  }
+
+  .breadcrumb span {
+    opacity: 0.7;
+  }
+
+  .city-hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+    line-height: 1.6;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.05rem;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #092441;
+  }
+
+  .btn-primary:hover {
+    background: #00a1f0;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: #092441;
+    transform: translateY(-2px);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .local-intro {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .local-intro h2 {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+  }
+
+  .local-intro p {
+    font-size: 1.15rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .city-services {
+    padding: 100px 20px;
+    background: #f8f9fa;
+  }
+
+  .city-services h2 {
+    font-size: 2.5rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+    color: #003366;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .service-card p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .service-link {
+    color: #00a1f0;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .service-link:hover {
+    color: #0862b7;
+  }
+
+  .why-city {
+    padding: 100px 20px;
+    background: white;
+  }
+
+  .why-city h2 {
+    font-size: 2.5rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .why-item {
+    text-align: center;
+  }
+
+  .why-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #00a1f0;
+  }
+
+  .why-item h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .why-item p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .city-areas {
+    padding: 80px 20px;
+    background: #f8f9fa;
+  }
+
+  .city-areas h2 {
+    font-size: 2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .city-areas > .container > p {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 40px;
+  }
+
+  .neighborhoods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto 30px;
+  }
+
+  .neighborhoods ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .neighborhoods li {
+    padding: 8px 0;
+    color: #333;
+  }
+
+  .service-note {
+    text-align: center;
+    color: #003366;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+
+  .city-cta {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #092441 0%, #0862b7 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .city-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .city-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .satisfaction {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .city-hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .local-intro h2,
+    .city-services h2,
+    .why-city h2,
+    .city-cta h2 {
+      font-size: 2rem;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .neighborhoods {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+</style>

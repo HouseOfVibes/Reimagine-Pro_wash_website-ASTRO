@@ -1,0 +1,164 @@
+---
+interface Props {
+  currentService: string;
+}
+
+const { currentService } = Astro.props;
+
+// Define all services with their relationships
+const allServices = [
+  {
+    name: "House Washing",
+    slug: "house-washing",
+    description: "Soft wash cleaning for siding, brick, and stucco",
+    related: ["roof-cleaning", "gutter-cleaning", "deck-fence-restoration"]
+  },
+  {
+    name: "Roof Cleaning",
+    slug: "roof-cleaning",
+    description: "Safe removal of black streaks and algae from roofs",
+    related: ["house-washing", "gutter-cleaning"]
+  },
+  {
+    name: "Driveway & Hardscapes",
+    slug: "driveway-hardscapes",
+    description: "Concrete, pavers, and stone surface cleaning",
+    related: ["pool-deck-patio", "brick-restoration", "deck-fence-restoration"]
+  },
+  {
+    name: "Gutter Cleaning",
+    slug: "gutter-cleaning",
+    description: "Complete gutter and downspout cleaning",
+    related: ["house-washing", "roof-cleaning"]
+  },
+  {
+    name: "Deck & Fence Restoration",
+    slug: "deck-fence-restoration",
+    description: "Wood and composite deck and fence cleaning",
+    related: ["house-washing", "pool-deck-patio", "driveway-hardscapes"]
+  },
+  {
+    name: "Pool Deck & Patio",
+    slug: "pool-deck-patio",
+    description: "Pool deck cleaning and algae removal",
+    related: ["driveway-hardscapes", "deck-fence-restoration"]
+  },
+  {
+    name: "Brick Restoration",
+    slug: "brick-restoration",
+    description: "Brick cleaning and graffiti removal",
+    related: ["house-washing", "driveway-hardscapes"]
+  }
+];
+
+// Find current service and get related services
+const current = allServices.find(s => s.slug === currentService);
+const relatedSlugs = current?.related || [];
+const relatedServices = allServices.filter(s => relatedSlugs.includes(s.slug));
+---
+
+{relatedServices.length > 0 && (
+  <section class="related-services">
+    <div class="container">
+      <h2>Related Services</h2>
+      <p class="section-intro">You might also be interested in these services:</p>
+      <div class="related-grid">
+        {relatedServices.map(service => (
+          <a href={`/services/${service.slug}`} class="related-card">
+            <h3>{service.name}</h3>
+            <p>{service.description}</p>
+            <span class="view-link">Learn More →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .related-services {
+    padding: 80px 20px;
+    background: #f8f9fa;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .related-services h2 {
+    font-size: 2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .section-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .related-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+  }
+
+  .related-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  }
+
+  .related-card h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .related-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+  }
+
+  .view-link {
+    color: #00a1f0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+  }
+
+  .related-card:hover .view-link {
+    color: #0862b7;
+  }
+
+  @media (max-width: 768px) {
+    .related-services h2 {
+      font-size: 1.7rem;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
