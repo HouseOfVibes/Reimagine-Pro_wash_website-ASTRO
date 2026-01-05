@@ -1,0 +1,172 @@
+# Weekly Link Scan Report
+**Date:** January 5, 2026
+**Website:** Reimagine Pro Wash & More (rprowashnc.com)
+
+---
+
+## Summary
+
+| Category | Status |
+|----------|--------|
+| Internal Page Links | All Valid |
+| Service Pages | All Valid |
+| Service Area Pages | All Valid |
+| Image Assets | All Valid |
+| External Links | Unable to verify (sandbox limitation) |
+| Anchor Links | 1 Issue Found |
+
+---
+
+## Detailed Findings
+
+### Internal Page Links
+
+All main navigation links are valid and correspond to existing pages:
+
+| Link | File | Status |
+|------|------|--------|
+| `/` | `src/pages/index.astro` | Valid |
+| `/about` | `src/pages/about.astro` | Valid |
+| `/services` | `src/pages/services.astro` | Valid |
+| `/gallery` | `src/pages/gallery.astro` | Valid |
+| `/blog` | `src/pages/blog/index.astro` | Valid |
+| `/contact` | `src/pages/contact.astro` | Valid |
+| `/privacy-policy` | `src/pages/privacy-policy.astro` | Valid |
+| `/terms-of-service` | `src/pages/terms-of-service.astro` | Valid |
+| `/service-areas` | `src/pages/service-areas/index.astro` | Valid |
+
+### Service Pages (7 total)
+
+All service pages exist and are properly linked:
+
+- `/services/house-washing`
+- `/services/roof-cleaning`
+- `/services/driveway-hardscapes`
+- `/services/gutter-cleaning`
+- `/services/deck-fence-restoration`
+- `/services/pool-deck-patio`
+- `/services/brick-restoration`
+
+### Service Area Pages (8 total)
+
+All service area pages exist and are properly linked:
+
+- `/service-areas/knightdale`
+- `/service-areas/raleigh`
+- `/service-areas/durham`
+- `/service-areas/cary`
+- `/service-areas/apex`
+- `/service-areas/wake-forest`
+- `/service-areas/garner`
+- `/service-areas/clayton`
+
+### Image Assets
+
+All referenced images exist in `public/images/`:
+
+| Image | Used In | Status |
+|-------|---------|--------|
+| `hero-background.webp` | About page | Valid |
+| `before-after-collage.webp` | About, Gallery | Valid |
+| `house-washing.webp` | Services, Gallery | Valid |
+| `roof-cleaning.webp` | Services | Valid |
+| `driveway-before.webp` | Homepage, Gallery | Valid |
+| `driveway-after.webp` | Homepage, Gallery | Valid |
+| `sidewalk-before.jpeg` | Homepage | Valid |
+| `sidewalk-after.jpeg` | Homepage | Valid |
+| `deck-restoration.webp` | Services, Gallery | Valid |
+| `pool-deck-cleaning.webp` | Services, Gallery | Valid |
+| `gutter-cleaning.webp` | Services, Gallery | Valid |
+| `brick-restoration.webp` | Services, Gallery | Valid |
+| `graffiti-removal-before-after.webp` | Services, Gallery | Valid |
+| `hardscapes-cleaning.webp` | Services, Gallery | Valid |
+| `clean-fence.webp` | Gallery | Valid |
+| `commercial-pressure-washing.webp` | Gallery | Valid |
+| `logo.png` | HomeFooter | Valid |
+| `og-image.png` | SEO meta | Valid |
+| `blog/fall-pressure-washing-knightdale.jpg` | Blog post | Valid |
+
+### External Links
+
+Unable to test from sandbox environment. The following external links should be manually verified:
+
+**Social Media:**
+- Instagram: `https://www.instagram.com/reimagine_prowash/`
+- Facebook: `https://www.facebook.com/people/Reimagine-Pro-Wash-More/61575086936289/`
+- TikTok: `https://www.tiktok.com/@reimagine.pro.wash`
+
+**Third Party:**
+- MW Design Studio: `https://mwdesign.agency`
+
+**CDN Resources:**
+- Google Fonts (Poppins, Open Sans)
+- Font Awesome 6.5.1 via cdnjs
+
+---
+
+## Issues Found
+
+### 1. Missing Anchor Target: `#blog` on Homepage
+
+**Severity:** Medium
+**Location:** `src/pages/index.astro`
+
+The homepage navigation includes links to `#blog`, but there is no corresponding section with `id="blog"` on the page.
+
+**Affected elements:**
+- Line 2041: `<a href="#blog" class="rpw-nav-link">Blog</a>`
+- Line 2089: `<a href="#blog" class="rpw-mobile-nav-link">Blog</a>`
+
+**Recommendation:** Either:
+1. Add a blog preview section to the homepage with `id="blog"`, or
+2. Change the `#blog` links to `/blog` to navigate to the blog page instead
+
+**Valid anchor IDs on homepage:**
+- `#home` (line 2111)
+- `#services` (line 2238)
+- `#service-area` (line 2326)
+- `#contact` (line 2406)
+
+---
+
+## Static Assets Verified
+
+| Asset | Location | Status |
+|-------|----------|--------|
+| `favicon.ico` | `/public/` | Valid |
+| `favicon-16x16.png` | `/public/` | Valid |
+| `favicon-32x32.png` | `/public/` | Valid |
+| `apple-touch-icon.png` | `/public/` | Valid |
+| `robots.txt` | `/public/` | Valid |
+| `googleac1051aef69e660c.html` | `/public/` | Valid |
+
+---
+
+## robots.txt Configuration
+
+```
+User-agent: *
+Allow: /
+
+Sitemap: https://rprowashnc.com/sitemap-index.xml
+```
+
+Configuration looks correct for SEO purposes.
+
+---
+
+## Recommendations
+
+1. **Fix the `#blog` anchor issue** - This is causing broken navigation on the homepage
+2. **Manually verify external social media links** - Ensure all social profiles are active
+3. **Consider adding blog preview section** - To make the `#blog` anchor functional on homepage
+
+---
+
+## Next Scan
+
+Recommended: Weekly scans to catch any new issues as the site evolves.
+
+---
+
+*Report generated by Claude Code - Weekly Link Scanner*
